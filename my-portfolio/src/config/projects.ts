@@ -76,7 +76,7 @@ export const projects: Project[] = [
   id: "project4",
   title: "Job Finder: AI-Powered Python/Django Job Search",
   shortTitle: "Job Finder",
-  description: "AI-powered job search platform for Python and Django developers. Features personalized job matching, real-time scraping from multiple sources, and a modern dashboard UI. Built with Django, React, and TypeScript, it supports remote, hybrid, and on-site roles, and includes automated email digests, user preferences, and a scoring engine for tailored recommendations.",
+  description: "Personalized AI-powered job search platform built specifically for Mia. This app provides custom job matching for Python and Django developers, real-time scraping from multiple sources, and a modern dashboard UI. Built with Django, React, and TypeScript, it supports remote, hybrid, and on-site roles, and includes automated email digests, user preferences, and a scoring engine for tailored recommendations.",
   technologies: [
     "python",
     "django",
@@ -84,14 +84,13 @@ export const projects: Project[] = [
     "typescript",
     "postgresql",
     "tailwindcss",
-
   ],
   date: "07/2024",
   lastUpdated: "2025-07-18", // Update as needed
   status: "complete",
   links: {
     github: "https://github.com/miasdk/job-finder-backend",
-    demo: "https://myjobfinder.vercel.app/"
+    demo: "https://mia-jobfinder.vercel.app/"
   },
   image: jobFinderImg,
   meta: {
