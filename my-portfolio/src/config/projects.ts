@@ -1,7 +1,7 @@
 import { Project, Technology } from "../types/index";
 import project1 from "../public/images/luxe.png";
 import project2 from "../public/images/portfolio.jpg";
-
+import jobFinderImg from "../public/images/job-finder-hero.png";
 
 export const projects: Project[] = [
   {
@@ -37,54 +37,12 @@ export const projects: Project[] = [
     },
     image: project2,
     meta: {
-      isFeatured: true,
+      isFeatured: false,
     },
     platforms: ["web", "mobile"]
   },
-//   {
-//   id: "project3",
-//   title: "Multimodal Video Analysis",
-//   description: "Advanced AI platform combining visual and audio understanding for intelligent video conversations. Built with Google Gemini Pro Vision, featuring multimodal RAG architecture, real-time WebSocket processing, and vector database integration with ChromaDB. Implements intelligent video sectioning, timestamp citations, and natural language visual content search.",
-//   technologies: ["python", "react", "typescript", "fastapi", "tailwindcss", "postgresql"],
-//   date: "06/2025",
-//   lastUpdated: "2025-06-10",
-//   status: "in-progress",
-//   links: {
-//     github: "https://github.com/miasdk/multimodal-video-analysis",
-//     // demo: "https://multimodal-video-analysis.vercel.app/" // Add when deployed
-//   },
-//   image: "https://images.unsplash.com/photo-1710993011904-8f1162b9806d?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-//   meta: {
-//     isWIP: true,
-//     isFeatured: false,
-//     isAI: true,
-//     isTeamProject: false,
-//   },
-//   platforms: ["web", "mobile"]
-// },
-// {
-// id: "project4",
-// title: "Sales Analytics Platform",
-// description: "Business intelligence platform with ML-powered sales forecasting, customer segmentation, and interactive dashboards. Processes 100K+ transactions with 85%+ prediction accuracy using Python, PostgreSQL, and Streamlit.",
-// technologies: ["python", "postgresql", "streamlit", "scikit-learn", "pandas", "plotly"],
-// date: "06/2025",
-// lastUpdated: "2025-06-10",
-// status: "in-progress",
-// links: {
-//   github: "https://github.com/miasdk/sales-analytics-platform",
-//   // demo: "https://sales-analytics-platform.streamlit.app/" // Add when deployed
-// },
-// image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // Business analytics/dashboard themed image
-// meta: {
-//   isWIP: true,
-//   isFeatured: true,
-//   isDataScience: true,
-//   isTeamProject: false,
-// },
-// platforms: ["web"]
-// },
 {
-  id: "project5",
+  id: "project3",
   title: "Medical Referral Hub: AI-Powered Healthcare Automation",
   shortTitle: "AI Medical Referral Hub",
   description: "Full-stack healthcare automation system built with Django and React. Features intelligent document processing, provider matching algorithms, and FHIR R4 compliance. Demonstrates clean architecture with PostgreSQL, comprehensive audit trails, and production-ready deployment pipeline. Currently implementing AI integration with Mistral AI for automated referral analysis.",
@@ -111,6 +69,36 @@ export const projects: Project[] = [
     isAI: true,
     isFullStack: true,
     isTeamProject: false,
+  },
+  platforms: ["web"]
+},
+{
+  id: "project4",
+  title: "Job Finder: AI-Powered Python/Django Job Search",
+  shortTitle: "Job Finder",
+  description: "AI-powered job search platform for Python and Django developers. Features personalized job matching, real-time scraping from multiple sources, and a modern dashboard UI. Built with Django, React, and TypeScript, it supports remote, hybrid, and on-site roles, and includes automated email digests, user preferences, and a scoring engine for tailored recommendations.",
+  technologies: [
+    "python",
+    "django",
+    "react",
+    "typescript",
+    "postgresql",
+    "tailwindcss",
+
+  ],
+  date: "07/2024",
+  lastUpdated: "2025-07-18", // Update as needed
+  status: "complete",
+  links: {
+    github: "https://github.com/miasdk/job-finder-backend",
+    demo: "https://myjobfinder.vercel.app/"
+  },
+  image: jobFinderImg,
+  meta: {
+    isFeatured: true,
+    isFullStack: true,
+    isAI: true,
+    isTeamProject: false
   },
   platforms: ["web"]
 }
