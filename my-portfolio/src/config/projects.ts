@@ -1,7 +1,7 @@
 import { Project, Technology } from "../types/index";
 import project1 from "../public/images/luxe.png";
 import project2 from "../public/images/portfolio.jpg";
-import jobFinderImg from "../public/images/job-finder-hero.png";
+import jobFinderImg from "../public/images/job-finder-hero1.png";
 
 export const projects: Project[] = [
   {
