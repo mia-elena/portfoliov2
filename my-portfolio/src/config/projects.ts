@@ -85,8 +85,8 @@ export const projects: Project[] = [
     "postgresql",
     "tailwindcss",
   ],
-  date: "07/2024",
-  lastUpdated: "2025-07-18", // Update as needed
+  date: "07/2025",
+  lastUpdated: "2025-07-20", // Update as needed
   status: "complete",
   links: {
     github: "https://github.com/miasdk/job-finder-backend",
