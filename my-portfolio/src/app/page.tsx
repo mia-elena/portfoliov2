@@ -211,7 +211,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="py-20 px-4 bg-blue-50">
+      <section id="education" className="py-20 px-4">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold mb-2 text-center">Education</h2>
           <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
