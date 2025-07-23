@@ -11,25 +11,28 @@ const categories = {
     title: "Frontend Development",
     description: "Modern tools and frameworks I use to build user interfaces",
     icon: Code,
-    gradient: "from-blue-50 to-indigo-50",
-    iconGradient: "from-blue-500 to-indigo-600",
-    borderHover: "group-hover:border-blue-200",
+    gradient: "from-gray-50 to-slate-50",
+    iconGradient: "from-gray-600 to-slate-700",
+    borderHover: "group-hover:border-gray-300",
+    iconColor: "text-gray-600",
   },
   backend: {
     title: "Backend & Data",
     description: "Technologies I work with for server-side development",
     icon: Database,
-    gradient: "from-emerald-50 to-teal-50",
-    iconGradient: "from-emerald-500 to-teal-600",
-    borderHover: "group-hover:border-emerald-200",
+    gradient: "from-gray-50 to-neutral-50",
+    iconGradient: "from-gray-600 to-neutral-700",
+    borderHover: "group-hover:border-gray-300",
+    iconColor: "text-gray-600",
   },
   infra: {
     title: "DevOps & Infrastructure",
     description: "DevOps and infrastructure tools I leverage for deployment",
     icon: Settings,
-    gradient: "from-amber-50 to-orange-50",
-    iconGradient: "from-amber-500 to-orange-600",
-    borderHover: "group-hover:border-amber-200",
+    gradient: "from-gray-50 to-stone-50",
+    iconGradient: "from-gray-600 to-stone-700",
+    borderHover: "group-hover:border-gray-300",
+    iconColor: "text-gray-600",
   },
 }
 
@@ -51,7 +54,7 @@ export default function TechnologyShowcase() {
   return (
     <div className="space-y-8">
       <div className="flex justify-center mb-8">
-        <div className="bg-white p-2 rounded-sm shadow-sm border border-gray-100">
+        <div className="bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-sm border border-gray-200">
           <ColorSchemeToggle currentScheme={colorScheme} onChange={setColorScheme} />
         </div>
       </div>
@@ -64,43 +67,50 @@ export default function TechnologyShowcase() {
           return (
             <div
               key={categoryKey}
-              className={`group relative rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg`}
+              className="group relative rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-200 hover:border-gray-300"
             >
-              {/* Background gradient */}
+              {/* Subtle background gradient */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-70 group-hover:opacity-100 transition-opacity duration-300`}
+                className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-60 group-hover:opacity-80 transition-opacity duration-300`}
               ></div>
 
-              <div className="relative z-10 p-6 h-full flex flex-col">
+              {/* Content */}
+              <div className="relative z-10 p-6 h-full flex flex-col bg-white/70 backdrop-blur-sm">
                 <div className="flex items-start gap-4 mb-5">
                   <div
-                    className={`flex-shrink-0 p-3 rounded-lg bg-white shadow-sm border border-gray-100 ${category.borderHover} transition-colors duration-300`}
+                    className={`flex-shrink-0 p-3 rounded-md bg-white/90 shadow-sm border border-gray-200 ${category.borderHover} transition-all duration-300`}
                   >
-                    {categoryKey === "frontend" && <CategoryIcon className="w-5 h-5 text-blue-600" />}
-                    {categoryKey === "backend" && <CategoryIcon className="w-5 h-5 text-emerald-600" />}
-                    {categoryKey === "infra" && <CategoryIcon className="w-5 h-5 text-amber-600" />}
+                    <CategoryIcon className={`w-5 h-5 ${category.iconColor}`} />
                   </div>
 
                   <div>
-                    <h2 className="text-lg font-bold text-gray-900">{category.title}</h2>
-                    <p className="text-sm text-gray-600 mt-1">{category.description}</p>
+                    <h2 className="text-lg font-semibold text-gray-900">{category.title}</h2>
+                    <p className="text-sm text-gray-600 mt-1 leading-relaxed">{category.description}</p>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-200 border-opacity-50">
-                    {technologies.map((tech: Technology) => (
+                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-200/60">
+                  {technologies.map((tech: Technology) => (
                     <TechBadge
                       key={tech}
                       tech={tech}
                       colorScheme={colorScheme}
-                      className="hover:scale-105 hover:shadow-sm transition-all duration-300"
+                      size="sm"
+                      className="hover:scale-105 hover:shadow-sm transition-all duration-200"
                     />
-                    ))}
+                  ))}
                 </div>
               </div>
             </div>
           )
         })}
+      </div>
+
+      {/* Optional: Add a subtle note about the color schemes */}
+      <div className="text-center mt-8">
+        <p className="text-xs text-gray-500">
+          Switch between color schemes to see different visual styles
+        </p>
       </div>
     </div>
   )
