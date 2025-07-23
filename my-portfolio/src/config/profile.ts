@@ -3,7 +3,7 @@ import profilePicture from "../public/images/my-notion-face-transparent-glasses2
 export const profile: Profile = {
     name: "Mia Elena",
     title: "Software Engineer",
-    description: "Software engineer & full-stack developer building AI-powered applications with React, Python, and modern cloud infrastructure",
+    description: "Software engineer & full-stack developer crafting intelligent, scalable solutions with React, Python, and modern cloud infrastructure.",
     image: profilePicture,
     links: {
         github: "https://github.com/miasdk",
