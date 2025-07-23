@@ -84,29 +84,27 @@ export default function ProjectCard({
 
       <div className="relative flex flex-col h-full z-10">
         {showImage && (
-          <div className={`relative ${imageHeight} w-full flex-shrink-0 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 border-b border-gray-200`}>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"></div>
+          <div className={`relative w-full aspect-[16/9] flex-shrink-0 overflow-hidden bg-white/20 border border-gray-200/40 rounded-xl transition-all duration-300 group-hover:border-gray-400 group-hover:scale-[1.02]`}>
+            {/* Optional: subtle overlay on hover */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
             <Image
               src={project.image || "/placeholder.svg"}
-              alt={`Screenshot of ${project.title}`}
+              alt={project.title ? `Screenshot of ${project.title}` : "Project screenshot"}
               fill
-              className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
+              className="object-cover object-center rounded-xl transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.meta?.isFeatured}
             />
-
             <div className="absolute top-3 right-3 z-20 flex flex-col gap-2 items-end">
               {project.status && (
                 <StatusBadge status={project.status} size="sm" />
               )}
-              
               {project.meta?.isWIP && !project.status && (
                 <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 shadow-sm">
                   In Progress
                 </span>
               )}
             </div>
-
             <div className="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
               {project.links?.github && (
                 <Link
