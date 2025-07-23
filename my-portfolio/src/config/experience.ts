@@ -16,7 +16,6 @@ export const experience = [
       "Built 4 production applications including AI chat bot and job recommendation system in a 10-week program",
       "Optimized application performance through caching, code splitting, and lazy loading techniques",
       "Implemented LLM integration with optimized API configuration and deployed on AWS and Vercel",
-      "Collaborated with cross-functional teams using Git version control and agile development methodologies"
     ],
     technologies: ["python", "react", "nextjs", "aws", "vercel", "openai"],
     logo: "/images/headstarter.jpeg"
