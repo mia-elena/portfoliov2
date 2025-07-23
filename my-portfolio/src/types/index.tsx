@@ -37,8 +37,11 @@ export type Technology =
   | "numpy"
   | "plotly"
   | "django"
-  | "aws";
-  ;
+  | "aws"
+  | "java"
+  | "mysql"
+  | "openai"
+  | "langchain";
 
 export interface Project {
   // Core Properties

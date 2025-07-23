@@ -3,8 +3,6 @@ import Link from "next/link";
 import { profile } from "../../config/profile";
 import TechBadge from "../../components/TechBadge";
 import TechStackChart from "../../components/TechStackChart";
-import Cat from "../../public/images/cat-2.jpg";
-import Mia from "../../public/images/mia-about1.jpg";
 import DisqusComments from "src/components/DisqusComments";
 
 export default function AboutPage() {
@@ -15,7 +13,7 @@ export default function AboutPage() {
           <div className="mx-auto w-100 md:w-1/2">
             <div className="relative aspect-square overflow-hidden">
               <Image
-                src={Mia}
+                src="/images/mia-about1.jpg"
                 alt="Mia Tapia"
                 fill
                 sizes="(max-width: 700px) 90vw, 40vw"

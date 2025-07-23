@@ -37,9 +37,11 @@ import {
   SiPandas,
   SiPlotly,
   SiNumpy,
-  SiDjango
+  SiDjango,
+  SiMysql,
+  SiOpenapiinitiative
 } from 'react-icons/si';
-import { FaAws } from 'react-icons/fa';
+import { FaAws, FaJava } from 'react-icons/fa';
 import { Technology } from '../types';
 
 // ===================================
@@ -131,6 +133,10 @@ const techCategories: Record<Technology, keyof typeof monoColorScheme> = {
   pandas: "backend",
   numpy: "backend",
   django: "backend",
+  java: "primary",
+  mysql: "backend",
+  openai: "backend",
+  langchain: "backend",
   
   // Infrastructure Technologies
   git: "infra",
@@ -339,6 +345,28 @@ const brandTechData = {
     color: "bg-[#3f4f75] text-white",
     label: "Plotly",
   },
+  
+  // Additional Technologies
+  java: {
+    icon: FaJava,
+    color: "bg-[#f89820] text-white",
+    label: "Java",
+  },
+  mysql: {
+    icon: SiMysql,
+    color: "bg-[#4479a1] text-white",
+    label: "MySQL",
+  },
+  openai: {
+    icon: SiOpenapiinitiative,
+    color: "bg-[#412991] text-white",
+    label: "OpenAI",
+  },
+  langchain: {
+    icon: SiOpenapiinitiative, // Using OpenAI icon as placeholder
+    color: "bg-[#1c3c73] text-white",
+    label: "LangChain",
+  },
 } satisfies Record<Technology, { icon: IconType; color?: string; label: string }>;
 
 // ===================================
@@ -377,7 +405,19 @@ export default function TechBadge({
   className = "",
   colorScheme = 'mono', 
 }: TechBadgeProps) {
-  const { icon: Icon, label } = brandTechData[tech];
+  const techData = brandTechData[tech];
+  
+  // If technology is not found, provide fallback
+  if (!techData) {
+    console.warn(`Technology "${tech}" not found in brandTechData`);
+    return (
+      <span className={`inline-flex items-center font-medium transition-all rounded-md ${sizeClasses[size]} bg-gray-100 text-gray-800 border border-gray-200 ${className}`}>
+        {showLabel && <span>{tech}</span>}
+      </span>
+    );
+  }
+  
+  const { icon: Icon, label } = techData;
   
   // Determine which color scheme to use
   let color = brandTechData[tech].color; // Default to brand color

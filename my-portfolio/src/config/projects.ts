@@ -1,7 +1,4 @@
 import { Project, Technology } from "../types/index";
-import project1 from "../public/images/luxe.png";
-import project2 from "../public/images/portfolio.jpg";
-import jobFinderImg from "../public/images/job-finder-hero1.png";
 
 export const projects: Project[] = [
   {
@@ -16,7 +13,7 @@ export const projects: Project[] = [
       github: "https://github.com/miasdk/Vite-Ecommerce-Template",
       demo: "https://ecartdemo.vercel.app/"
     },
-    image: project1,
+    image: "/images/luxe.png",
     meta: {
       isTeamProject: false,
       isFeatured: true,
@@ -35,7 +32,7 @@ export const projects: Project[] = [
       github: "https://github.com/miasdk/Portfolio",
       demo: "https://miaelena.vercel.app/"
     },
-    image: project2,
+    image: "/images/portfolio.jpg",
     meta: {
       isFeatured: false,
     },
@@ -86,13 +83,13 @@ export const projects: Project[] = [
     "tailwindcss",
   ],
   date: "07/2025",
-  lastUpdated: "2025-07-20", // Update as needed
+  lastUpdated: "2025-07-23", // Update as needed
   status: "complete",
   links: {
     github: "https://github.com/miasdk/job-finder-backend",
     demo: "https://mia-jobfinder.vercel.app/"
   },
-  image: jobFinderImg,
+  image: "/images/job-finder-hero1.png",
   meta: {
     isFeatured: true,
     isFullStack: true,

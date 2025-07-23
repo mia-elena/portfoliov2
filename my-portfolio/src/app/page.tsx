@@ -191,9 +191,13 @@ export default function Home() {
               <ExperienceCard
                 key={exp.id}
                 experience={{
-                  ...exp,
+                  id: exp.id,
+                  role: exp.title,
+                  company: exp.company,
+                  period: exp.date,
                   highlights: exp.highlights || [],
-                  logo: typeof exp.logo === "object" ? exp.logo.src : exp.logo,
+                  skills: exp.technologies || [],
+                  logo: exp.logo,
                   location: {
                     city: exp.location?.city || "Unknown",
                     country: exp.location?.country || "Unknown",

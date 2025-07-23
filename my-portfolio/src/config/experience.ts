@@ -1,195 +1,87 @@
 import { ExperienceItem, Technology } from "../types";
-import CodePathLogo from "../public/images/codepathlogo.jpg";
-import HunterLogo from "../public/images/HunterCollege.jpg";
-import EvergreenLogo from "../public/images/evergreen-logo.jpg";
-import HeadstarterLogo from "../public/images/headstarter.jpeg";
-
-export const experience: ExperienceItem[] = [
+export const experience = [
   {
-    id: "experience1",
-    role: "Software Engineering Resident",
-    company: "Headstarter",
-    period: "May 2025 - Present",
-    logo: HeadstarterLogo,
-    
-    // Card view - concise and impactful
-    summary: "Built multiple applications including ML models and full-stack systems in collaborative team environment",
-    
-    // Medium view - scannable highlights
-    highlights: [
-      "Built ML models and full-stack applications using Python and TypeScript in collaborative environment",
-      "Optimized application performance through caching, code splitting, and lazy loading techniques",
-      "Deployed LLM integrations with hyperparameter tuning on AWS and Vercel with CI/CD pipelines"
-    ],
-    
-    // Detailed view - full technical descriptions
-    description: [
-      "Built multiple applications including ML models and full-stack systems in collaborative team environment using Python and TypeScript",
-      "Developed and deployed web applications with React/Next.js frontend and Python backend services",
-      "Optimized application performance through caching, code splitting, and lazy loading techniques to improve user experience",
-      "Implemented LLM integration with hyperparameter tuning and deployment on AWS and Vercel with automated CI/CD pipelines",
-      "Collaborated with team members using Git version control and agile development methodologies"
-    ],
-    
-    skills: [
-      "typescript",
-      "python",
-      "vercel",
-      "git",
-      "docker",
-      "awslambda"
-    ] as Technology[],
-    location: {
-      city: "New York",
-      country: "USA",
-    },
-    links: {
-      companyWebsite: "https://headstarter.co", 
-      projectLink: "https://github.com/miatapia/headstarter-projects",
-    },
-    metrics: [],
-    displayOptions: {
-      emphasizeSkills: true,
-      cardLayout: "standard"
-    }
-  },
-  {
-    id: "experience2",
-    role: "Student Developer",
-    company: "CUNY Hunter College",
-    period: "Jan 2025 - May 2025",
-    logo: HunterLogo,
-    
-    summary: "Designed WCAG 2.1 accessible React components with comprehensive form validation",
-    
-    highlights: [
-      "Designed WCAG 2.1 accessible React components with TypeScript and comprehensive form validation",
-      "Built responsive web applications with TailwindCSS ensuring cross-browser compatibility",
-      "Deployed applications with CI/CD pipelines and collaborated on technical architecture decisions"
-    ],
-    
-    description: [
-      "Designed WCAG 2.1 accessible React components with comprehensive form validation using TypeScript and modern React patterns",
-      "Built responsive web applications with TailwindCSS ensuring cross-browser compatibility and mobile-first design",
-      "Implemented client-side form validation with error handling and user feedback mechanisms",
-      "Deployed applications with CI/CD pipelines ensuring reliable uptime and automated testing",
-      "Collaborated on technical architecture decisions and participated in code reviews with development team"
-    ],
-    
-    skills: [
-      "typescript",
-      "react",
-      "nextjs",
-      "tailwindcss",
-      "firebase",
-      "git"
-    ] as Technology[],
-    location: {
-      city: "New York",
-      country: "USA",
-    },
-    links: {
-      companyWebsite: "https://hunter.cuny.edu",
-      projectLink: "https://github.com/miatapia/hunter-web-platform",
-    },
-    metrics: [],
-    displayOptions: {
-      emphasizeSkills: true,
-      cardLayout: "standard"
-    }
-  },
-  {
-    id: "experience3",
-    role: "Software Engineering Intern", 
-    company: "Evergreen Investments",
-    period: "June 2024 - Dec 2024",
-    logo: EvergreenLogo,
-    
-    summary: "Engineered portfolio management features for client base, enhanced user experience and satisfaction",
-    
-    highlights: [
-      "Engineered portfolio management features using React and TypeScript for enhanced user experience",
-      "Developed responsive dashboard interfaces with real-time data visualization and financial charts",
-      "Implemented comprehensive testing with Jest and architected secure role-based access control"
-    ],
-    
-    description: [
-      "Engineered portfolio management features for client base using React and TypeScript, enhancing user experience and satisfaction",
-      "Developed responsive dashboard interfaces with real-time data visualization and interactive financial charts",
-      "Implemented comprehensive testing suite with Jest and React Testing Library including unit and integration tests",
-      "Architected secure access control with role-based permissions and authentication using Firebase and Node.js",
-      "Participated in agile development cycles with daily standups, sprint planning, and collaborative code reviews"
-    ],
-    
-    skills: [
-      "react",
-      "nodejs", 
-      "typescript",
-      "git",
-      "firebase",
-      "swift",
-      "jest"
-    ] as Technology[],
-    location: {
-      city: "New York",
-      country: "USA",
-    },
-    links: {
-      companyWebsite: "https://evergreeninvestments.com",
-      projectLink: "https://github.com/miatapia/evergreen-portfolio-system",
-    },
-    metrics: [],
-    displayOptions: {
-      emphasizeSkills: true,
-      cardLayout: "standard"
-    }
-  },
-  {
-    id: "experience4",
-    role: "Advanced Web Development Mentee",
+    id: "codepath",
+    title: "Software Engineer Fellow",
     company: "CodePath",
-    period: "Aug 2023 - Jan 2024", 
-    logo: CodePathLogo,
-    
-    summary: "Developed full-stack applications with React/Next.js; engaged in pair programming sessions",
-    
+    date: "June 2024 - September 2024",
+    location: {
+      city: "Remote",
+      country: "USA"
+    },
+    type: "fellowship",
+    status: "completed",
+    description: "Completed intensive 12-week software engineering fellowship focused on advanced backend development, system design, and technical interview preparation.",
     highlights: [
-      "Developed full-stack applications with React/Next.js and TypeScript in intensive web development program",
-      "Created RESTful APIs with Express.js and Node.js, integrating third-party services and databases",
-      "Applied performance optimization techniques and engaged in pair programming with Git version control"
+      "Built 5+ full-stack projects using Python, Django, React, and PostgreSQL",
+      "Participated in weekly technical interviews and coding challenges",
+      "Collaborated on group projects with distributed teams",
+      "Learned advanced algorithms, data structures, and system design principles"
     ],
-    
-    description: [
-      "Developed full-stack applications with React/Next.js and TypeScript in intensive web development program",
-      "Created RESTful APIs with Express.js and Node.js, integrating third-party services and databases",
-      "Applied performance optimization techniques including code splitting, lazy loading, and efficient state management",
-      "Engaged in pair programming sessions and collaborative development using Git version control",
-      "Built responsive web applications with modern CSS frameworks and implemented web security best practices"
-    ],
-    
-    skills: [
-      "javascript",
-      "react", 
-      "nextjs",
-      "nodejs",
-      "express",
-      "firebase",
-      "supabase",
-      "git",
-      "tailwindcss"
-    ] as Technology[],
+    technologies: ["python", "django", "react", "postgresql", "git"],
+    logo: "/images/codepathlogo.jpg"
+  },
+  {
+    id: "hunter-college",
+    title: "Student",
+    company: "Hunter College",
+    date: "2022 - 2024",
     location: {
       city: "New York",
-      country: "USA",
+      country: "USA"
     },
-    links: {
-      companyWebsite: "https://codepath.org",
-      projectLink: "https://github.com/miatapia/codepath-web-development",
-    },
-    metrics: [],
-    displayOptions: {
-      emphasizeSkills: true,
-      cardLayout: "standard"
-    }
+    type: "education",
+    status: "completed",
+    description: "Completed coursework in Computer Science with focus on software development, algorithms, and database systems.",
+    highlights: [
+      "Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering",
+      "Participated in coding competitions and hackathons",
+      "Maintained Dean's List status",
+      "Worked on team projects using agile methodologies"
+    ],
+    technologies: ["java", "python", "javascript", "mysql"],
+    logo: "/images/HunterCollege.jpg"
   },
+  {
+    id: "evergreen",
+    title: "Software Developer Intern",
+    company: "Evergreen Health Partners",
+    date: "January 2024 - May 2024",
+    location: {
+      city: "New York",
+      country: "USA"
+    },
+    type: "internship",
+    status: "completed",
+    description: "Developed healthcare management software solutions to improve patient data processing and clinic workflow efficiency.",
+    highlights: [
+      "Built patient management dashboard using React and TypeScript",
+      "Integrated FHIR R4 standards for healthcare data interoperability",
+      "Optimized database queries resulting in 40% faster load times",
+      "Collaborated with healthcare professionals to gather requirements"
+    ],
+    technologies: ["react", "typescript", "nodejs", "postgresql", "docker"],
+    logo: "/images/evergreen-logo.jpg"
+  },
+  {
+    id: "headstarter",
+    title: "Software Engineer Fellow",
+    company: "Headstarter AI",
+    date: "July 2024 - September 2024",
+    location: {
+      city: "Remote",
+      country: "USA"
+    },
+    type: "fellowship",
+    status: "completed",
+    description: "Participated in AI-focused software engineering fellowship, building 5 AI-powered applications and learning modern development practices.",
+    highlights: [
+      "Built 5 AI applications including chatbots, recommendation systems, and image processors",
+      "Learned OpenAI API integration, LangChain, and prompt engineering",
+      "Implemented CI/CD pipelines and cloud deployment strategies",
+      "Mentored by industry professionals from top tech companies"
+    ],
+    technologies: ["python", "react", "nextjs", "openai", "langchain", "vercel"],
+    logo: "/images/headstarter.jpeg"
+  }
 ];
