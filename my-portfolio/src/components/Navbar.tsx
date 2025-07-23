@@ -16,9 +16,10 @@ export default function Navbar() {
                 </div>
 
                 <ul className="hidden md:flex space-x-4">
-                    <Link href="/projects">Projects</Link>
+                    <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="#experience">Experience</NavLink>
+                    <NavLink href="#education">Education</NavLink>
                     <NavLink href="#contact">Contact</NavLink>
                 </ul>
 
@@ -32,9 +33,10 @@ export default function Navbar() {
             {isOpen && (
                 <div className="md:hidden px-4 py-2">
                     <ul className="flex flex-col space-y-2">
-                        <MobileNavLink href="#projects" onClick={() => setIsOpen(false)}>Projects</MobileNavLink>
+                        <MobileNavLink href="/projects" onClick={() => setIsOpen(false)}>Projects</MobileNavLink>
                         <MobileNavLink href="/about" onClick={() => setIsOpen(false)}>About</MobileNavLink>
                         <MobileNavLink href="#experience" onClick={() => setIsOpen(false)}>Experience</MobileNavLink>
+                        <MobileNavLink href="#education" onClick={() => setIsOpen(false)}>Education</MobileNavLink>
                         <MobileNavLink href="#contact" onClick={() => setIsOpen(false)}>Contact</MobileNavLink>
                     </ul>
                 </div>

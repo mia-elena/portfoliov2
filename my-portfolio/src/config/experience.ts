@@ -80,25 +80,5 @@ export const experience = [
     ],
     technologies: ["react", "nextjs", "nodejs", "express", "javascript"],
     logo: "/images/codepathlogo.jpg"
-  },
-  {
-    id: "hunter-college-education",
-    title: "Bachelor of Science in Computer Science",
-    company: "CUNY Hunter College",
-    date: "September 2022 - Present",
-    location: {
-      city: "New York",
-      country: "USA"
-    },
-    type: "education",
-    status: "current",
-    description: "Computer Science degree with focus on data structures, algorithms, and web development. Active in CS community and maintaining 3.7 GPA.",
-    highlights: [
-      "Maintaining 3.7 GPA while actively participating in Computer Science Club and WiCS (Women in Computer Science)",
-      "Completed core curriculum including Data Structures & Algorithms, Operating Systems, and Practical Web Development",
-      "Enhanced technical skills through CodePath Advanced Web Development program and ongoing Technical Interview Course"
-    ],
-    technologies: ["javascript", "python", "cpp"],
-    logo: "/images/HunterCollege.jpg"
   }
 ];

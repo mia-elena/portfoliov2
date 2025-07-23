@@ -6,9 +6,11 @@ import TechBadge from "../components/TechBadge"
 import { projects } from "../config/projects"
 import { profile } from "../config/profile"
 import { experience } from "../config/experience"
+import { education } from "../config/education"
 import type { Technology } from "../types"
 import ProjectCard from "../components/ProjectCard"
 import ExperienceCard from "../components/ExperienceCard"
+import EducationCard from "../components/EducationCard"
 import ContactForm from "../components/ContactForm"
 import TechnologyShowcase from "../components/TechnologyShowcase"
 import { FileText, Linkedin, ArrowRight, FolderOpen } from "lucide-react"
@@ -203,6 +205,22 @@ export default function Home() {
                     country: exp.location?.country || "Unknown",
                   },
                 }}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="education" className="py-20 px-4 bg-blue-50">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold mb-2 text-center">Education</h2>
+          <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+
+          <div className="grid gap-8 max-w-4xl mx-auto">
+            {education.map((edu) => (
+              <EducationCard
+                key={edu.id}
+                education={edu}
               />
             ))}
           </div>
