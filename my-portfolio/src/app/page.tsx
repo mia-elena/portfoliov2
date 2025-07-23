@@ -16,6 +16,27 @@ import TechnologyShowcase from "../components/TechnologyShowcase"
 import { FileText, Linkedin, ArrowRight, FolderOpen } from "lucide-react"
 import { motion } from "framer-motion"
 
+// Animation variants for reusability
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0 }
+}
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1 }
+}
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+}
+
 export default function Home() {
   const featuredProjects = projects.filter((project) => project.meta?.isFeatured);
   const totalProjects = projects.length;
@@ -127,10 +148,17 @@ export default function Home() {
 
       <section id="projects" className="py-16 px-10 bg-gray-50">
         <div className="container mx-auto">
-          <div className="text-center mb-10">
+          <motion.div 
+            className="text-center mb-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             <h2 className="text-3xl font-bold mb-2">Projects</h2>
             <div className="w-20 h-1 bg-gray-900 mx-auto mb-3"></div>
-          </div>
+          </motion.div>
           
           <div className="mx-auto max-w-screen-xl">
             {(() => {
@@ -149,28 +177,43 @@ export default function Home() {
               const shouldSpanLast = projectCount !== 3;
               
               return (
-                <div className={`grid ${gridClasses} gap-6 mb-10`}>
+                <motion.div 
+                  className={`grid ${gridClasses} gap-6 mb-10`}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, amount: 0.2 }}
+                  variants={staggerContainer}
+                >
                   {featuredProjects.map((project, index, array) => (
-                    <div
+                    <motion.div
                       key={project.id}
                       className={`${
                         shouldSpanLast && index === array.length - 1 && array.length % 2 !== 0
                           ? "sm:col-span-2 lg:col-span-1"
                           : ""
                       }`}
+                      variants={fadeInUp}
+                      transition={{ duration: 0.5, ease: "easeOut" }}
                     >
                       <ProjectCard 
                         project={project} 
                         variant="grid"
                       />
-                    </div>
+                    </motion.div>
                   ))}
-                </div>
+                </motion.div>
               );
             })()}
           </div>
 
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.5 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          >
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
@@ -179,77 +222,145 @@ export default function Home() {
               <span>View All Projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="experience" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-2 text-center">Experience</h2>
-          <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl font-bold mb-2 text-center">Experience</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+          </motion.div>
 
-          <div className="grid gap-8 max-w-4xl mx-auto">
-            {experience.map((exp) => (
-              <ExperienceCard
+          <motion.div 
+            className="grid gap-8 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={staggerContainer}
+          >
+            {experience.map((exp, index) => (
+              <motion.div
                 key={exp.id}
-                experience={{
-                  id: exp.id,
-                  role: exp.title,
-                  company: exp.company,
-                  period: exp.date,
-                  highlights: exp.highlights || [],
-                  skills: exp.technologies || [],
-                  logo: exp.logo,
-                  location: {
-                    city: exp.location?.city || "Unknown",
-                    country: exp.location?.country || "Unknown",
-                  },
-                }}
-              />
+                variants={fadeInUp}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <ExperienceCard
+                  experience={{
+                    id: exp.id,
+                    role: exp.title,
+                    company: exp.company,
+                    period: exp.date,
+                    highlights: exp.highlights || [],
+                    skills: exp.technologies || [],
+                    logo: exp.logo,
+                    location: {
+                      city: exp.location?.city || "Unknown",
+                      country: exp.location?.country || "Unknown",
+                    },
+                  }}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="education" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-2 text-center">Education</h2>
-          <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl font-bold mb-2 text-center">Education</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+          </motion.div>
 
-          <div className="grid gap-8 max-w-4xl mx-auto">
+          <motion.div 
+            className="grid gap-8 max-w-4xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+          >
             {education.map((edu) => (
-              <EducationCard
+              <motion.div
                 key={edu.id}
-                education={edu}
-              />
+                variants={fadeInUp}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <EducationCard
+                  education={edu}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="technology" className="py-20 px-4 bg-gray-50">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-2 text-center">Technologies</h2>
-          <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl font-bold mb-2 text-center">Technologies</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+          </motion.div>
 
-          <div className="max-w-5xl mx-auto">
+          <motion.div 
+            className="max-w-5xl mx-auto"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={fadeIn}
+            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          >
             <TechnologyShowcase />
-          </div>
+          </motion.div>
         </div>
       </section>
 
       <section id="contact" className="py-20 px-4">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-bold mb-2 text-center">Contact Me</h2>
-          <div className="w-20 h-1 bg-gray-900 mx-auto mb-6"></div>
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl font-bold mb-2 text-center">Contact Me</h2>
+            <div className="w-20 h-1 bg-gray-900 mx-auto mb-6"></div>
 
-          <p className="text-center mb-10 text-gray-700 max-w-2xl mx-auto">
-            I'm always looking for new opportunities to collaborate on projects. Feel free to reach out using the form below!
-          </p>
+            <p className="text-center mb-10 text-gray-700 max-w-2xl mx-auto">
+              I'm always looking for new opportunities to collaborate on projects. Feel free to reach out using the form below!
+            </p>
+          </motion.div>
 
-          <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8">
+          <motion.div 
+            className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={fadeInUp}
+            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+          >
             <ContactForm />
-          </div>
+          </motion.div>
         </div>
       </section>
     </main>
