@@ -1,87 +1,100 @@
 import { ExperienceItem, Technology } from "../types";
 export const experience = [
   {
-    id: "codepath",
-    title: "Software Engineer Fellow",
-    company: "CodePath",
-    date: "June 2024 - September 2024",
-    location: {
-      city: "Remote",
-      country: "USA"
-    },
-    type: "fellowship",
-    status: "completed",
-    description: "Completed intensive 12-week software engineering fellowship focused on advanced backend development, system design, and technical interview preparation.",
-    highlights: [
-      "Built 5+ full-stack projects using Python, Django, React, and PostgreSQL",
-      "Participated in weekly technical interviews and coding challenges",
-      "Collaborated on group projects with distributed teams",
-      "Learned advanced algorithms, data structures, and system design principles"
-    ],
-    technologies: ["python", "django", "react", "postgresql", "git"],
-    logo: "/images/codepathlogo.jpg"
-  },
-  {
-    id: "hunter-college",
-    title: "Student",
-    company: "Hunter College",
-    date: "2022 - 2024",
+    id: "headstarter",
+    title: "Software Engineering Resident",
+    company: "Headstarter",
+    date: "May 2025 - Present",
     location: {
       city: "New York",
       country: "USA"
     },
-    type: "education",
-    status: "completed",
-    description: "Completed coursework in Computer Science with focus on software development, algorithms, and database systems.",
+    type: "residency",
+    status: "current",
+    description: "Built 4 production applications including AI chat bot and job recommendation system in a 10-week program with focus on modern development practices and deployment.",
     highlights: [
-      "Relevant coursework: Data Structures, Algorithms, Database Systems, Software Engineering",
-      "Participated in coding competitions and hackathons",
-      "Maintained Dean's List status",
-      "Worked on team projects using agile methodologies"
+      "Built 4 production applications including AI chat bot and job recommendation system in a 10-week program",
+      "Optimized application performance through caching, code splitting, and lazy loading techniques",
+      "Implemented LLM integration with optimized API configuration and deployed on AWS and Vercel"
     ],
-    technologies: ["java", "python", "javascript", "mysql"],
+    technologies: ["python", "react", "nextjs", "aws", "vercel", "openai"],
+    logo: "/images/headstarter.jpeg"
+  },
+  {
+    id: "hunter-college-dev",
+    title: "Student Developer",
+    company: "CUNY Hunter College",
+    date: "January 2025 - May 2025",
+    location: {
+      city: "New York",
+      country: "USA"
+    },
+    type: "work",
+    status: "completed",
+    description: "Developed accessible web applications with focus on WCAG 2.1 compliance and modern React development practices.",
+    highlights: [
+      "Designed WCAG 2.1 accessible React components with comprehensive form validation",
+      "Deployed applications with CI/CD ensuring reliable uptime and collaborated on technical architecture decisions"
+    ],
+    technologies: ["react", "typescript", "javascript", "git"],
     logo: "/images/HunterCollege.jpg"
   },
   {
-    id: "evergreen",
-    title: "Software Developer Intern",
-    company: "Evergreen Health Partners",
-    date: "January 2024 - May 2024",
+    id: "evergreen-investments",
+    title: "Software Engineering Intern",
+    company: "Evergreen Investments",
+    date: "June 2024 - December 2024",
     location: {
       city: "New York",
       country: "USA"
     },
     type: "internship",
     status: "completed",
-    description: "Developed healthcare management software solutions to improve patient data processing and clinic workflow efficiency.",
+    description: "Developed portfolio management features and implemented security controls for client dashboard systems.",
     highlights: [
-      "Built patient management dashboard using React and TypeScript",
-      "Integrated FHIR R4 standards for healthcare data interoperability",
-      "Optimized database queries resulting in 40% faster load times",
-      "Collaborated with healthcare professionals to gather requirements"
+      "Developed portfolio management features improving client dashboard functionality and user experience",
+      "Implemented role-based access control components following senior architect guidance and security standards"
     ],
-    technologies: ["react", "typescript", "nodejs", "postgresql", "docker"],
+    technologies: ["react", "typescript", "nodejs", "postgresql"],
     logo: "/images/evergreen-logo.jpg"
   },
   {
-    id: "headstarter",
-    title: "Software Engineer Fellow",
-    company: "Headstarter AI",
-    date: "July 2024 - September 2024",
+    id: "codepath",
+    title: "Advanced Web Development Mentee",
+    company: "CodePath",
+    date: "August 2023 - January 2024",
     location: {
-      city: "Remote",
+      city: "New York",
       country: "USA"
     },
-    type: "fellowship",
+    type: "program",
     status: "completed",
-    description: "Participated in AI-focused software engineering fellowship, building 5 AI-powered applications and learning modern development practices.",
+    description: "Completed intensive web development program focused on full-stack application development and modern frameworks.",
     highlights: [
-      "Built 5 AI applications including chatbots, recommendation systems, and image processors",
-      "Learned OpenAI API integration, LangChain, and prompt engineering",
-      "Implemented CI/CD pipelines and cloud deployment strategies",
-      "Mentored by industry professionals from top tech companies"
+      "Developed full-stack applications with React/Next.js and engaged in pair programming sessions",
+      "Created RESTful APIs with Express.js and applied performance optimization techniques"
     ],
-    technologies: ["python", "react", "nextjs", "openai", "langchain", "vercel"],
-    logo: "/images/headstarter.jpeg"
+    technologies: ["react", "nextjs", "nodejs", "express", "javascript"],
+    logo: "/images/codepathlogo.jpg"
+  },
+  {
+    id: "hunter-college-education",
+    title: "Bachelor of Science in Computer Science",
+    company: "CUNY Hunter College",
+    date: "September 2022 - Present",
+    location: {
+      city: "New York",
+      country: "USA"
+    },
+    type: "education",
+    status: "current",
+    description: "Computer Science degree with focus on data structures, algorithms, and web development. Active in CS community and maintaining 3.7 GPA.",
+    highlights: [
+      "GPA: 3.7 | Activities: Computer Science Club, WiCS (Women in Computer Science)",
+      "Curriculum: Data Structures & Algorithms, Operating Systems, Practical Web Development, Statistics",
+      "CodePath: Advanced Web Development (Jan 2024), Intermediate Technical Interview Course (In Progress)"
+    ],
+    technologies: ["javascript", "python", "cpp"],
+    logo: "/images/HunterCollege.jpg"
   }
 ];
