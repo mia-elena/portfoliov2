@@ -12,7 +12,7 @@ export const education = [
     gpa: "3.7",
     description: "Computer Science degree with focus on data structures, algorithms, and web development. Active in CS community and maintaining strong academic performance.",
     highlights: [
-      "Maintaining 3.7 GPA while actively participating in Computer Science Club and WiCS (Women in Computer Science)",
+      "Actively participating in Computer Science Club and WiCS (Women in Computer Science)",
       "Completed core curriculum including Data Structures & Algorithms, Operating Systems, and Practical Web Development",
       "Enhanced technical skills through CodePath Advanced Web Development program and ongoing Technical Interview Course"
     ],

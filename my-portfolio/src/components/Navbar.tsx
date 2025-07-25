@@ -8,14 +8,14 @@ export default function Navbar() {
 
     return (
         <nav className="bg-white sticky top-0 z-50 ">
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
                     <Link href="/" className="text-xl font-bold text-gray-900">
                         Mia E. Ricci 
                     </Link>
                 </div>
 
-                <ul className="hidden md:flex space-x-4">
+                <ul className="hidden md:flex space-x-3">
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="#experience">Experience</NavLink>

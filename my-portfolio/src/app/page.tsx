@@ -61,7 +61,7 @@ export default function Home() {
             />
           </motion.div>
           <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 text-center"
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 text-center"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
@@ -69,7 +69,7 @@ export default function Home() {
             {profile.name}
           </motion.h1>
           <motion.p 
-            className="text-xl md:text-2xl text-gray-600 mb-4 font-light"
+            className="text-xl md:text-2xl text-gray-600 mb-3 font-light"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
@@ -77,7 +77,7 @@ export default function Home() {
             {profile.title}
           </motion.p>
           <motion.p 
-            className="text-gray-700 max-w-2xl mx-auto text-center leading-relaxed mb-8"
+            className="text-gray-700 max-w-xl mx-auto text-center leading-relaxed mb-6"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
@@ -86,43 +86,10 @@ export default function Home() {
           </motion.p>
           
           <motion.div 
-            className="flex flex-wrap justify-center gap-3 mb-6"
+            className="flex gap-4 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
-          >
-            {profile.skills.map((tech: Technology, index) => (
-              <motion.div
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.6 + index * 0.1, ease: "easeOut" }}
-              >
-                <TechBadge
-                  tech={tech}
-                  size="md"
-                  showLabel={false}
-                  showbg={false}
-                  className="hover:drop-shadow-xl hover:scale-110 transition-all duration-300"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-          
-          <motion.img
-            src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
-            alt="GitHub Contribution Snake"
-            className="mx-auto w-full max-w-lg mb-8"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1, ease: "easeOut" }}
-          />
-          
-          <motion.div 
-            className="flex gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 1.2, ease: "easeOut" }}
           >
             <a
               href={profile.links?.resume || "#"}
@@ -143,6 +110,39 @@ export default function Home() {
               <span>LinkedIn</span>
             </a>
           </motion.div>
+          
+          <motion.div 
+            className="flex flex-wrap justify-center gap-3 mb-4"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
+          >
+            {profile.skills.map((tech: Technology, index) => (
+              <motion.div
+                key={tech}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4, delay: 0.7 + index * 0.1, ease: "easeOut" }}
+              >
+                <TechBadge
+                  tech={tech}
+                  size="md"
+                  showLabel={false}
+                  showbg={false}
+                  className="hover:drop-shadow-xl hover:scale-110 transition-all duration-300"
+                />
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          <motion.img
+            src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
+            alt="GitHub Contribution Snake"
+            className="mx-auto w-full max-w-lg"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+          />
         </div>
       </section>
 
