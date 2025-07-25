@@ -109,7 +109,7 @@ export const projects: Project[] = [
   status: "complete",
   links: {
     github: "https://github.com/miasdk/gemini-chatbot",
-    demo: "https://gemini-chatbot-demo.vercel.app"
+    demo: "https://gemini-chat-component.vercel.app/"
   },
   image: "/images/gemini-chatbot.png",
   meta: {
