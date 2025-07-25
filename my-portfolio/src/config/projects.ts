@@ -97,5 +97,27 @@ export const projects: Project[] = [
     isTeamProject: false
   },
   platforms: ["web"]
+},
+{
+  id: "project5",
+  title: "Gemini ChatBot",
+  shortTitle: "Gemini ChatBot",
+  description: "Production-ready React component featuring Google Gemini AI with intelligent personas, context-aware conversations, and modern UI. Includes 4 specialized AI assistants: Tutor, Support Agent, Code Reviewer, and General Assistant with theme customization, Framer Motion animations, and comprehensive TypeScript support. Built as a reusable component for seamless integration into any React application.",
+  technologies: ["react", "typescript", "nodejs", "express", "tailwindcss"],
+  date: "07/2025",
+  lastUpdated: "2025-07-25",
+  status: "complete",
+  links: {
+    github: "https://github.com/miasdk/gemini-chatbot",
+    demo: "https://gemini-chatbot-demo.vercel.app"
+  },
+  image: "/images/gemini-chatbot.png",
+  meta: {
+    isFeatured: true,
+    isFullStack: true,
+    isAI: true,
+    isTeamProject: false
+  },
+  platforms: ["web"]
 }
 ];
