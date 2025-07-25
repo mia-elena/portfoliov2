@@ -59,25 +59,5 @@ export const experience = [
     ],
     technologies: ["react", "typescript", "nodejs", "postgresql", "nextjs"],
     logo: "/images/evergreen-logo.jpg"
-  },
-  {
-    id: "codepath",
-    title: "Advanced Web Development Mentee",
-    company: "CodePath",
-    date: "August 2023 - January 2024",
-    location: {
-      city: "New York",
-      country: "USA"
-    },
-    type: "program",
-    status: "completed",
-    description: "Completed intensive web development program focused on full-stack application development and modern frameworks.",
-    highlights: [
-      "Developed full-stack applications with React/Next.js engaging in weekly pair programming sessions",
-      "Created RESTful APIs with comprehensive endpoint documentation and applied database query optimizations",
-      "Built responsive web applications with modern CSS frameworks and implemented web security best practices"
-    ],
-    technologies: ["react", "nextjs", "nodejs", "express", "javascript"],
-    logo: "/images/codepathlogo.jpg"
   }
 ];
