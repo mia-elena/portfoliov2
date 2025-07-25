@@ -1,9 +1,9 @@
 import type { Technology } from "../types/index";
 
 export const profile = {
-  name: "Mia Elena Ricci",
+  name: "Mia Elena",
   title: "Software Engineer",
-  description: "Full-stack developer specializing in AI/ML applications, healthcare systems, and scalable web solutions with expertise in React, Python, and cloud technologies.",
+  description: "Building intelligent solutions with React, Python, and cloud.",
   image: "/images/my-notion-face-transparent-glasses2.png",
   links: {
     github: "https://github.com/miasdk",
