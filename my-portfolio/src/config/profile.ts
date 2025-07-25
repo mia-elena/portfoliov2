@@ -1,28 +1,37 @@
 import type { Technology } from "../types/index";
 
 export const profile = {
-  name: "Mia Elena",
+  name: "Mia Elena Ricci",
   title: "Software Engineer",
-  description: "Building intelligent solutions with React, Python, and cloud.",
+  description: "Full-stack developer specializing in AI/ML applications, healthcare systems, and scalable web solutions with expertise in React, Python, and cloud technologies.",
   image: "/images/my-notion-face-transparent-glasses2.png",
   links: {
     github: "https://github.com/miasdk",
     linkedIn: "https://www.linkedin.com/in/miaelena/",
-    resume: "https://www.dropbox.com/scl/fi/o2ku0nh0smpi4fx6kgukn/Mia-Elena-Ricci-SWE-Resume-5.pdf?rlkey=sdo6ht1cslgzus4xhbklv798o&st=7u682vea&dl=0",
+    website: "https://miaelena.vercel.app/",
+    resume: "https://www.dropbox.com/scl/fi/cizrd3ho6tvx3jtfhxr1c/Mia-Elena-Ricci-SWE-Resume.pdf?rlkey=2riqxf44fe879gldnjj4m2d09&st=ie9c95fi&dl=0",
   },
   skills: [
     "python",
-    "django", 
-    "react",
+    "javascript",
     "typescript",
-    "aws"
+    "react",
+    "nextjs",
+    "django",
+    "nodejs",
+    "express",
+    "postgresql",
+    "aws",
+    "docker",
+    "git",
+    "github"
   ] as Technology[],
   contact: {
     email: "miariccidev@gmail.com",
-    phone: "+1 (123) 456-7890",
+    phone: "(929) 428-2071",
   },
   location: {
-    city: "New York City",
+    city: "New York",
     country: "USA",
   }
 };

@@ -11,13 +11,13 @@ export const experience = [
     },
     type: "residency",
     status: "current",
-    description: "Built 4 production applications including AI chat bot and job recommendation system in a 10-week program with focus on modern development practices and deployment.",
+    description: "Built 4 production applications including AI chatbot and job recommendation system in a 10-week program with focus on modern development practices and deployment.",
     highlights: [
       "Built 4 production applications including AI chatbot and job recommendation system in 10-week program",
       "Optimized application performance through Redis caching, React code splitting, and lazy loading techniques",
-      "Implemented Large Language Models with optimized API configuration and deployed on AWS and Vercel",
+      "Architected scalable AI pipeline with prompt engineering, token optimization, and multi-modal API integration",
     ],
-    technologies: ["python", "react", "nextjs", "aws", "vercel", "openai"],
+    technologies: ["python", "react", "nextjs", "aws", "vercel", "openai", "postgresql"],
     logo: "/images/headstarter.jpeg"
   },
   {
@@ -31,13 +31,13 @@ export const experience = [
     },
     type: "work",
     status: "completed",
-    description: "Developed accessible web applications with focus on WCAG 2.1 compliance and modern React development practices.",
+    description: "Designed WCAG 2.1 accessible React components with form validation and type safety using Typescript. Built CI/CD pipeline with GitHub Actions integrating automated testing, linting, and multi-environment deployments. Led technical architecture reviews for 3 web applications, mentoring junior peers on modern React patterns.",
     highlights: [
-      "Designed WCAG 2.1 accessible React components with comprehensive form validation and error handling",
-      "Deployed applications with CI/CD ensuring reliable uptime; collaborated on technical architecture decisions",
-      "Built robust TypeScript applications with comprehensive testing and automated deployment workflows"
+      "Designed WCAG 2.1 accessible React components with form validation and type safety using Typescript",
+      "Built CI/CD pipeline with GitHub Actions integrating automated testing, linting, and multi-environment deployments",
+      "Led technical architecture reviews for 3 web applications, mentoring junior peers on modern React patterns"
     ],
-    technologies: ["react", "typescript", "javascript", "git"],
+    technologies: ["react", "typescript", "javascript", "git", "github"],
     logo: "/images/HunterCollege.jpg"
   },
   {
@@ -51,13 +51,13 @@ export const experience = [
     },
     type: "internship",
     status: "completed",
-    description: "Developed portfolio management features and implemented security controls for client dashboard systems.",
+    description: "Developed portfolio management features improving client dashboard functionality and user experience. Created RESTful APIs with comprehensive endpoint documentation and applied database query optimizations. Developed full-stack applications with React/Next.js engaging in weekly pair programming sessions.",
     highlights: [
       "Developed portfolio management features improving client dashboard functionality and user experience",
-      "Implemented role-based access control components following senior architect guidance and security standards",
-      "Built responsive dashboard interfaces with real-time data visualization and interactive financial charts"
+      "Created RESTful APIs with comprehensive endpoint documentation and applied database query optimizations",
+      "Developed full-stack applications with React/Next.js engaging in weekly pair programming sessions"
     ],
-    technologies: ["react", "typescript", "nodejs", "postgresql"],
+    technologies: ["react", "typescript", "nodejs", "postgresql", "nextjs"],
     logo: "/images/evergreen-logo.jpg"
   },
   {
