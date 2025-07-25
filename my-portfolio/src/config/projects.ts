@@ -3,23 +3,21 @@ import { Project, Technology } from "../types/index";
 export const projects: Project[] = [
   {
     id: "project1",
-    title: "Smart Chat Component",
-    shortTitle: "Smart Chat Component",
-    description: "Reusable AI chat component with 4 intelligent personas and real-time conversational AI. Built responsive React component library with Typescript, 4 theme variants, and Framer motion animations. Implemented split deployment architecture with Vercel frontend and Render backend supporting CORS configuration. Created comprehensive documentation and integration guides enabling developers to easily adopt the component.",
-    technologies: ["react", "typescript", "nodejs", "express", "tailwindcss", "openai"],
-    date: "07/2025",
-    lastUpdated: "2025-07-25",
+    title: "E-commerce Platform",
+    description: "Full-stack platform with 30+ Swagger API endpoints, Stripe payments, Google OAuth, and Swagger documentation. Built PostgreSQL database with full-text search, real-time cart management, and CI/CD deployment. Developed social commerce features including product likes system, automated brand creation, and RESTful APIs. Implemented Firebase authentication, seller listing management, and multi-environment deployment.",
+    technologies: ["react", "nodejs", "express", "postgresql", "firebase", "tailwindcss"],
+    date: "01/2025",
+    lastUpdated: "2025-07-18",
     status: "complete", 
     links: {
-      github: "https://github.com/miasdk/gemini-chatbot",
-      demo: "https://gemini-chat-component.vercel.app/"
+      github: "https://github.com/miasdk/Vite-Ecommerce-Template",
+      demo: "https://ecartdemo.vercel.app/"
     },
-    image: "/images/gemini-chatbot.png",
+    image: "/images/luxe.png",
     meta: {
+      isTeamProject: false,
       isFeatured: true,
       isFullStack: true,
-      isAI: true,
-      isTeamProject: false,
     },
     platforms: ["web"]
   },
@@ -54,21 +52,23 @@ export const projects: Project[] = [
   },
   {
     id: "project3",
-    title: "E-commerce Platform",
-    description: "Production platform with 30+ API endpoints, Stripe payments, Google OAuth, and Swagger documentation. Built PostgreSQL database with full-text search, real-time cart management, and CI/CD deployment. Developed social commerce features including product likes system, automated brand creation, and RESTful APIs. Implemented Firebase authentication, seller listing management, and multi-environment deployment.",
-    technologies: ["react", "nodejs", "express", "postgresql", "firebase", "tailwindcss"],
-    date: "01/2025",
-    lastUpdated: "2025-07-18",
+    title: "Smart Chat Component",
+    shortTitle: "Smart Chat Component",
+    description: "Reusable AI chat component with 4 intelligent personas and real-time conversational AI. Built responsive React component library with Typescript, 4 theme variants, and Framer motion animations. Implemented split deployment architecture with Vercel frontend and Render backend supporting CORS configuration. Created comprehensive documentation and integration guides enabling developers to easily adopt the component.",
+    technologies: ["react", "typescript", "nodejs", "express", "tailwindcss", "openai"],
+    date: "07/2025",
+    lastUpdated: "2025-07-25",
     status: "complete", 
     links: {
-      github: "https://github.com/miasdk/Vite-Ecommerce-Template",
-      demo: "https://ecartdemo.vercel.app/"
+      github: "https://github.com/miasdk/gemini-chatbot",
+      demo: "https://gemini-chat-component.vercel.app/"
     },
-    image: "/images/luxe.png",
+    image: "/images/gemini-chatbot.png",
     meta: {
-      isTeamProject: false,
       isFeatured: true,
       isFullStack: true,
+      isAI: true,
+      isTeamProject: false,
     },
     platforms: ["web"]
   },
