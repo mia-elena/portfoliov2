@@ -23,15 +23,13 @@ export default function ViewCounter({
         // Only run on client side
         if (typeof window === 'undefined') return;
         
-        const API_KEY = 'ut_2KbIfzDw2N4VbJzP53JQHND6VmKUGLt2CPip7LQf';
-        const WORKSPACE = 'mia-portfolio';
-        const COUNTER_NAME = 'total-views';
+        const WORKSPACE = 'mia-personal-dev';
+        const COUNTER_NAME = 'mia-portfolio-views';
         
         // Increment the view count using CounterAPI.dev V2
         const response = await fetch(`https://api.counterapi.dev/v2/${WORKSPACE}/${COUNTER_NAME}/up`, {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${API_KEY}`,
             'Content-Type': 'application/json',
           }
         });
@@ -54,14 +52,12 @@ export default function ViewCounter({
         
         // Fallback: try to get current count without incrementing
         try {
-          const API_KEY = 'ut_2KbIfzDw2N4VbJzP53JQHND6VmKUGLt2CPip7LQf';
-          const WORKSPACE = 'mia-portfolio';
-          const COUNTER_NAME = 'total-views';
+          const WORKSPACE = 'mia-personal-dev';
+          const COUNTER_NAME = 'mia-portfolio-views';
           
           const response = await fetch(`https://api.counterapi.dev/v2/${WORKSPACE}/${COUNTER_NAME}`, {
             method: 'GET',
             headers: {
-              'Authorization': `Bearer ${API_KEY}`,
               'Content-Type': 'application/json',
             }
           });
