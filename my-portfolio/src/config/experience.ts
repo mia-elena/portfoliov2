@@ -13,9 +13,9 @@ export const experience = [
     status: "current",
     description: "Built 4 production applications including AI chat bot and job recommendation system in a 10-week program with focus on modern development practices and deployment.",
     highlights: [
-      "Built 4 production applications including AI chat bot and job recommendation system in a 10-week program",
-      "Optimized application performance through caching, code splitting, and lazy loading techniques",
-      "Implemented LLM integration with optimized API configuration and deployed on AWS and Vercel",
+      "Built 4 production applications including AI chatbot and job recommendation system in 10-week program",
+      "Optimized application performance through Redis caching, React code splitting, and lazy loading techniques",
+      "Implemented Large Language Models with optimized API configuration and deployed on AWS and Vercel",
     ],
     technologies: ["python", "react", "nextjs", "aws", "vercel", "openai"],
     logo: "/images/headstarter.jpeg"
@@ -33,9 +33,9 @@ export const experience = [
     status: "completed",
     description: "Developed accessible web applications with focus on WCAG 2.1 compliance and modern React development practices.",
     highlights: [
-      "Designed WCAG 2.1 accessible React components with comprehensive form validation using TypeScript",
-      "Deployed applications with CI/CD pipelines ensuring reliable uptime and automated testing workflows",
-      "Collaborated on technical architecture decisions and participated in code reviews with development team"
+      "Designed WCAG 2.1 accessible React components with comprehensive form validation and error handling",
+      "Deployed applications with CI/CD ensuring reliable uptime; collaborated on technical architecture decisions",
+      "Built robust TypeScript applications with comprehensive testing and automated deployment workflows"
     ],
     technologies: ["react", "typescript", "javascript", "git"],
     logo: "/images/HunterCollege.jpg"
@@ -73,8 +73,8 @@ export const experience = [
     status: "completed",
     description: "Completed intensive web development program focused on full-stack application development and modern frameworks.",
     highlights: [
-      "Developed full-stack applications with React/Next.js and engaged in pair programming sessions",
-      "Created RESTful APIs with Express.js and applied performance optimization techniques",
+      "Developed full-stack applications with React/Next.js engaging in weekly pair programming sessions",
+      "Created RESTful APIs with comprehensive endpoint documentation and applied database query optimizations",
       "Built responsive web applications with modern CSS frameworks and implemented web security best practices"
     ],
     technologies: ["react", "nextjs", "nodejs", "express", "javascript"],
