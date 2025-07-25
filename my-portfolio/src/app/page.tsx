@@ -2,12 +2,10 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import TechBadge from "../components/TechBadge"
 import { projects } from "../config/projects"
 import { profile } from "../config/profile"
 import { experience } from "../config/experience"
 import { education } from "../config/education"
-import type { Technology } from "../types"
 import ProjectCard from "../components/ProjectCard"
 import ExperienceCard from "../components/ExperienceCard"
 import EducationCard from "../components/EducationCard"
@@ -111,37 +109,13 @@ export default function Home() {
             </a>
           </motion.div>
           
-          <motion.div 
-            className="flex flex-wrap justify-center gap-3 mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6, ease: "easeOut" }}
-          >
-            {profile.skills.map((tech: Technology, index) => (
-              <motion.div
-                key={tech}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.4, delay: 0.7 + index * 0.1, ease: "easeOut" }}
-              >
-                <TechBadge
-                  tech={tech}
-                  size="md"
-                  showLabel={false}
-                  showbg={false}
-                  className="hover:drop-shadow-xl hover:scale-110 transition-all duration-300"
-                />
-              </motion.div>
-            ))}
-          </motion.div>
-          
           <motion.img
             src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
             alt="GitHub Contribution Snake"
             className="mx-auto w-full max-w-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
           />
         </div>
       </section>

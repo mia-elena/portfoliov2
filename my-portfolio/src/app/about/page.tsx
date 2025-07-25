@@ -2,14 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { profile } from "../../config/profile";
 import TechBadge from "../../components/TechBadge";
+import type { Technology } from "../../types";
 import TechStackChart from "../../components/TechStackChart";
-import DisqusComments from "src/components/DisqusComments";
+import TechStackBarChart from "../../components/TechStackBarChart";
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white text-gray-900">
-      <section className="max-w-4xl mx-auto px-6 pt-24 pb-16">
-        <div className="flex flex-col md:flex-row md:items-center gap-16">
+      <section className="max-w-4xl mx-auto px-6 pt-20 pb-12">
+        <div className="flex flex-col md:flex-row md:items-center gap-12">
           <div className="mx-auto w-100 md:w-1/2">
             <div className="relative aspect-square overflow-hidden">
               <Image
@@ -23,19 +24,27 @@ export default function AboutPage() {
             </div>
           </div>
           
-          <div className="w-full md:w-1/2 space-y-6 text-center md:text-left">
-            <h1 className="text-3xl font-light tracking-wide">
-              Hello, I'm <span className="font-medium">Mia</span> 👋
+          <div className="w-full md:w-1/2 space-y-4 text-center md:text-left">
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              Hello, I'm <span className="font-bold">Mia</span> 👋
             </h1>
             
             <p className="text-gray-700 leading-relaxed">
-              I'm a New York native crafting digital experiences through 
-              React, Next.js, and TypeScript. With 3+ years of experience 
-              transforming ideas into functional web applications with a focus on 
-              intuitive UX, I pride myself in my ability to tackle large, complex problems. 
+              I'm a New York native building intelligent solutions with Python, Django, and modern web technologies. With 3+ years of experience transforming ideas into scalable applications, I pride myself on producing clean code, prioritizing user experience, and tackling large, complex problems.
             </p>
+            <div className="border-t border-gray-100 my-4 w-16 mx-auto md:mx-0"></div>
+            <div className="mb-2 text-left md:text-left">
+              <span className="text-gray-600 font-medium">Currently learning:</span>
+              <ul className="list-disc list-inside text-gray-700 text-base space-y-1 max-w-xs mx-auto md:mx-0">
+                <li>System Design & Architecture</li>
+                <li>Python for Data Science</li>
+                <li>AI/ML Integration (Mistral AI)</li>
+                <li>Advanced Algorithms & DSA</li>
+                <li>Healthcare Standards (FHIR R4)</li>
+              </ul>
+            </div>
             
-            <div className="flex gap-5 pt-4 justify-center md:justify-start">
+            <div className="flex gap-4 pt-3 justify-center md:justify-start">
               <Link 
                 href={profile.links?.github || "https://github.com"}
                 target="_blank"
@@ -72,89 +81,48 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* <section className="max-w-4xl mx-auto px-6 py-16">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-          <h2 className="text-2xl font-light tracking-wide">GitHub Activity</h2>
-          <Link 
-            href={profile.links?.github || "https://github.com"} 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-gray-700 hover:text-gray-900 transition-colors text-sm flex items-center"
-          >
-            View Profile
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-            </svg>
-          </Link>
-        </div>
-        
-        <div className="p-6 rounded">
-          <div className="relative rounded overflow-hidden">
-            <Image
-              src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
-              alt="GitHub contribution grid snake animation"
-              width={800}
-              height={400}
-              className="w-full h-auto"
-            />
-          </div>
-          <p className="text-center text-sm text-gray-500 mt-4">
-            The snake grows with every commit I make to GitHub
-          </p>
-        </div>
-      </section> */}
-    
-      <div className="border-t border-gray-100 max-w-4xl mx-auto"></div>
-
-      {/* Tech Stack Section */}
+      {/* Core Technologies Section */}
+      <div className="border-t border-gray-100 w-full max-w-4xl mx-auto"></div>
       <section className="max-w-4xl mx-auto px-6 py-16">
         <div className="text-center">
-          <h2 className="text-xl font-medium mb-2">My Most Used Technologies</h2>
-          <p className="text-sm text-gray-600 mb-12">Dynamically generated from projects I've worked on</p>
-          <TechStackChart />
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Core Technologies</h2>
+          <p className="text-sm text-gray-500 mb-4">My primary languages and frameworks</p>
+          <div className="flex flex-wrap justify-center gap-4 max-w-sm mx-auto">
+            {profile.skills.map((tech) => (
+              <TechBadge
+                key={tech}
+                tech={tech}
+                size="lg"
+                showLabel={true}
+                showbg={true}
+                className="hover:scale-105 transition-all duration-300"
+              />
+            ))}
+          </div>
         </div>
+      </section>
 
-        <div className="mt-16">
-          <h2 className="text-xl font-medium mb-8 text-center">Currently Learning</h2>
-          <div className="max-w-lg mx-auto">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                <span className="text-sm text-gray-700">System Design & Architecture</span>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                <span className="text-sm text-gray-700">Python for Data Science</span>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                <span className="text-sm text-gray-700">AI/ML Integration (Mistral AI)</span>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                <span className="text-sm text-gray-700">Advanced Algorithms & DSA</span>
-              </div>
-              
-              <div className="flex items-center gap-3">
-                <div className="w-1.5 h-1.5 bg-gray-800 rounded-full"></div>
-                <span className="text-sm text-gray-700">Healthcare Standards (FHIR R4)</span>
-              </div>
-            </div>
+      {/* Most Used Technologies Section */}
+      <div className="border-t border-gray-100 w-full max-w-4xl mx-auto"></div>
+      <section className="max-w-4xl mx-auto px-6 py-16">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Most Used Technologies</h2>
+          <p className="text-sm text-gray-500 mb-4">Dynamically generated from my current projects</p>
+        </div>
+        <div className="flex flex-col items-center justify-center">
+          <div className="w-full max-w-2xl">
+            <TechStackChart />
           </div>
         </div>
       </section>
 
 
-
-      <div className="border-t border-gray-100 max-w-4xl mx-auto"></div>
-
+      {/* Get in Touch Section */}
+      <div className="border-t border-gray-100 w-full max-w-4xl mx-auto"></div>
       <section className="max-w-4xl mx-auto px-6 py-16">
         <div className="flex flex-col items-center text-center">
-          <h2 className="text-xl font-medium mb-6">Get in Touch</h2>
-          <p className="text-gray-700 mb-8 max-w-md">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+          <p className="text-gray-700 mb-6 max-w-sm">
             I'm always open to discussing new projects or opportunities.
           </p>
           <Link 
