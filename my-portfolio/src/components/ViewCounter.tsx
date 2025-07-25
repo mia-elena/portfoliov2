@@ -39,9 +39,10 @@ export default function ViewCounter({
         }
         
         const data = await response.json();
-        console.log('ViewCounter: API response:', data);
+        console.log('ViewCounter: API response (increment):', data);
         
         if (data && data.data && typeof data.data.up_count === 'number') {
+          console.log('Setting viewCount to:', data.data.up_count);
           setViewCount(data.data.up_count);
         } else {
           throw new Error('Invalid response format');
@@ -64,7 +65,10 @@ export default function ViewCounter({
           
           if (response.ok) {
             const data = await response.json();
-            setViewCount((data && data.data && typeof data.data.up_count === 'number') ? data.data.up_count : 0);
+            console.log('ViewCounter: API response (fallback):', data);
+            const count = (data && data.data && typeof data.data.up_count === 'number') ? data.data.up_count : 0;
+            console.log('Setting viewCount to (fallback):', count);
+            setViewCount(count);
           } else {
             setViewCount(0);
           }
