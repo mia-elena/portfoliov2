@@ -3,7 +3,7 @@ import type { Technology } from "../types/index";
 export const profile = {
   name: "Mia Elena",
   title: "Software Engineer",
-  description: "Software engineer building intelligent applications with React, Python, and modern cloud infrastructure",
+  description: "Building intelligent solutions with React, Python, and cloud.",
   image: "/images/my-notion-face-transparent-glasses2.png",
   links: {
     github: "https://github.com/miasdk",
@@ -12,10 +12,9 @@ export const profile = {
   },
   skills: [
     "python",
-    "django",
+    "django", 
     "react",
     "typescript",
-    "postgresql",
     "aws"
   ] as Technology[],
   contact: {
