@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   title: "Mia Elena Ricci | Full-Stack Developer",
   description: "Software engineer specializing in Python, Django, React, Next.js, and TypeScript development",
   icons: {
-    icon: '/icon.svg',
+    icon: [
+      { url: '/icon.svg', sizes: '32x32', type: 'image/svg+xml' },
+      { url: '/icon.svg', sizes: '16x16', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' }
+    ],
   },
 };
 
