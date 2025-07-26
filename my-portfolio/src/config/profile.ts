@@ -9,7 +9,7 @@ export const profile = {
     github: "https://github.com/miasdk",
     linkedIn: "https://www.linkedin.com/in/miaelena/",
     website: "https://miaelena.vercel.app/",
-    resume: "https://www.dropbox.com/scl/fi/cizrd3ho6tvx3jtfhxr1c/Mia-Elena-Ricci-SWE-Resume.pdf?rlkey=2riqxf44fe879gldnjj4m2d09&st=ie9c95fi&dl=0",
+    resume: "https://www.dropbox.com/scl/fi/cizrd3ho6tvx3jtfhxr1c/Mia-Elena-Ricci-SWE-Resume.pdf?rlkey=2riqxf44fe879gldnjj4m2d09&st=0by9nhtk&dl=0",
   },
   skills: [
     "python",
