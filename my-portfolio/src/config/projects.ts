@@ -120,27 +120,27 @@ export const projects: Project[] = [
     },
     platforms: ["web", "mobile"]
   },
-  {
-    id: "project6",
-    title: "Python Mastery Learning Platform",
-    shortTitle: "Python Mastery",
-    description: "Interactive Python learning platform with AI-powered code execution, real-time feedback, and personalized curriculum. Built comprehensive backend with PostgreSQL database, GitHub OAuth authentication, and Python code sandbox execution. Developed responsive React frontend with Monaco editor integration, progress tracking, and multi-level problem sets. Implemented production deployment with CI/CD pipeline supporting separate frontend/backend architecture.",
-    technologies: ["react", "typescript", "nodejs", "express", "postgresql", "python", "tailwindcss"],
-    date: "07/2025",
-    lastUpdated: "2025-07-29",
-    status: "complete",
-    links: {
-      github: "https://github.com/miasdk/python-mastery",
-      demo: "https://python-mastery-i25r8d9go-mia-s-projects.vercel.app/"
-    },
-    image: "/images/python-mastery.png",
-    meta: {
-      isFeatured: true,
-      isFullStack: true,
-      isAI: false,
-      isTeamProject: false
-    },
-    platforms: ["web"]
-  }
+  // {
+  //   id: "project6",
+  //   title: "Python Mastery Learning Platform",
+  //   shortTitle: "Python Mastery",
+  //   description: "Interactive Python learning platform with AI-powered code execution, real-time feedback, and personalized curriculum. Built comprehensive backend with PostgreSQL database, GitHub OAuth authentication, and Python code sandbox execution. Developed responsive React frontend with Monaco editor integration, progress tracking, and multi-level problem sets. Implemented production deployment with CI/CD pipeline supporting separate frontend/backend architecture.",
+  //   technologies: ["react", "typescript", "nodejs", "express", "postgresql", "python", "tailwindcss"],
+  //   date: "07/2025",
+  //   lastUpdated: "2025-07-29",
+  //   status: "complete",
+  //   links: {
+  //     github: "https://github.com/miasdk/python-mastery",
+  //     demo: "https://python-mastery-i25r8d9go-mia-s-projects.vercel.app/"
+  //   },
+  //   image: "/images/python-mastery.png",
+  //   meta: {
+  //     isFeatured: true,
+  //     isFullStack: true,
+  //     isAI: false,
+  //     isTeamProject: false
+  //   },
+  //   platforms: ["web"]
+  // }
   
 ];
