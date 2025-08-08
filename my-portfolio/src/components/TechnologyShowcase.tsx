@@ -97,7 +97,7 @@ export default function TechnologyShowcase() {
                 </div>
 
                 <div className="flex flex-wrap gap-2.5 mt-auto pt-5 border-t border-gray-200/70">
-                  {technologies.map((tech: Technology, techIndex) => (
+                  {technologies.map((tech: Technology, techIndex: number) => (
                     <TechBadge
                       key={tech}
                       tech={tech}
