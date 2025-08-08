@@ -2,6 +2,7 @@
 import { useState } from "react"; 
 import Link from "next/link"; 
 import { HiMenu, HiX } from "react-icons/hi";
+import { SiReact } from "react-icons/si";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,8 +11,9 @@ export default function Navbar() {
         <nav className="bg-white sticky top-0 z-50">
             <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
-                    <Link href="/" className="text-xl font-bold text-gray-900">
-                        Mia E. Ricci 
+                    <Link href="/" className="text-xl font-bold text-gray-900 hover:text-gray-700 transition-colors relative group">
+                        Mia E. Ricci
+                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
                     </Link>
                 </div>
 

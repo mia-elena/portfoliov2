@@ -86,8 +86,8 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      <div className="container mx-auto">
-        <div className="text-left mb-8  ms-5">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="text-left mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2 ">All Projects</h1>
             <p className="text-sm text-gray-600">
                Use the filters below to search by name, category, or technology.

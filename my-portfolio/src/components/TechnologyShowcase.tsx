@@ -52,51 +52,61 @@ export default function TechnologyShowcase() {
   } 
 
   return (
-    <div className="space-y-8">
-      <div className="flex justify-center mb-8">
-        <div className="bg-white/80 backdrop-blur-sm p-2 rounded-lg shadow-sm border border-gray-200">
+    <div className="space-y-10">
+      {/* Enhanced toggle container */}
+      <div className="flex justify-center mb-10">
+        <div className="bg-white/90 backdrop-blur-md p-3 rounded-xl shadow-lg shadow-gray-200/50 border border-gray-200/80 ring-1 ring-gray-200/20">
           <ColorSchemeToggle currentScheme={colorScheme} onChange={setColorScheme} />
         </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {Object.entries(techCategories).map(([categoryKey, technologies]) => {
+        {Object.entries(techCategories).map(([categoryKey, technologies], index) => {
           const category = categories[categoryKey as keyof typeof categories]
           const CategoryIcon = category.icon
 
           return (
             <div
               key={categoryKey}
-              className="group relative rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-200 hover:border-gray-300"
+              className="group relative rounded-xl overflow-hidden transition-all duration-500 ease-out hover:shadow-2xl hover:shadow-gray-200/60 border border-gray-200/80 hover:border-gray-300/80 hover:-translate-y-1"
+              style={{
+                animationDelay: `${index * 100}ms`,
+              }}
             >
-              {/* Subtle background gradient */}
+              {/* Enhanced background gradient */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-60 group-hover:opacity-80 transition-opacity duration-300`}
+                className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-50 group-hover:opacity-70 transition-opacity duration-500`}
               ></div>
 
+              {/* Subtle noise texture overlay */}
+              <div className="absolute inset-0 opacity-[0.015] bg-[radial-gradient(circle_at_50%_120%,rgba(120,120,120,0.3),transparent_50%)]"></div>
+
               {/* Content */}
-              <div className="relative z-10 p-6 h-full flex flex-col bg-white/70 backdrop-blur-sm">
-                <div className="flex items-start gap-4 mb-5">
+              <div className="relative z-10 p-7 h-full flex flex-col bg-white/80 backdrop-blur-md">
+                <div className="flex items-start gap-4 mb-6">
                   <div
-                    className={`flex-shrink-0 p-3 rounded-md bg-white/90 shadow-sm border border-gray-200 ${category.borderHover} transition-all duration-300`}
+                    className={`flex-shrink-0 p-3.5 rounded-xl bg-white/95 shadow-md shadow-gray-200/50 border border-gray-200/60 ${category.borderHover} transition-all duration-300 group-hover:shadow-lg group-hover:shadow-gray-200/60`}
                   >
                     <CategoryIcon className={`w-5 h-5 ${category.iconColor}`} />
                   </div>
 
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-900">{category.title}</h2>
-                    <p className="text-sm text-gray-600 mt-1 leading-relaxed">{category.description}</p>
+                    <h2 className="text-lg font-semibold text-gray-900 tracking-tight">{category.title}</h2>
+                    <p className="text-sm text-gray-600 mt-1.5 leading-relaxed font-medium">{category.description}</p>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 mt-auto pt-4 border-t border-gray-200/60">
-                  {technologies.map((tech: Technology) => (
+                <div className="flex flex-wrap gap-2.5 mt-auto pt-5 border-t border-gray-200/70">
+                  {technologies.map((tech: Technology, techIndex) => (
                     <TechBadge
                       key={tech}
                       tech={tech}
                       colorScheme={colorScheme}
                       size="sm"
-                      className="hover:scale-105 hover:shadow-sm transition-all duration-200"
+                      className="hover:scale-110 hover:shadow-md hover:shadow-gray-200/60 transition-all duration-300 ease-out"
+                      style={{
+                        animationDelay: `${(index * 100) + (techIndex * 50)}ms`,
+                      }}
                     />
                   ))}
                 </div>
@@ -106,10 +116,10 @@ export default function TechnologyShowcase() {
         })}
       </div>
 
-      {/* Optional: Add a subtle note about the color schemes */}
-      <div className="text-center mt-8">
-        <p className="text-xs text-gray-500">
-          Switch between color schemes to see different visual styles
+      {/* Enhanced footer note */}
+      <div className="text-center mt-12">
+        <p className="text-sm text-gray-500 font-medium tracking-wide">
+          Switch between color schemes to explore different visual styles
         </p>
       </div>
     </div>
