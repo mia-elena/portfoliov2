@@ -104,9 +104,6 @@ export default function TechnologyShowcase() {
                       colorScheme={colorScheme}
                       size="sm"
                       className="hover:scale-110 hover:shadow-md hover:shadow-gray-200/60 transition-all duration-300 ease-out"
-                      style={{
-                        animationDelay: `${(index * 100) + (techIndex * 50)}ms`,
-                      }}
                     />
                   ))}
                 </div>
