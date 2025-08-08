@@ -9,10 +9,9 @@ export const education = [
     },
     period: "September 2022 - Present",
     status: "current",
-    gpa: "3.7",
+    gpa: "3.4",
     description: "Computer Science degree with focus on data structures, algorithms, and web development. Active in CS community and maintaining strong academic performance.",
     highlights: [
-      "Actively participating in Computer Science Club and WiCS (Women in Computer Science)",
       "Completed core curriculum including Data Structures & Algorithms, Operating Systems, and Practical Web Development",
       "Enhanced technical skills through CodePath Advanced Web Development program and ongoing Technical Interview Course"
     ],
@@ -23,10 +22,10 @@ export const education = [
       "Statistics",
       "Software Engineering"
     ],
-    activities: [
-      "Computer Science Club - Active Member",
-      "WiCS (Women in Computer Science) - Active Member"
-    ],
+    // activities: [
+    //   "Computer Science Club - Active Member", (PENDING)
+    //   "WiCS (Women in Computer Science) - Active Member" (PENDING)
+    // ],
     technologies: ["javascript", "python", "cpp"],
     logo: "/images/HunterCollege.jpg"
   }

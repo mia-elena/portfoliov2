@@ -1,5 +1,6 @@
 import { ExperienceItem, Technology } from "../types";
 export const experience = [
+
   {
     id: "headstarter",
     title: "Software Engineering Resident",
