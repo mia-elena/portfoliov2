@@ -253,7 +253,7 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {variant !== "compact" && (
+        {/* {variant !== "compact" && (
           <div className="px-5 pb-5">
             <div className="flex gap-2 mt-4">
               {project.links?.demo && (
@@ -278,7 +278,7 @@ export default function ProjectCard({
               )}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </article>
   )

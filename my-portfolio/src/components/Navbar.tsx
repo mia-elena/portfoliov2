@@ -11,9 +11,9 @@ export default function Navbar() {
         <nav className="bg-white sticky top-0 z-50">
             <div className="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
                 <div className="flex items-center space-x-2">
-                    <Link href="/" className="text-xl font-bold text-gray-900 hover:text-gray-700 transition-colors relative group">
+                    <Link href="/" className="text-3xl font-extrabold text-gray-900 hover:text-gray-700 transition-colors relative group" style={{ fontFamily: 'Licorice, cursive' }}>
                         Mia E. Ricci
-                        <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
+                        <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gray-900 group-hover:w-full transition-all duration-300"></span>
                     </Link>
                 </div>
 

@@ -1,9 +1,9 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect, useRef } from "react"
 import TechBadge from "./TechBadge"
 import ColorSchemeToggle from "./ColorSchemeToggle"
-import { Code, Database, Settings } from "lucide-react"
+import { Code, Database, Settings, Sparkles, TrendingUp, Zap, Globe } from "lucide-react"
 import type { Technology, ColorScheme } from "../types"
 
 const categories = {

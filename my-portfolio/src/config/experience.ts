@@ -1,17 +1,36 @@
 import { ExperienceItem, Technology } from "../types";
 export const experience = [
-
+  {
+    id: "gogentic",
+    title: "Junior Software Engineer",
+    company: "Gogentic.ai",
+    date: "August 2025 - Present",
+    location: {
+      city: "New York",
+      country: "USA"
+    },
+    type: "work",
+    status: "current",
+    description: "Developed comprehensive RBAC using TypeScript with comprehensive permissions and multi-organization support. Developed AI-powered educational technology solutions supporting student learning outcomes and educational tools. Collaborated cross-functionally with product and design teams on technical requirements and implementation strategy.",
+    highlights: [
+      "Developed comprehensive RBAC using TypeScript with comprehensive permissions and multi-organization support",
+      "Developed AI-powered educational technology solutions supporting student learning outcomes, educational tools",
+      "Collaborated cross-functionally with product, design teams on technical requirements and implementation strategy"
+    ],
+    technologies: ["typescript", "react", "nextjs", "nodejs", "postgresql", "aws"],
+    logo: "/images/gogentic-logo.png"
+  },
   {
     id: "headstarter",
     title: "Software Engineering Resident",
     company: "Headstarter",
-    date: "May 2025 - Present",
+    date: "May 2025 - August 2025",
     location: {
       city: "New York",
       country: "USA"
     },
     type: "residency",
-    status: "current",
+    status: "completed",
     description: "Built 4 production applications including AI chatbot and job recommendation system in a 10-week program with focus on modern development practices and deployment.",
     highlights: [
       "Built 4 production applications including AI chatbot and job recommendation system in 10-week program",
