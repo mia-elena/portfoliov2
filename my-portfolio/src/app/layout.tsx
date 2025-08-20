@@ -11,6 +11,13 @@ const inter = Inter({
   display: "swap",
 });
 
+const interDisplay = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter-display",
+  display: "swap",
+  weight: ["400", "500", "600", "700"],
+});
+
 const epilogue = Epilogue({
   subsets: ["latin"],
   variable: "--font-epilogue",
@@ -44,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${epilogue.variable} ${licorice.variable} antialiased font-sans`}
+        className={`${inter.variable} ${interDisplay.variable} ${epilogue.variable} ${licorice.variable} antialiased font-sans`}
       >
         <Navbar />
         {children}
