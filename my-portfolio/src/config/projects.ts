@@ -65,7 +65,7 @@ export const projects: Project[] = [
     },
     image: "/images/gemini-chatbot.png",
     meta: {
-      isFeatured: true,
+      isFeatured: false,
       isFullStack: true,
       isAI: true,
       isTeamProject: false,
