@@ -137,17 +137,12 @@ export default function HirePage() {
             transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           >
             <Button asChild size="lg">
-              <a href="#consultation">
-                Book free consultation
+              <a href="#contact-form">
+                Get in touch
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <a href="#contact-form">
-                Send project details
-              </a>
-            </Button>
-            <Button asChild variant="ghost" size="lg">
               <Link href="/projects">
                 View my work
               </Link>
@@ -306,47 +301,49 @@ export default function HirePage() {
         </div>
       </section>
 
-      {/* Contact Form */}
+      {/* Let's Talk - Two Column Section */}
       <section id="contact-form" className="py-16 px-6 bg-white">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <motion.div
-            className="mb-10"
+            className="text-center mb-12"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Start a project</h2>
-            <p className="text-gray-600">Tell me about what you're building. I'll get back to you within 24 hours.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Ready to start?</h2>
+            <p className="text-lg text-gray-600">Choose how you'd like to connect</p>
           </motion.div>
 
-          {status.success ? (
+          <div className="grid lg:grid-cols-2 gap-8">
+            {/* Left Column - Contact Form */}
             <motion.div
-              className="border border-green-200 bg-green-50 rounded-lg p-8 text-center"
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
-                <CheckCircle2 className="h-6 w-6 text-green-600" />
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Message sent!</h3>
-              <p className="text-gray-700 mb-6">{status.message}</p>
-              <button
-                onClick={() => setStatus({ loading: false, success: false, error: false, message: '' })}
-                className="px-4 py-2 bg-white text-gray-700 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors text-sm"
-              >
-                Send another message
-              </button>
-            </motion.div>
-          ) : (
-            <motion.div
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ y: 0, opacity: 1 }}
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
             >
-              <Card className="border-gray-200 shadow-sm">
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Send project details</h3>
+                <p className="text-gray-600">Tell me about your project and I'll get back to you within 24 hours.</p>
+              </div>
+
+              {status.success ? (
+                <div className="border border-green-200 bg-green-50 rounded-lg p-8 text-center">
+                  <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
+                    <CheckCircle2 className="h-6 w-6 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">Message sent!</h3>
+                  <p className="text-gray-700 mb-6">{status.message}</p>
+                  <button
+                    onClick={() => setStatus({ loading: false, success: false, error: false, message: '' })}
+                    className="px-4 py-2 bg-white text-gray-700 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors text-sm"
+                  >
+                    Send another message
+                  </button>
+                </div>
+              ) : (
+                <Card className="border-gray-200 shadow-sm">
                 <CardContent className="pt-8">
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
@@ -509,44 +506,33 @@ export default function HirePage() {
                 </form>
               </CardContent>
             </Card>
+              )}
+
+              <div className="mt-4 text-center text-sm text-gray-600">
+                Or email me at{' '}
+                <a href="mailto:miariccidev@gmail.com" className="text-gray-900 font-semibold hover:underline">
+                  miariccidev@gmail.com
+                </a>
+              </div>
             </motion.div>
-          )}
 
-          <div className="mt-6 text-center">
-            <p className="text-sm text-gray-600">
-              Or email me directly at{' '}
-              <a href="mailto:miariccidev@gmail.com" className="text-gray-900 font-semibold hover:underline">
-                miariccidev@gmail.com
-              </a>
-            </p>
+            {/* Right Column - Book Consultation */}
+            <motion.div
+              initial={{ x: 20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+            >
+              <div className="mb-6">
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">Book a free call</h3>
+                <p className="text-gray-600">Prefer to talk first? Schedule a 30-minute consultation to discuss your project.</p>
+              </div>
+
+              <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+                <div className="calendly-inline-widget" data-url="https://calendly.com/miariccidev/30min" style={{minWidth: '320px', height: '700px'}}></div>
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* Book Consultation */}
-      <section id="consultation" className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            className="text-center mb-10"
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Book a free consultation</h2>
-            <p className="text-gray-600">
-              Prefer to talk first? Schedule a 30-minute call to discuss your project and see if we're a good fit.
-            </p>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-          >
-            <div className="calendly-inline-widget" data-url="https://calendly.com/miariccidev/30min" style={{minWidth: '320px', height: '700px'}}></div>
-          </motion.div>
         </div>
       </section>
       </main>

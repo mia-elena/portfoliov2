@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Epilogue, Licorice } from "next/font/google";
+import Script from "next/script";
 import '../styles/globals.css';
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -53,6 +54,16 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${interDisplay.variable} ${epilogue.variable} ${licorice.variable} antialiased font-sans`}
       >
+        {/* Umami Analytics - Add your website ID after creating account at https://cloud.umami.is */}
+        {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
+          <Script
+            async
+            src="https://cloud.umami.is/script.js"
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
+            strategy="afterInteractive"
+          />
+        )}
+
         <Navbar />
         {children}
         <Footer />

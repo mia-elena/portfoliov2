@@ -1,7 +1,6 @@
 import { profile } from "../config/profile"
 import { FaGithub, FaLinkedin, FaHeart } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
-import ViewCounter from "./ViewCounter"
 
 export default function Footer() {
     const currentYear = 2025
@@ -15,7 +14,6 @@ export default function Footer() {
                     </p>
                     <div className="flex items-center gap-4 mt-1">
                         <span>&copy; {currentYear} {profile.name}</span>
-                        <ViewCounter className="text-gray-500" />
                     </div>
                 </div>
                 <div className="flex space-x-4">
