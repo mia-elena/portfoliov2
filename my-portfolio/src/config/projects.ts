@@ -120,8 +120,30 @@ export const projects: Project[] = [
     },
     platforms: ["web", "mobile"]
   },
+  {
+    id: "project6",
+    title: "Canvas LMS Feedback Intelligence Platform",
+    shortTitle: "Canvas Feedback Platform",
+    description: "Built intelligent course improvement platform extracting student feedback from Canvas LMS surveys using modular API architecture. Engineered priority scoring algorithm analyzing 60+ feedback metrics across 4 weighted dimensions (impact, urgency, effort, recency) with explainable recommendations. Developed async FastAPI backend with SQLAlchemy 2.0, Alembic migrations, and Neon PostgreSQL for scalable data processing. Implemented Canvas API clients (Courses, Quizzes, Submissions, Reports) with pagination, authentication, and CSV report parsing for student response extraction.",
+    technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
+    date: "10/2025",
+    lastUpdated: "2025-10-06",
+    status: "in-progress",
+    links: {
+      github: "https://github.com/miasdk/canvas-feedback-aggregator"
+    },
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    meta: {
+      isWIP: true,
+      isFeatured: true,
+      isFullStack: true,
+      isAI: false,
+      isTeamProject: false
+    },
+    platforms: ["web"]
+  },
   // {
-  //   id: "project6",
+  //   id: "project8",
   //   title: "Python Mastery Learning Platform",
   //   shortTitle: "Python Mastery",
   //   description: "Interactive Python learning platform with AI-powered code execution, real-time feedback, and personalized curriculum. Built comprehensive backend with PostgreSQL database, GitHub OAuth authentication, and Python code sandbox execution. Developed responsive React frontend with Monaco editor integration, progress tracking, and multi-level problem sets. Implemented production deployment with CI/CD pipeline supporting separate frontend/backend architecture.",
@@ -141,6 +163,7 @@ export const projects: Project[] = [
   //     isTeamProject: false
   //   },
   //   platforms: ["web"]
-  // }
+  // },
+  
   
 ];
