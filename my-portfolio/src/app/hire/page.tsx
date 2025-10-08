@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
+import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -109,14 +110,29 @@ export default function HirePage() {
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-6">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
             Let's build something together
-          </h1>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-600 mb-8 leading-relaxed"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          >
             I'm a full-stack developer who specializes in React, Python, and building scalable web applications.
             Currently accepting projects for <span className="font-semibold text-gray-900">November 2025 onwards</span>.
-          </p>
-          <div className="flex flex-wrap gap-3">
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap gap-3"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+          >
             <Button asChild size="lg">
               <a href="#contact-form">
                 Get in touch
@@ -128,39 +144,65 @@ export default function HirePage() {
                 View my work
               </Link>
             </Button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* What I Do Section */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">What I can help you with</h2>
+          <motion.h2
+            className="text-2xl font-bold text-gray-900 mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            What I can help you with
+          </motion.h2>
 
           <div className="space-y-6">
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
+            <motion.div
+              className="bg-white p-6 rounded-lg border border-gray-200"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+            >
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Full-stack web applications</h3>
               <p className="text-gray-600">
                 Building complete web apps from the ground up using React, Next.js, Node.js, and PostgreSQL.
                 I handle everything from database design to responsive UI.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
+            <motion.div
+              className="bg-white p-6 rounded-lg border border-gray-200"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
+            >
               <h3 className="text-lg font-semibold text-gray-900 mb-2">API development & integration</h3>
               <p className="text-gray-600">
                 Creating RESTful APIs with FastAPI or Django, connecting to third-party services,
                 and building reliable backend systems.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white p-6 rounded-lg border border-gray-200">
+            <motion.div
+              className="bg-white p-6 rounded-lg border border-gray-200"
+              initial={{ x: -20, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
+            >
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Technical consultation</h3>
               <p className="text-gray-600">
                 Code reviews, architecture planning, and helping teams make good technical decisions.
                 I can also help improve existing codebases.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -168,59 +210,42 @@ export default function HirePage() {
       {/* How It Works */}
       <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8 text-center">How we'll work together</h2>
+          <motion.h2
+            className="text-2xl font-bold text-gray-900 mb-8 text-center"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            How we'll work together
+          </motion.h2>
 
           <div className="grid md:grid-cols-4 gap-6">
-            <Card className="relative border-gray-200 text-center">
-              <CardContent className="pt-6">
-                <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                  1
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Initial conversation</h3>
-                <p className="text-sm text-gray-600">
-                  We'll discuss your project goals, timeline, and requirements. I'll ask questions to understand what you're trying to build.
-                </p>
-              </CardContent>
-              <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-300"></div>
-            </Card>
-
-            <Card className="relative border-gray-200 text-center">
-              <CardContent className="pt-6">
-                <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                  2
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Proposal & scope</h3>
-                <p className="text-sm text-gray-600">
-                  I'll send you a detailed proposal with the project scope, timeline, and cost breakdown. No surprises.
-                </p>
-              </CardContent>
-              <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-300"></div>
-            </Card>
-
-            <Card className="relative border-gray-200 text-center">
-              <CardContent className="pt-6">
-                <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                  3
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Build & iterate</h3>
-                <p className="text-sm text-gray-600">
-                  Regular check-ins and updates as I build. You'll see progress at every step and can give feedback along the way.
-                </p>
-              </CardContent>
-              <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-300"></div>
-            </Card>
-
-            <Card className="border-gray-200 text-center">
-              <CardContent className="pt-6">
-                <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                  4
-                </div>
-                <h3 className="font-semibold text-gray-900 mb-2">Launch & support</h3>
-                <p className="text-sm text-gray-600">
-                  I'll help you launch and provide documentation. Available for ongoing support if you need it.
-                </p>
-              </CardContent>
-            </Card>
+            {[
+              { num: 1, title: "Initial conversation", desc: "We'll discuss your project goals, timeline, and requirements. I'll ask questions to understand what you're trying to build." },
+              { num: 2, title: "Proposal & scope", desc: "I'll send you a detailed proposal with the project scope, timeline, and cost breakdown. No surprises." },
+              { num: 3, title: "Build & iterate", desc: "Regular check-ins and updates as I build. You'll see progress at every step and can give feedback along the way." },
+              { num: 4, title: "Launch & support", desc: "I'll help you launch and provide documentation. Available for ongoing support if you need it." }
+            ].map((step, index) => (
+              <motion.div
+                key={step.num}
+                initial={{ x: -20, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
+              >
+                <Card className={`relative border-gray-200 text-center ${index < 3 ? 'md:mr-3' : ''}`}>
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                      {step.num}
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-sm text-gray-600">{step.desc}</p>
+                  </CardContent>
+                  {index < 3 && <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-300"></div>}
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -228,9 +253,23 @@ export default function HirePage() {
       {/* What You Get */}
       <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">What you can expect</h2>
+          <motion.h2
+            className="text-2xl font-bold text-gray-900 mb-8"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            What you can expect
+          </motion.h2>
 
-          <div className="grid md:grid-cols-2 gap-x-8 gap-y-4">
+          <motion.div
+            className="grid md:grid-cols-2 gap-x-8 gap-y-4"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          >
             <div className="flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Clear, regular communication</p>
@@ -255,20 +294,31 @@ export default function HirePage() {
               <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Flexible hourly or project-based pricing</p>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Contact Form */}
       <section id="contact-form" className="py-16 px-6 bg-white">
         <div className="max-w-2xl mx-auto">
-          <div className="mb-10">
+          <motion.div
+            className="mb-10"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Start a project</h2>
             <p className="text-gray-600">Tell me about what you're building. I'll get back to you within 24 hours.</p>
-          </div>
+          </motion.div>
 
           {status.success ? (
-            <div className="border border-green-200 bg-green-50 rounded-lg p-8 text-center">
+            <motion.div
+              className="border border-green-200 bg-green-50 rounded-lg p-8 text-center"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.4, ease: "easeOut" }}
+            >
               <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
                 <CheckCircle2 className="h-6 w-6 text-green-600" />
               </div>
@@ -280,11 +330,17 @@ export default function HirePage() {
               >
                 Send another message
               </button>
-            </div>
+            </motion.div>
           ) : (
-            <Card className="border-gray-200 shadow-sm">
-              <CardContent className="pt-8">
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+            <motion.div
+              initial={{ y: 20, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+            >
+              <Card className="border-gray-200 shadow-sm">
+                <CardContent className="pt-8">
+                  <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name">Name *</Label>
@@ -445,6 +501,7 @@ export default function HirePage() {
                 </form>
               </CardContent>
             </Card>
+            </motion.div>
           )}
 
           <div className="mt-6 text-center">
