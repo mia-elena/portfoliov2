@@ -12,8 +12,8 @@ export default function ProjectsPage() {
   )
 
   return (
-    <div className="min-h-screen bg-white py-12">
-      <div className="max-w-4xl mx-auto px-6">
+    <div className="min-h-screen bg-white py-20">
+      <div className="max-w-3xl mx-auto px-6">
         <h1 className="text-4xl font-bold text-gray-900 mb-12">Projects</h1>
 
         <div className="space-y-8">
