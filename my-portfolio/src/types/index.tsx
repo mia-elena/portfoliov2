@@ -47,7 +47,8 @@ export interface Project {
   // Core Properties
   id: string;
   title: string;
-  shortTitle?: string; 
+  shortTitle?: string;
+  projectType?: string; // Client-friendly project category (e.g., "E-commerce Platform", "SaaS Dashboard")
   description: string;
   shortDescription?: string; // Brief description for compact cards
   technologies: Technology[];

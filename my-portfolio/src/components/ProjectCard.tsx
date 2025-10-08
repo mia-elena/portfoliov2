@@ -94,6 +94,11 @@ export default function ProjectCard({
 
         <div className="p-5 flex-1 flex flex-col">
           <div className="mb-3">
+            {project.projectType && (
+              <span className="text-xs uppercase tracking-wide text-gray-600 font-semibold mb-1.5 block">
+                {project.projectType}
+              </span>
+            )}
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
                 {project.links?.github ? (
@@ -114,15 +119,8 @@ export default function ProjectCard({
             <div className="flex items-center gap-4 mt-1 text-xs text-gray-500">
               <div className="flex items-center">
                 <Calendar className="w-3 h-3 mr-1" />
-                <span>Created {project.date}</span>
+                <span>{project.date}</span>
               </div>
-
-              {project.lastUpdated && (
-                <div className="flex items-center">
-                  <Clock className="w-3 h-3 mr-1" />
-                  <span>Updated {formatRelativeDate(project.lastUpdated)}</span>
-                </div>
-              )}
             </div>
           </div>
 
@@ -161,18 +159,43 @@ export default function ProjectCard({
           </div>
 
           <div className="mt-auto pt-4 border-t border-gray-100">
-            <h4 className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wide">Technologies</h4>
-            <div className="flex flex-wrap gap-1.5">
-              {project.technologies.map((tech) => (
-                <TechBadge
-                  key={tech}
-                  tech={tech}
-                  size="sm"
-                  showLabel={true}
-                  showbg={true}
-                  showIcon={false}
-                />
-              ))}
+            <div className="text-xs text-gray-600">
+              {(() => {
+                const displayCount = 3;
+                const displayTechs = project.technologies.slice(0, displayCount);
+                const remaining = project.technologies.length - displayCount;
+
+                const techNames = displayTechs.map(tech => {
+                  // Capitalize tech names
+                  const nameMap: Record<string, string> = {
+                    'typescript': 'TypeScript',
+                    'javascript': 'JavaScript',
+                    'react': 'React',
+                    'nextjs': 'Next.js',
+                    'nodejs': 'Node.js',
+                    'postgresql': 'PostgreSQL',
+                    'mongodb': 'MongoDB',
+                    'tailwindcss': 'Tailwind CSS',
+                    'python': 'Python',
+                    'django': 'Django',
+                    'fastapi': 'FastAPI',
+                    'express': 'Express',
+                    'firebase': 'Firebase',
+                    'docker': 'Docker',
+                    'graphql': 'GraphQL',
+                    'prisma': 'Prisma',
+                    'openai': 'OpenAI'
+                  };
+                  return nameMap[tech] || tech.charAt(0).toUpperCase() + tech.slice(1);
+                });
+
+                return (
+                  <span>
+                    Built with {techNames.join(', ')}
+                    {remaining > 0 && ` +${remaining} more`}
+                  </span>
+                );
+              })()}
             </div>
           </div>
         </div>
