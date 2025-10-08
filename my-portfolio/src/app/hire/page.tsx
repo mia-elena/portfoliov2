@@ -17,8 +17,23 @@ export default function HirePage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission - integrate with your backend/email service
-    console.log('Form submitted:', formData)
+
+    // Create mailto link with form data
+    const subject = encodeURIComponent(`Project Inquiry: ${formData.projectType || 'New Project'}`)
+    const body = encodeURIComponent(`
+Name: ${formData.name}
+Email: ${formData.email}
+Company: ${formData.company || 'N/A'}
+Project Type: ${formData.projectType}
+Budget Range: ${formData.budget || 'Not specified'}
+Timeline: ${formData.timeline || 'Not specified'}
+
+Project Description:
+${formData.description}
+    `.trim())
+
+    // Open default email client
+    window.location.href = `mailto:miariccidev@gmail.com?subject=${subject}&body=${body}`
   }
 
   const services = [
@@ -57,20 +72,20 @@ export default function HirePage() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 px-6 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative pt-20 pb-14 px-6 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full border border-green-200 mb-6">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full border border-green-200 mb-5">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
             Currently accepting new projects
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
             Let's Build Your Next Project
           </h1>
-          <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-gray-600 mb-7 max-w-2xl mx-auto">
             Full-stack developer specializing in React, Python, and scalable web applications.
             From MVP to production — I'll help bring your vision to life.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
               href="#contact-form"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300"
@@ -89,9 +104,9 @@ export default function HirePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-14 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">What I Can Do For You</h2>
             <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
           </div>
@@ -113,9 +128,9 @@ export default function HirePage() {
       </section>
 
       {/* Process Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-14 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">How We'll Work Together</h2>
             <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
           </div>
@@ -139,9 +154,9 @@ export default function HirePage() {
       </section>
 
       {/* Why Work With Me */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-14 px-6 bg-white">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Work With Me</h2>
             <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
           </div>
@@ -159,21 +174,21 @@ export default function HirePage() {
       </section>
 
       {/* Availability */}
-      <section className="py-12 px-6 bg-gray-50">
+      <section className="py-10 px-6 bg-gray-50">
         <div className="max-w-3xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">
             <Clock className="w-5 h-5 text-gray-700" />
-            <span className="text-sm font-medium text-gray-900">Currently accepting projects starting in November 2025</span>
+            <span className="text-sm font-medium text-gray-900">Currently accepting projects starting December 2024</span>
           </div>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="py-16 px-6 bg-white">
+      <section id="contact-form" className="py-14 px-6 bg-white">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-10">
+          <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-2">Start Your Project</h2>
-            <div className="w-16 h-0.5 bg-gray-800 mx-auto mb-4"></div>
+            <div className="w-16 h-0.5 bg-gray-800 mx-auto mb-3"></div>
             <p className="text-gray-600 text-sm">Fill out the form below and I'll get back to you within 24 hours</p>
           </div>
 
