@@ -24,11 +24,14 @@ export default function ProjectsPage() {
   }
 
   return (
-    <div className="min-h-screen bg-white py-20">
-      <div className="max-w-3xl mx-auto px-6">
-        <h1 className="text-4xl font-bold text-gray-900 mb-12">Projects</h1>
+    <div className="min-h-screen bg-white py-16">
+      <div className="max-w-6xl mx-auto px-6">
+        <div className="mb-10">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Projects</h1>
+          <div className="w-16 h-0.5 bg-gray-800"></div>
+        </div>
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {sortedProjects.map((project) => {
             const isExpanded = expandedId === project.id
             const showTruncated = project.description.length > 120
@@ -36,15 +39,15 @@ export default function ProjectsPage() {
             return (
               <div
                 key={project.id}
-                className="border-b border-gray-200 pb-8 last:border-b-0"
+                className="border-b border-gray-200 pb-6 last:border-b-0"
               >
                 <div
                   className="cursor-pointer"
                   onClick={() => showTruncated && toggleExpand(project.id)}
                 >
-                  <div className="flex items-start justify-between gap-4 mb-3">
+                  <div className="flex items-start justify-between gap-4 mb-2">
                     <div className="flex items-center gap-2 flex-1">
-                      <h2 className="text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors">
+                      <h2 className="text-lg font-bold text-gray-900 hover:text-gray-700 transition-colors">
                         {project.title}
                       </h2>
                       {showTruncated && (
@@ -55,16 +58,16 @@ export default function ProjectsPage() {
                         />
                       )}
                     </div>
-                    <div className="flex items-center gap-3 shrink-0" onClick={(e) => e.stopPropagation()}>
+                    <div className="flex items-center gap-2.5 shrink-0" onClick={(e) => e.stopPropagation()}>
                       {project.links?.github && (
                         <a
                           href={project.links.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
+                          className="text-gray-700 hover:text-gray-900 transition-colors"
                           aria-label="GitHub"
                         >
-                          <Github className="w-5 h-5" />
+                          <Github className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
                         </a>
                       )}
                       {project.links?.demo && (
@@ -72,23 +75,23 @@ export default function ProjectsPage() {
                           href={project.links.demo}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-gray-600 hover:text-gray-900 transition-colors"
+                          className="text-gray-700 hover:text-gray-900 transition-colors"
                           aria-label="Live Demo"
                         >
-                          <ExternalLink className="w-5 h-5" />
+                          <ExternalLink className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
                         </a>
                       )}
                     </div>
                   </div>
 
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
+                  <p className="text-gray-600 text-sm mb-3 leading-relaxed">
                     {isExpanded || !showTruncated
                       ? project.description
                       : truncateDescription(project.description)}
                   </p>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 mb-3">
+                <div className="flex flex-wrap gap-1.5 mb-2.5">
                   {project.technologies.map((tech) => (
                     <TechBadge
                       key={tech}
@@ -101,7 +104,7 @@ export default function ProjectsPage() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-4 text-xs text-gray-500">
+                <div className="flex items-center gap-4 text-xs text-gray-500 font-normal">
                   <span>{project.date}</span>
                   {project.status && (
                     <span className="capitalize">{project.status.replace('-', ' ')}</span>

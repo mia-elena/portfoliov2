@@ -5,22 +5,25 @@ import { Github, Linkedin, Mail } from "lucide-react"
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-3xl mx-auto px-6 py-20">
-        <div className="space-y-12">
+      <div className="max-w-6xl mx-auto px-6 py-16">
+        <div className="space-y-10">
           {/* Header */}
           <div>
-            <h1 className="text-4xl font-bold text-gray-900 mb-6">About</h1>
-            <p className="text-gray-700 leading-relaxed">
-              Software engineer at <span className="font-medium">Gogentic.ai</span> building educational technology and full-stack applications with Python, TypeScript, and React. Based in New York, focused on creating scalable systems for education and healthcare.
+            <div className="mb-5">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2">About</h1>
+              <div className="w-16 h-0.5 bg-gray-800"></div>
+            </div>
+            <p className="text-gray-600 leading-relaxed text-sm">
+              Software engineer at <span className="font-semibold text-gray-900">Gogentic.ai</span> building educational technology and full-stack applications with Python, TypeScript, and React. Based in New York, focused on creating scalable systems for education and healthcare.
             </p>
           </div>
 
           {/* What I'm Working With */}
-          <div className="border-t border-gray-200 pt-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">What I'm Working With</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm">
+          <div className="border-t border-gray-200 pt-10">
+            <h2 className="text-xl font-bold text-gray-900 mb-5">What I'm Working With</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-5 text-sm">
               <div>
-                <h3 className="font-medium text-gray-900 mb-2">Backend</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Backend</h3>
                 <ul className="space-y-1 text-gray-600">
                   <li>Python</li>
                   <li>FastAPI</li>
@@ -30,7 +33,7 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900 mb-2">Frontend</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Frontend</h3>
                 <ul className="space-y-1 text-gray-600">
                   <li>React</li>
                   <li>Next.js</li>
@@ -39,7 +42,7 @@ export default function AboutPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-medium text-gray-900 mb-2">Tools</h3>
+                <h3 className="font-semibold text-gray-900 mb-2">Tools</h3>
                 <ul className="space-y-1 text-gray-600">
                   <li>Git</li>
                   <li>Docker</li>
@@ -51,9 +54,9 @@ export default function AboutPage() {
           </div>
 
           {/* Currently Learning */}
-          <div className="border-t border-gray-200 pt-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Currently Exploring</h2>
-            <ul className="space-y-2 text-gray-700">
+          <div className="border-t border-gray-200 pt-10">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Currently Exploring</h2>
+            <ul className="space-y-1.5 text-gray-600 text-sm">
               <li>• Fine-tuning LLMs for domain-specific tasks</li>
               <li>• Prompt engineering and chain-of-thought reasoning</li>
               <li>• AI agent orchestration frameworks (LangGraph, CrewAI, AutoGen)</li>
@@ -62,20 +65,20 @@ export default function AboutPage() {
           </div>
 
           {/* Contact */}
-          <div className="border-t border-gray-200 pt-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Get in Touch</h2>
-            <p className="text-gray-700 mb-6">
+          <div className="border-t border-gray-200 pt-10">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+            <p className="text-gray-600 text-sm mb-5">
               Open to discussing new opportunities, collaborations, or just connecting about tech.
             </p>
-            <div className="flex gap-6">
+            <div className="flex gap-5">
               <Link
                 href={profile.links?.github || "https://github.com"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
               >
-                <Github className="w-5 h-5" />
-                <span className="text-sm">GitHub</span>
+                <Github className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
+                <span className="text-sm font-medium">GitHub</span>
               </Link>
               <Link
                 href={profile.links?.linkedIn || "https://linkedin.com"}
@@ -83,15 +86,15 @@ export default function AboutPage() {
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
               >
-                <Linkedin className="w-5 h-5" />
-                <span className="text-sm">LinkedIn</span>
+                <Linkedin className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
+                <span className="text-sm font-medium">LinkedIn</span>
               </Link>
               <Link
                 href={`mailto:${profile.contact?.email}`}
                 className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
               >
-                <Mail className="w-5 h-5" />
-                <span className="text-sm">Email</span>
+                <Mail className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
+                <span className="text-sm font-medium">Email</span>
               </Link>
             </div>
           </div>

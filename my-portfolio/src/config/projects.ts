@@ -5,7 +5,7 @@ export const projects: Project[] = [
   {
     id: "project6",
     title: "Canvas LMS Feedback Intelligence Platform",
-    shortTitle: "Canvas Feedback Platform",
+    shortTitle: "Canvas LMS Feedback Platform",
     description: "Intelligent platform helping educators prioritize course improvements by analyzing student feedback from Canvas LMS surveys. Built priority scoring algorithm weighing 60+ metrics across impact, urgency, effort, and recency with explainable recommendations. Developed async FastAPI backend with modular Canvas API clients, SQLAlchemy 2.0, and PostgreSQL for automated survey extraction and response processing.",
     technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
     date: "10/2025",
@@ -68,7 +68,7 @@ export const projects: Project[] = [
   {
     id: "project2",
     title: "AI-Powered Job Finder Platform",
-    shortTitle: "Job Finder",
+    shortTitle: "AI-Powered Job Finder",
     description: "Architected intelligent job matching platform integrating 9+ APIs (Jsearch, Adzuna, Reed, RemoteOK). Implemented AI-driven scoring algorithms analyzing 50+ job attributes for personalized recommendations. Built scalable Django backend with Celery task queues processing 1000+ jobs daily from multiple sources. Developed responsive Next.js frontend with realtime filtering, advanced search, and user preference management.",
     technologies: ["python", "django", "react", "nextjs", "typescript", "postgresql"],
     date: "07/2025",

@@ -1,11 +1,12 @@
 'use client'
 
+import { useState } from "react"
 import type { Project } from "../types"
 import Link from "next/link"
 import Image from "next/image"
 import TechBadge from "./TechBadge"
 import StatusBadge from "./StatusBadge"
-import { Calendar, Github, Clock, ExternalLink } from "lucide-react"
+import { Calendar, Github, Clock, ExternalLink, ChevronDown } from "lucide-react"
 
 interface ProjectCardProps {
   project: Project
@@ -31,7 +32,9 @@ export default function ProjectCard({
   className = "",
   variant = "grid"
 }: ProjectCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
   const maxDescriptionLength = 120
+  const showReadMore = project.description.length > maxDescriptionLength
   const truncatedDescription = project.description.length > maxDescriptionLength
     ? project.description.substring(0, maxDescriptionLength) + "..."
     : project.description
@@ -125,8 +128,17 @@ export default function ProjectCard({
 
           <div className="mb-4">
             <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-              {truncatedDescription}
+              {isExpanded ? project.description : truncatedDescription}
             </p>
+            {showReadMore && (
+              <button
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="flex items-center gap-1 text-xs text-gray-600 hover:text-gray-900 mt-2 transition-colors"
+              >
+                <span>{isExpanded ? 'Read less' : 'Read more'}</span>
+                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
+              </button>
+            )}
           </div>
 
           <div className="flex flex-wrap gap-2 mb-4">

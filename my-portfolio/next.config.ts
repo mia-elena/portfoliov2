@@ -11,6 +11,10 @@ const nextConfig: NextConfig = {
         protocol: 'https',
         hostname: 's29068.pcdn.co',
       },
+      {
+        protocol: 'https',
+        hostname: 'oit.caes.uga.edu',
+      },
     ],
   },
 };

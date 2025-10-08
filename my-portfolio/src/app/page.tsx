@@ -10,7 +10,6 @@ import ProjectCard from "../components/ProjectCard"
 import ExperienceCard from "../components/ExperienceCard"
 import EducationCard from "../components/EducationCard"
 import ContactForm from "../components/ContactForm"
-import TechnologyShowcase from "../components/TechnologyShowcase"
 import { FileText, Linkedin, ArrowRight, Github, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
@@ -41,164 +40,161 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative pt-24 pb-16 flex flex-col justify-start items-center px-4 overflow-hidden">
-        <div className="container mx-auto relative z-10 flex flex-col items-center">
+      <section className="relative pt-24 pb-12 flex flex-col justify-start items-center px-6 overflow-hidden">
+        <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
           <motion.div
-            className="relative mb-3"
+            className="relative mb-4"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
           >
             <Image
               src={profile.image || "/default-profile.png"}
               alt={`${profile.name}'s profile picture`}
-              width={150}
-              height={150}
-              className="rounded-full object-cover"
+              width={96}
+              height={96}
+              className="rounded-full object-cover border-[3px] border-gray-200"
               priority
             />
           </motion.div>
-          <motion.h1
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 text-center"
-            initial={{ y: 30, opacity: 0 }}
+          <motion.div
+            className="flex items-center gap-2 mb-1"
+            initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
           >
-            {profile.name}
-          </motion.h1>
+            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 text-center">
+              {profile.name}
+            </h1>
+            <span className="px-2 py-0.5 bg-green-100 text-green-800 text-xs font-semibold rounded-full border border-green-200">
+              Available for Hire
+            </span>
+          </motion.div>
           <motion.p
-            className="text-xl md:text-2xl text-gray-600 mb-8 font-light"
-            initial={{ y: 30, opacity: 0 }}
+            className="text-sm md:text-base text-gray-600 mb-2 font-normal"
+            initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
           >
             {profile.title}
           </motion.p>
+          <motion.p
+            className="text-xs md:text-sm text-gray-500 mb-5 text-center max-w-md font-light"
+            initial={{ y: 15, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.16, ease: "easeOut" }}
+          >
+            {profile.description}
+          </motion.p>
 
           <motion.div
-            className="flex gap-3 mb-10"
-            initial={{ opacity: 0, y: 20 }}
+            className="flex gap-4 mb-4"
+            initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
+            transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           >
             <a
               href={profile.links?.github || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              className="text-gray-800 hover:text-gray-900 transition-colors"
               aria-label="GitHub"
             >
-              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Github className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
             </a>
             <a
               href={profile.links?.linkedIn || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              className="text-gray-800 hover:text-gray-900 transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Linkedin className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
             </a>
             <a
               href={`mailto:${profile.contact.email}`}
-              className="p-3 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              className="text-gray-800 hover:text-gray-900 transition-colors"
               aria-label="Email"
             >
-              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <Mail className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
             </a>
             <a
               href={profile.links?.resume || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-gray-900 text-white rounded-lg shadow-sm hover:bg-gray-800 transition-all duration-300 group"
+              className="text-gray-800 hover:text-gray-900 transition-colors"
               aria-label="Download Resume"
             >
-              <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" />
+              <FileText className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
             </a>
           </motion.div>
 
           <motion.img
             src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
             alt="GitHub Contribution Snake"
-            className="mx-auto w-full max-w-lg"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+            className="mx-auto w-full max-w-md opacity-60"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 0.6, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.24, ease: "easeOut" }}
           />
         </div>
       </section>
 
-      <section id="projects" className="py-16 px-10 bg-gray-50">
-        <div className="container mx-auto">
-          <motion.div 
-            className="text-center mb-10"
+      <section id="projects" className="py-14 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            className="text-center mb-8"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h2 className="text-3xl font-bold mb-2">Projects</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-3"></div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">Projects</h2>
+            <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
           </motion.div>
           
-          <div className="mx-auto max-w-screen-xl">
-            {(() => {
-              const projectCount = featuredProjects.length;
-              
-              const xlGridClass = projectCount >= 4 && projectCount % 4 === 0 
-                ? "xl:grid-cols-4" 
-                : projectCount === 3 
-                  ? "md:grid-cols-3"
-                  : "xl:grid-cols-3";
-              
-              const gridClasses = projectCount === 3 
-                ? "grid-cols-1 md:grid-cols-3"
-                : `grid-cols-1 sm:grid-cols-2 ${xlGridClass}`;
-              
-              const shouldSpanLast = projectCount !== 3;
-              
-              return (
-                <motion.div 
-                  className={`grid ${gridClasses} gap-6 mb-10`}
-                  initial="hidden"
-                  whileInView="visible"
-                  viewport={{ once: true, amount: 0.2 }}
-                  variants={staggerContainer}
+          <div className="mx-auto max-w-6xl">
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8"
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={staggerContainer}
+            >
+              {featuredProjects.slice(0, 3).map((project) => (
+                <motion.div
+                  key={project.id}
+                  variants={fadeInUp}
+                  transition={{ duration: 0.4, ease: "easeOut" }}
                 >
-                  {featuredProjects.map((project, index, array) => (
-                    <motion.div
-                      key={project.id}
-                      className={`${
-                        shouldSpanLast && index === array.length - 1 && array.length % 2 !== 0
-                          ? "sm:col-span-2 lg:col-span-1"
-                          : ""
-                      }`}
-                      variants={fadeInUp}
-                      transition={{ duration: 0.5, ease: "easeOut" }}
-                    >
-                      <ProjectCard 
-                        project={project} 
-                        variant="grid"
-                      />
-                    </motion.div>
-                  ))}
+                  <ProjectCard
+                    project={project}
+                    variant="grid"
+                  />
                 </motion.div>
-              );
-            })()}
+              ))}
+            </motion.div>
           </div>
 
-          <motion.div 
-            className="text-center"
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-3"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.5 }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           >
             <Link
+              href="/#contact"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300 group"
+            >
+              <span>Start a Project</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
             >
               <span>View All Projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -207,21 +203,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="py-20 px-4">
-        <div className="container mx-auto">
+      <section id="experience" className="py-14 px-6">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h2 className="text-3xl font-bold mb-2 text-center">Experience</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Experience</h2>
+            <div className="w-16 h-0.5 bg-gray-800 mx-auto mb-10"></div>
           </motion.div>
 
-          <motion.div 
-            className="grid gap-8 max-w-4xl mx-auto"
+          <motion.div
+            className="grid gap-6 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -231,7 +227,7 @@ export default function Home() {
               <motion.div
                 key={exp.id}
                 variants={fadeInUp}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <ExperienceCard
                   experience={{
@@ -254,21 +250,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="py-20 px-4">
-        <div className="container mx-auto">
+      <section id="education" className="py-14 px-6">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h2 className="text-3xl font-bold mb-2 text-center">Education</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Education</h2>
+            <div className="w-16 h-0.5 bg-gray-800 mx-auto mb-10"></div>
           </motion.div>
 
-          <motion.div 
-            className="grid gap-8 max-w-4xl mx-auto"
+          <motion.div
+            className="grid gap-6 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
@@ -278,7 +274,7 @@ export default function Home() {
               <motion.div
                 key={edu.id}
                 variants={fadeInUp}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
               >
                 <EducationCard
                   education={edu}
@@ -289,56 +285,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="technology" className="py-20 px-4 bg-gray-50">
-        <div className="container mx-auto">
+      <section id="contact" className="py-14 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
           >
-            <h2 className="text-3xl font-bold mb-2 text-center">Technologies</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-12"></div>
-          </motion.div>
+            <h2 className="text-2xl font-bold text-gray-900 mb-2 text-center">Let's Work Together</h2>
+            <div className="w-16 h-0.5 bg-gray-800 mx-auto mb-4"></div>
 
-          <motion.div 
-            className="max-w-5xl mx-auto"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
-            variants={fadeIn}
-            transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          >
-            <TechnologyShowcase />
-          </motion.div>
-        </div>
-      </section>
-
-      <section id="contact" className="py-20 px-4">
-        <div className="container mx-auto">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={fadeInUp}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
-            <h2 className="text-3xl font-bold mb-2 text-center">Contact Me</h2>
-            <div className="w-20 h-1 bg-gray-900 mx-auto mb-6"></div>
-
-            <p className="text-center mb-10 text-gray-700 max-w-2xl mx-auto">
-              I'm always looking for new opportunities to collaborate on projects. Feel free to reach out using the form below!
+            <p className="text-center mb-8 text-gray-600 text-sm max-w-xl mx-auto">
+              Available for freelance and contract opportunities. Whether you need a full-stack application, API development, or technical consultation — let's build something great together.
             </p>
           </motion.div>
 
-          <motion.div 
-            className="max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-6 md:p-8"
+          <motion.div
+            className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-7"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={fadeInUp}
-            transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           >
             <ContactForm />
           </motion.div>

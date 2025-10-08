@@ -8,16 +8,16 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <nav className="bg-white  sticky top-0 z-50">
-            <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+        <nav className="bg-white sticky top-0 z-50">
+            <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
                 <Link
                     href="/"
-                    className="text-xl font-semibold text-gray-900 hover:text-gray-600 transition-colors"
+                    className="text-lg font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
                 >
                     Mia E. Ricci
                 </Link>
 
-                <ul className="hidden md:flex items-center gap-8">
+                <ul className="hidden md:flex items-center gap-7">
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/#experience">Experience</NavLink>
@@ -35,7 +35,7 @@ export default function Navbar() {
 
             {isOpen && (
                 <div className="md:hidden border-t border-gray-200 bg-white">
-                    <ul className="px-4 py-3 space-y-1">
+                    <ul className="px-6 py-3 space-y-1">
                         <MobileNavLink href="/projects" onClick={() => setIsOpen(false)}>
                             Projects
                         </MobileNavLink>
@@ -73,7 +73,7 @@ function MobileNavLink({ href, children, onClick }: { href: string; children: Re
         <li>
             <Link
                 href={href}
-                className="block text-gray-700 hover:text-gray-900 hover:bg-gray-50 py-2 px-3 rounded-md transition-colors font-medium"
+                className="block text-gray-800 hover:text-gray-900 hover:bg-gray-50 py-2 px-3 rounded-md transition-colors font-semibold"
                 onClick={onClick}
             >
                 {children}
