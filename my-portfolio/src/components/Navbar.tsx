@@ -21,7 +21,14 @@ export default function Navbar() {
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/#experience">Experience</NavLink>
-                    <NavLink href="/hire">Hire Me</NavLink>
+                    <li>
+                        <Link
+                            href="/hire"
+                            className="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-md hover:bg-green-700 transition-colors shadow-sm"
+                        >
+                            Hire Me
+                        </Link>
+                    </li>
                 </ul>
 
                 <button
@@ -45,9 +52,15 @@ export default function Navbar() {
                         <MobileNavLink href="/#experience" onClick={() => setIsOpen(false)}>
                             Experience
                         </MobileNavLink>
-                        <MobileNavLink href="/hire" onClick={() => setIsOpen(false)}>
-                            Hire Me
-                        </MobileNavLink>
+                        <li>
+                            <Link
+                                href="/hire"
+                                className="block text-center bg-green-600 text-white hover:bg-green-700 py-2.5 px-3 rounded-md transition-colors font-semibold shadow-sm"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                Hire Me
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             )}
