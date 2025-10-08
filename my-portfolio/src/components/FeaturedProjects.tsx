@@ -18,7 +18,7 @@ export default function FeaturedProjects({ projects }: FeaturedProjectsProps) {
         >
           <ProjectCard
             project={projects[0]}
-            variant="detailed"
+            variant="grid"
             className="max-w-4xl mx-auto"
           />
         </motion.div>
