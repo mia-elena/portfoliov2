@@ -50,9 +50,9 @@ export default function TechnologyShowcase() {
           return (
             <div
               key={categoryKey}
-              className="relative rounded-lg overflow-hidden bg-white border border-gray-200"
+              className="relative rounded-xl overflow-hidden bg-white"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-50"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-50 shadow-md"></div>
 
               <div className="relative p-6 z-10">
                 <div className="flex items-center gap-2 mb-4">

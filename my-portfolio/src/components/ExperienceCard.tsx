@@ -29,7 +29,9 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
   const { role, company, period, logo, highlights, skills, metrics, location } = experience
 
   return (
-    <article className="border border-gray-200 rounded-lg p-6 bg-white">
+    <article className="relative rounded-xl overflow-hidden bg-white">
+      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gray-100 to-gray-50 shadow-md"></div>
+      <div className="relative p-6 z-10">
       <header className="mb-4">
         <div className="flex items-start gap-4">
           <div className="flex-shrink-0 p-2 bg-gray-100 rounded-md border border-gray-200">
@@ -99,6 +101,7 @@ export default function ExperienceCard({ experience }: ExperienceCardProps) {
             />
           ))}
         </div>
+      </div>
       </div>
     </article>
   )

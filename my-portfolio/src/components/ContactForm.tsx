@@ -100,7 +100,9 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="border border-gray-200 rounded-lg p-6">
+    <div className="relative rounded-xl overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-50 shadow-md"></div>
+      <div className="relative p-6 z-10">
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
@@ -201,6 +203,7 @@ export default function ContactForm() {
           </div>
         )}
       </form>
+      </div>
     </div>
   )
 }
