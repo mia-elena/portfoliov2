@@ -84,18 +84,18 @@ export default function HirePage() {
           loading: false,
           success: true,
           error: false,
-          message: 'Thank you for reaching out! I'll get back to you within 24 hours.',
+          message: "Thank you for reaching out! I'll get back to you within 24 hours.",
         })
         reset()
       } else {
-        throw new Error(result.error || 'Failed to send message')
+        throw new Error(result.error || "Failed to send message")
       }
     } catch (error) {
       setStatus({
         loading: false,
         success: false,
         error: true,
-        message: error instanceof Error ? error.message : 'An error occurred. Please try again later.',
+        message: error instanceof Error ? error.message : "An error occurred. Please try again later.",
       })
 
       setTimeout(() => {
