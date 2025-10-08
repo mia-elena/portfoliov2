@@ -56,20 +56,16 @@ export default function Home() {
               className="rounded-full object-cover border-[3px] border-gray-200"
               priority
             />
+            <div className="absolute bottom-0 right-0 w-6 h-6 bg-green-500 border-[3px] border-white rounded-full"></div>
           </motion.div>
-          <motion.div
-            className="flex items-center gap-2 mb-1"
+          <motion.h1
+            className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 text-center"
             initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
           >
-            <h1 className="text-2xl md:text-3xl font-extrabold text-gray-900 text-center">
-              {profile.name}
-            </h1>
-            <span className="px-2 py-0.5 bg-green-100 text-green-800 text-xs font-semibold rounded-full border border-green-200">
-              Available for Hire
-            </span>
-          </motion.div>
+            {profile.name}
+          </motion.h1>
           <motion.p
             className="text-sm md:text-base text-gray-600 mb-2 font-normal"
             initial={{ y: 15, opacity: 0 }}
@@ -186,10 +182,10 @@ export default function Home() {
             transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
           >
             <Link
-              href="/#contact"
+              href="/hire"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300 group"
             >
-              <span>Start a Project</span>
+              <span>Hire Me</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link

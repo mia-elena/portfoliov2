@@ -21,7 +21,7 @@ export default function Navbar() {
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/#experience">Experience</NavLink>
-                    <NavLink href="/#contact">Contact</NavLink>
+                    <NavLink href="/hire">Hire Me</NavLink>
                 </ul>
 
                 <button
@@ -45,8 +45,8 @@ export default function Navbar() {
                         <MobileNavLink href="/#experience" onClick={() => setIsOpen(false)}>
                             Experience
                         </MobileNavLink>
-                        <MobileNavLink href="/#contact" onClick={() => setIsOpen(false)}>
-                            Contact
+                        <MobileNavLink href="/hire" onClick={() => setIsOpen(false)}>
+                            Hire Me
                         </MobileNavLink>
                     </ul>
                 </div>
