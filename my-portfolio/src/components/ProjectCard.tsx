@@ -159,43 +159,18 @@ export default function ProjectCard({
           </div>
 
           <div className="mt-auto pt-4 border-t border-gray-100">
-            <div className="text-xs text-gray-600">
-              {(() => {
-                const displayCount = 3;
-                const displayTechs = project.technologies.slice(0, displayCount);
-                const remaining = project.technologies.length - displayCount;
-
-                const techNames = displayTechs.map(tech => {
-                  // Capitalize tech names
-                  const nameMap: Record<string, string> = {
-                    'typescript': 'TypeScript',
-                    'javascript': 'JavaScript',
-                    'react': 'React',
-                    'nextjs': 'Next.js',
-                    'nodejs': 'Node.js',
-                    'postgresql': 'PostgreSQL',
-                    'mongodb': 'MongoDB',
-                    'tailwindcss': 'Tailwind CSS',
-                    'python': 'Python',
-                    'django': 'Django',
-                    'fastapi': 'FastAPI',
-                    'express': 'Express',
-                    'firebase': 'Firebase',
-                    'docker': 'Docker',
-                    'graphql': 'GraphQL',
-                    'prisma': 'Prisma',
-                    'openai': 'OpenAI'
-                  };
-                  return nameMap[tech] || tech.charAt(0).toUpperCase() + tech.slice(1);
-                });
-
-                return (
-                  <span>
-                    Built with {techNames.join(', ')}
-                    {remaining > 0 && ` +${remaining} more`}
-                  </span>
-                );
-              })()}
+            <h4 className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wide">Technologies</h4>
+            <div className="flex flex-wrap gap-1.5">
+              {project.technologies.map((tech) => (
+                <TechBadge
+                  key={tech}
+                  tech={tech}
+                  size="sm"
+                  showLabel={true}
+                  showbg={true}
+                  showIcon={false}
+                />
+              ))}
             </div>
           </div>
         </div>
