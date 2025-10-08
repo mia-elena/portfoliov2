@@ -1,35 +1,69 @@
 'use client'
 
-import { useState } from 'react'
-import { Check, Code, Zap, Users, Clock, ArrowRight, Mail, Calendar } from 'lucide-react'
+import { Check, Code, Zap, Users, Clock, ArrowRight, Mail } from 'lucide-react'
 import Link from 'next/link'
+import { useForm } from 'react-hook-form'
+import { zodResolver } from '@hookform/resolvers/zod'
+import * as z from 'zod'
+import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { Badge } from '@/components/ui/badge'
+import { Separator } from '@/components/ui/separator'
+
+// Form validation schema
+const contactFormSchema = z.object({
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Please enter a valid email address'),
+  company: z.string().optional(),
+  projectType: z.string().min(1, 'Please select a project type'),
+  budget: z.string().optional(),
+  timeline: z.string().optional(),
+  description: z.string().min(20, 'Please provide at least 20 characters describing your project'),
+})
+
+type ContactFormValues = z.infer<typeof contactFormSchema>
 
 export default function HirePage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    projectType: '',
-    budget: '',
-    timeline: '',
-    description: ''
+  const {
+    register,
+    handleSubmit,
+    setValue,
+    watch,
+    formState: { errors, isSubmitting },
+  } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactFormSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      company: '',
+      projectType: '',
+      budget: '',
+      timeline: '',
+      description: '',
+    },
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
+  const projectType = watch('projectType')
+  const budget = watch('budget')
+  const timeline = watch('timeline')
 
+  const onSubmit = async (data: ContactFormValues) => {
     // Create mailto link with form data
-    const subject = encodeURIComponent(`Project Inquiry: ${formData.projectType || 'New Project'}`)
+    const subject = encodeURIComponent(`Project Inquiry: ${data.projectType || 'New Project'}`)
     const body = encodeURIComponent(`
-Name: ${formData.name}
-Email: ${formData.email}
-Company: ${formData.company || 'N/A'}
-Project Type: ${formData.projectType}
-Budget Range: ${formData.budget || 'Not specified'}
-Timeline: ${formData.timeline || 'Not specified'}
+Name: ${data.name}
+Email: ${data.email}
+Company: ${data.company || 'N/A'}
+Project Type: ${data.projectType}
+Budget Range: ${data.budget || 'Not specified'}
+Timeline: ${data.timeline || 'Not specified'}
 
 Project Description:
-${formData.description}
+${data.description}
     `.trim())
 
     // Open default email client
@@ -70,57 +104,59 @@ ${formData.description}
   ]
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section */}
-      <section className="relative pt-20 pb-14 px-6 bg-gradient-to-br from-gray-50 to-white">
+      <section className="relative pt-20 pb-16 px-6">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-100 text-green-800 text-xs font-semibold rounded-full border border-green-200 mb-5">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+          <Badge variant="outline" className="mb-6 px-4 py-2 bg-green-50 text-green-700 border-green-200 hover:bg-green-50">
+            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse mr-2"></div>
             Currently accepting new projects
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-5">
+          </Badge>
+          <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
             Let's Build Your Next Project
           </h1>
-          <p className="text-base md:text-lg text-gray-600 mb-7 max-w-2xl mx-auto">
+          <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-2xl mx-auto leading-relaxed">
             Full-stack developer specializing in React, Python, and scalable web applications.
             From MVP to production — I'll help bring your vision to life.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <a
-              href="#contact-form"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300"
-            >
-              Start Your Project
-              <ArrowRight className="w-4 h-4" />
-            </a>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300"
-            >
-              View Past Work
-            </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <Button asChild size="lg" className="px-8">
+              <a href="#contact-form">
+                Start Your Project
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </a>
+            </Button>
+            <Button asChild variant="outline" size="lg" className="px-8">
+              <Link href="/projects">
+                View Past Work
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Services Section */}
-      <section className="py-14 px-6 bg-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">What I Can Do For You</h2>
-            <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
+      <section className="py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">What I Can Do For You</h2>
+            <Separator className="w-20 mx-auto" />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {services.map((service, index) => {
               const Icon = service.icon
               return (
-                <div key={index} className="p-6 border border-gray-200 rounded-lg hover:border-gray-400 hover:shadow-md transition-all">
-                  <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4">
-                    <Icon className="w-6 h-6 text-white" strokeWidth={2} />
-                  </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-2">{service.title}</h3>
-                  <p className="text-sm text-gray-600">{service.description}</p>
-                </div>
+                <Card key={index} className="border-gray-200 hover:shadow-lg transition-all duration-300">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-gray-900 rounded-lg flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-white" strokeWidth={2} />
+                    </div>
+                    <CardTitle className="text-xl">{service.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <CardDescription className="text-base">{service.description}</CardDescription>
+                  </CardContent>
+                </Card>
               )
             })}
           </div>
@@ -128,174 +164,197 @@ ${formData.description}
       </section>
 
       {/* Process Section */}
-      <section className="py-14 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">How We'll Work Together</h2>
-            <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
+      <section className="py-16 px-6 bg-gray-50/50">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">How We'll Work Together</h2>
+            <Separator className="w-20 mx-auto" />
           </div>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-8">
             {process.map((item, index) => (
-              <div key={index} className="relative">
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-12 h-12 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mb-4">
+              <Card key={index} className="relative border-gray-200 text-center">
+                <CardHeader className="pb-4">
+                  <div className="w-14 h-14 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-xl mx-auto mb-4">
                     {item.step}
                   </div>
-                  <h3 className="text-base font-bold text-gray-900 mb-2">{item.title}</h3>
-                  <p className="text-sm text-gray-600">{item.description}</p>
-                </div>
+                  <CardTitle className="text-lg">{item.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-sm">{item.description}</CardDescription>
+                </CardContent>
                 {index < process.length - 1 && (
-                  <div className="hidden md:block absolute top-6 left-[60%] w-[80%] h-0.5 bg-gray-300"></div>
+                  <div className="hidden md:block absolute top-10 -right-4 w-8 h-0.5 bg-gray-300"></div>
                 )}
-              </div>
+              </Card>
             ))}
           </div>
         </div>
       </section>
 
       {/* Why Work With Me */}
-      <section className="py-14 px-6 bg-white">
+      <section className="py-16 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Why Work With Me</h2>
-            <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Why Work With Me</h2>
+            <Separator className="w-20 mx-auto" />
           </div>
-          <div className="grid md:grid-cols-2 gap-4">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-start gap-3">
-                <div className="flex-shrink-0 w-5 h-5 bg-green-500 rounded-full flex items-center justify-center mt-0.5">
-                  <Check className="w-3 h-3 text-white" strokeWidth={3} />
-                </div>
-                <p className="text-gray-700">{benefit}</p>
+          <Card className="border-gray-200">
+            <CardContent className="pt-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                {benefits.map((benefit, index) => (
+                  <div key={index} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-0.5">
+                      <Check className="w-4 h-4 text-white" strokeWidth={3} />
+                    </div>
+                    <p className="text-gray-700 text-base">{benefit}</p>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
+            </CardContent>
+          </Card>
         </div>
       </section>
 
       {/* Availability */}
-      <section className="py-10 px-6 bg-gray-50">
+      <section className="py-12 px-6 bg-gray-50/50">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">
-            <Clock className="w-5 h-5 text-gray-700" />
-            <span className="text-sm font-medium text-gray-900">Currently accepting projects starting December 2024</span>
-          </div>
+          <Badge variant="outline" className="px-6 py-3 text-sm bg-white border-gray-200 shadow-sm">
+            <Clock className="w-5 h-5 text-gray-700 mr-2" />
+            Currently accepting projects starting December 2024
+          </Badge>
         </div>
       </section>
 
       {/* Contact Form */}
-      <section id="contact-form" className="py-14 px-6 bg-white">
+      <section id="contact-form" className="py-16 px-6">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">Start Your Project</h2>
-            <div className="w-16 h-0.5 bg-gray-800 mx-auto mb-3"></div>
-            <p className="text-gray-600 text-sm">Fill out the form below and I'll get back to you within 24 hours</p>
+          <div className="text-center mb-10">
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Start Your Project</h2>
+            <Separator className="w-20 mx-auto mb-4" />
+            <p className="text-gray-600">Fill out the form below and I'll get back to you within 24 hours</p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-5">
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Name *</label>
-                <input
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
-                  placeholder="Your name"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Email *</label>
-                <input
-                  type="email"
-                  required
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
+          <Card className="border-gray-200 shadow-lg">
+            <CardContent className="pt-8">
+              <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name *</Label>
+                    <Input
+                      id="name"
+                      type="text"
+                      {...register('name')}
+                      placeholder="Your name"
+                      className={errors.name ? 'border-red-500' : ''}
+                    />
+                    {errors.name && (
+                      <p className="text-sm text-red-500">{errors.name.message}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email *</Label>
+                    <Input
+                      id="email"
+                      type="email"
+                      {...register('email')}
+                      placeholder="your@email.com"
+                      className={errors.email ? 'border-red-500' : ''}
+                    />
+                    {errors.email && (
+                      <p className="text-sm text-red-500">{errors.email.message}</p>
+                    )}
+                  </div>
+                </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Company / Organization</label>
-              <input
-                type="text"
-                value={formData.company}
-                onChange={(e) => setFormData({...formData, company: e.target.value})}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
-                placeholder="Your company (optional)"
-              />
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="company">Company / Organization</Label>
+                  <Input
+                    id="company"
+                    type="text"
+                    {...register('company')}
+                    placeholder="Your company (optional)"
+                  />
+                </div>
 
-            <div className="grid md:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Project Type *</label>
-                <select
-                  required
-                  value={formData.projectType}
-                  onChange={(e) => setFormData({...formData, projectType: e.target.value})}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
-                >
-                  <option value="">Select type</option>
-                  <option value="full-stack">Full-Stack Application</option>
-                  <option value="api">API Development</option>
-                  <option value="consultation">Technical Consultation</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-semibold text-gray-900 mb-2">Budget Range</label>
-                <select
-                  value={formData.budget}
-                  onChange={(e) => setFormData({...formData, budget: e.target.value})}
-                  className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
-                >
-                  <option value="">Select budget</option>
-                  <option value="<5k">Less than $5,000</option>
-                  <option value="5k-10k">$5,000 - $10,000</option>
-                  <option value="10k-25k">$10,000 - $25,000</option>
-                  <option value="25k+">$25,000+</option>
-                </select>
-              </div>
-            </div>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <Label htmlFor="projectType">Project Type *</Label>
+                    <Select
+                      value={projectType}
+                      onValueChange={(value) => setValue('projectType', value)}
+                    >
+                      <SelectTrigger id="projectType" className={errors.projectType ? 'border-red-500' : ''}>
+                        <SelectValue placeholder="Select type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="full-stack">Full-Stack Application</SelectItem>
+                        <SelectItem value="api">API Development</SelectItem>
+                        <SelectItem value="consultation">Technical Consultation</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    {errors.projectType && (
+                      <p className="text-sm text-red-500">{errors.projectType.message}</p>
+                    )}
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="budget">Budget Range</Label>
+                    <Select
+                      value={budget}
+                      onValueChange={(value) => setValue('budget', value)}
+                    >
+                      <SelectTrigger id="budget">
+                        <SelectValue placeholder="Select budget" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="<5k">Less than $5,000</SelectItem>
+                        <SelectItem value="5k-10k">$5,000 - $10,000</SelectItem>
+                        <SelectItem value="10k-25k">$10,000 - $25,000</SelectItem>
+                        <SelectItem value="25k+">$25,000+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Timeline</label>
-              <select
-                value={formData.timeline}
-                onChange={(e) => setFormData({...formData, timeline: e.target.value})}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition"
-              >
-                <option value="">Select timeline</option>
-                <option value="asap">ASAP</option>
-                <option value="1-2months">1-2 months</option>
-                <option value="3-6months">3-6 months</option>
-                <option value="flexible">Flexible</option>
-              </select>
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="timeline">Timeline</Label>
+                  <Select
+                    value={timeline}
+                    onValueChange={(value) => setValue('timeline', value)}
+                  >
+                    <SelectTrigger id="timeline">
+                      <SelectValue placeholder="Select timeline" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="asap">ASAP</SelectItem>
+                      <SelectItem value="1-2months">1-2 months</SelectItem>
+                      <SelectItem value="3-6months">3-6 months</SelectItem>
+                      <SelectItem value="flexible">Flexible</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
 
-            <div>
-              <label className="block text-sm font-semibold text-gray-900 mb-2">Project Description *</label>
-              <textarea
-                required
-                value={formData.description}
-                onChange={(e) => setFormData({...formData, description: e.target.value})}
-                rows={6}
-                className="w-full px-4 py-2.5 border border-gray-300 rounded-md focus:ring-2 focus:ring-gray-900 focus:border-transparent outline-none transition resize-none"
-                placeholder="Tell me about your project, goals, and any specific requirements..."
-              />
-            </div>
+                <div className="space-y-2">
+                  <Label htmlFor="description">Project Description *</Label>
+                  <Textarea
+                    id="description"
+                    {...register('description')}
+                    rows={6}
+                    placeholder="Tell me about your project, goals, and any specific requirements..."
+                    className={`resize-none ${errors.description ? 'border-red-500' : ''}`}
+                  />
+                  {errors.description && (
+                    <p className="text-sm text-red-500">{errors.description.message}</p>
+                  )}
+                </div>
 
-            <button
-              type="submit"
-              className="w-full px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300 flex items-center justify-center gap-2"
-            >
-              Send Project Inquiry
-              <Mail className="w-4 h-4" />
-            </button>
-          </form>
+                <Button type="submit" className="w-full" size="lg" disabled={isSubmitting}>
+                  {isSubmitting ? 'Sending...' : 'Send Project Inquiry'}
+                  <Mail className="w-4 h-4 ml-2" />
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
 
           <div className="mt-8 text-center">
             <p className="text-sm text-gray-600">
