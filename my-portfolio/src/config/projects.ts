@@ -43,7 +43,7 @@ export const projects: Project[] = [
     },
     image: "/images/job-finder-hero1.png",
     meta: {
-      isFeatured: true,
+      isFeatured: false,
       isFullStack: true,
       isAI: true,
       isTeamProject: false
@@ -142,6 +142,27 @@ export const projects: Project[] = [
     },
     platforms: ["web"]
   },
+  {
+    id: "project7",
+    title: "Hunter Daily Events Portal",
+    shortTitle: "Hunter Events Portal",
+    description: "Platform centralizing Hunter College club events in one daily feed. Built admin form with Firebase real-time database for event management by Club Presidents. Implemented automated daily event cleanup system and admin-only access control. Developed responsive React frontend with event card layout, real-time updates, and public event feed. Created one-event-per-day restriction system and deployed on Vercel with Firebase authentication.",
+    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
+    date: "10/2025",
+    lastUpdated: "2025-10-08",
+    status: "planning",
+    links: {
+      github: "TBD"
+    },
+    image: "https://s29068.pcdn.co/wp-content/uploads/streetfair-dsc-8099-1024x576.jpg.webp",
+    meta: {
+      isWIP: true,
+      isFeatured: true,
+      isFullStack: true,
+      isTeamProject: true
+    },
+    platforms: ["web"]
+  }
   // {
   //   id: "project8",
   //   title: "Python Mastery Learning Platform",
