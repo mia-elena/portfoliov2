@@ -11,34 +11,14 @@ export const experience = [
     },
     type: "work",
     status: "current",
-    description: "Developed comprehensive RBAC using TypeScript with comprehensive permissions and multi-organization support. Developed AI-powered educational technology solutions supporting student learning outcomes and educational tools. Collaborated cross-functionally with product and design teams on technical requirements and implementation strategy.",
+    description: "Developed comprehensive RBAC using TypeScript with comprehensive permissions and multi-organization support. Built Canvas LMS feedback intelligence platform with FastAPI backend, priority scoring algorithms, and modular Canvas API architecture. Developed AI-powered educational technology solutions supporting student learning outcomes and educational tools.",
     highlights: [
-      "Developed comprehensive RBAC using TypeScript with comprehensive permissions and multi-organization support",
-      "Developed AI-powered educational technology solutions supporting student learning outcomes, educational tools",
-      "Collaborated cross-functionally with product, design teams on technical requirements and implementation strategy"
+      "Built Canvas LMS feedback platform with FastAPI backend, modular API clients, and async SQLAlchemy 2.0—processing 60+ metrics across 4 weighted dimensions for AI-driven course improvement recommendations",
+      "Engineered priority scoring algorithm with explainable recommendations and automated survey discovery using confidence-based Canvas quiz identification",
+      "Developed comprehensive RBAC system with TypeScript supporting granular permissions and multi-organization access control"
     ],
-    technologies: ["typescript", "react", "nextjs", "nodejs", "postgresql", "aws"],
+    technologies: ["python", "fastapi", "typescript", "react", "nextjs", "nodejs", "postgresql", "aws"],
     logo: "/images/gogentic-logo.png"
-  },
-  {
-    id: "headstarter",
-    title: "Software Engineering Resident",
-    company: "Headstarter",
-    date: "May 2025 - August 2025",
-    location: {
-      city: "New York",
-      country: "USA"
-    },
-    type: "residency",
-    status: "completed",
-    description: "Built 4 production applications including AI chatbot and job recommendation system in a 10-week program with focus on modern development practices and deployment.",
-    highlights: [
-      "Built 4 production applications including AI chatbot and job recommendation system in 10-week program",
-      "Optimized application performance through Redis caching, React code splitting, and lazy loading techniques",
-      "Architected scalable AI pipeline with prompt engineering, token optimization, and multi-modal API integration",
-    ],
-    technologies: ["python", "react", "nextjs", "aws", "vercel", "openai", "postgresql"],
-    logo: "/images/headstarter.jpeg"
   },
   {
     id: "hunter-college-dev",

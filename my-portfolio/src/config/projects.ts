@@ -1,6 +1,50 @@
 import { Project, Technology } from "../types/index";
 
 export const projects: Project[] = [
+  // Featured projects first (most recent work)
+  {
+    id: "project6",
+    title: "Canvas LMS Feedback Intelligence Platform",
+    shortTitle: "Canvas Feedback Platform",
+    description: "Intelligent platform helping educators prioritize course improvements by analyzing student feedback from Canvas LMS surveys. Built priority scoring algorithm weighing 60+ metrics across impact, urgency, effort, and recency with explainable recommendations. Developed async FastAPI backend with modular Canvas API clients, SQLAlchemy 2.0, and PostgreSQL for automated survey extraction and response processing.",
+    technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
+    date: "10/2025",
+    lastUpdated: "2025-10-06",
+    status: "in-progress",
+    links: {
+      github: "https://github.com/miasdk/canvas-feedback-aggregator"
+    },
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    meta: {
+      isWIP: true,
+      isFeatured: true,
+      isFullStack: true,
+      isAI: false,
+      isTeamProject: false
+    },
+    platforms: ["web"]
+  },
+  {
+    id: "project7",
+    title: "CUNY Hunter College Daily Events Portal",
+    shortTitle: "Hunter College Events Portal",
+    description: "Platform centralizing Hunter College club events in one daily feed. Built admin form with Firebase real-time database for event management by Club Presidents. Implemented automated daily event cleanup system and admin-only access control. Developed responsive React frontend with event card layout, real-time updates, and public event feed. Created one-event-per-day restriction system and deployed on Vercel with Firebase authentication.",
+    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
+    date: "10/2025",
+    lastUpdated: "2025-10-08",
+    status: "planning",
+    links: {
+      github: "TBD"
+    },
+    image: "https://s29068.pcdn.co/wp-content/uploads/streetfair-dsc-8099-1024x576.jpg.webp",
+    meta: {
+      isWIP: true,
+      isFeatured: true,
+      isFullStack: true,
+      isTeamProject: true
+    },
+    platforms: ["web"]
+  },
   {
     id: "project1",
     title: "E-commerce Platform",
@@ -8,7 +52,7 @@ export const projects: Project[] = [
     technologies: ["react", "nodejs", "express", "postgresql", "firebase", "tailwindcss"],
     date: "01/2025",
     lastUpdated: "2025-07-18",
-    status: "complete", 
+    status: "complete",
     links: {
       github: "https://github.com/miasdk/Vite-Ecommerce-Template",
       demo: "https://ecartdemo.vercel.app/"
@@ -26,14 +70,7 @@ export const projects: Project[] = [
     title: "AI-Powered Job Finder Platform",
     shortTitle: "Job Finder",
     description: "Architected intelligent job matching platform integrating 9+ APIs (Jsearch, Adzuna, Reed, RemoteOK). Implemented AI-driven scoring algorithms analyzing 50+ job attributes for personalized recommendations. Built scalable Django backend with Celery task queues processing 1000+ jobs daily from multiple sources. Developed responsive Next.js frontend with realtime filtering, advanced search, and user preference management.",
-    technologies: [
-      "python",
-      "django",
-      "react",
-      "nextjs",
-      "typescript",
-      "postgresql"
-    ],
+    technologies: ["python", "django", "react", "nextjs", "typescript", "postgresql"],
     date: "07/2025",
     lastUpdated: "2025-07-23",
     status: "complete",
@@ -43,13 +80,14 @@ export const projects: Project[] = [
     },
     image: "/images/job-finder-hero1.png",
     meta: {
-      isFeatured: false,
+      isFeatured: true,
       isFullStack: true,
       isAI: true,
       isTeamProject: false
     },
     platforms: ["web"]
   },
+  // Non-featured projects (reverse chronological)
   {
     id: "project3",
     title: "Smart Chat Component",
@@ -58,7 +96,7 @@ export const projects: Project[] = [
     technologies: ["react", "typescript", "nodejs", "express", "tailwindcss", "openai"],
     date: "07/2025",
     lastUpdated: "2025-07-25",
-    status: "complete", 
+    status: "complete",
     links: {
       github: "https://github.com/miasdk/gemini-chatbot",
       demo: "https://gemini-chat-component.vercel.app/"
@@ -77,15 +115,7 @@ export const projects: Project[] = [
     title: "AI-Medical Referral Hub",
     shortTitle: "Medical Referral Hub",
     description: "Built HIPAA-compliant healthcare application with normalized PostgreSQL schema and comprehensive audit logging. Engineered FHIR R4-compliant data models and APIs for healthcare interoperability across provider systems. Implemented AI-powered PDF document processing using Mistral AI and spaCy for medical data extraction. Currently implementing AI integration with Mistral AI for automated referral analysis.",
-    technologies: [
-      "python",
-      "django", 
-      "postgresql",
-      "react",
-      "typescript",
-      "tailwindcss",
-      "docker"
-    ],
+    technologies: ["python", "django", "postgresql", "react", "typescript", "tailwindcss", "docker"],
     date: "06/2025",
     lastUpdated: "2025-07-09",
     status: "in-progress",
@@ -109,7 +139,7 @@ export const projects: Project[] = [
     technologies: ["typescript", "javascript", "react", "nextjs", "tailwindcss"],
     date: "04/2025",
     lastUpdated: "2025-07-18",
-    status: "complete", 
+    status: "complete",
     links: {
       github: "https://github.com/miasdk/Portfolio",
       demo: "https://miaelena.vercel.app/"
@@ -119,49 +149,6 @@ export const projects: Project[] = [
       isFeatured: false,
     },
     platforms: ["web", "mobile"]
-  },
-  {
-    id: "project6",
-    title: "Canvas LMS Feedback Intelligence Platform",
-    shortTitle: "Canvas Feedback Platform",
-    description: "Built intelligent course improvement platform extracting student feedback from Canvas LMS surveys using modular API architecture. Engineered priority scoring algorithm analyzing 60+ feedback metrics across 4 weighted dimensions (impact, urgency, effort, recency) with explainable recommendations. Developed async FastAPI backend with SQLAlchemy 2.0, Alembic migrations, and Neon PostgreSQL for scalable data processing. Implemented Canvas API clients (Courses, Quizzes, Submissions, Reports) with pagination, authentication, and CSV report parsing for student response extraction.",
-    technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
-    date: "10/2025",
-    lastUpdated: "2025-10-06",
-    status: "in-progress",
-    links: {
-      github: "https://github.com/miasdk/canvas-feedback-aggregator"
-    },
-    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    meta: {
-      isWIP: true,
-      isFeatured: true,
-      isFullStack: true,
-      isAI: false,
-      isTeamProject: false
-    },
-    platforms: ["web"]
-  },
-  {
-    id: "project7",
-    title: "Hunter Daily Events Portal",
-    shortTitle: "Hunter Events Portal",
-    description: "Platform centralizing Hunter College club events in one daily feed. Built admin form with Firebase real-time database for event management by Club Presidents. Implemented automated daily event cleanup system and admin-only access control. Developed responsive React frontend with event card layout, real-time updates, and public event feed. Created one-event-per-day restriction system and deployed on Vercel with Firebase authentication.",
-    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
-    date: "10/2025",
-    lastUpdated: "2025-10-08",
-    status: "planning",
-    links: {
-      github: "TBD"
-    },
-    image: "https://s29068.pcdn.co/wp-content/uploads/streetfair-dsc-8099-1024x576.jpg.webp",
-    meta: {
-      isWIP: true,
-      isFeatured: true,
-      isFullStack: true,
-      isTeamProject: true
-    },
-    platforms: ["web"]
   }
   // {
   //   id: "project8",

@@ -11,7 +11,7 @@ import ExperienceCard from "../components/ExperienceCard"
 import EducationCard from "../components/EducationCard"
 import ContactForm from "../components/ContactForm"
 import TechnologyShowcase from "../components/TechnologyShowcase"
-import { FileText, Linkedin, ArrowRight, FolderOpen } from "lucide-react"
+import { FileText, Linkedin, ArrowRight, Github, Mail } from "lucide-react"
 import { motion } from "framer-motion"
 
 // Animation variants for reusability
@@ -41,10 +41,10 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative min-h-[90vh] flex flex-col justify-center items-center px-4 overflow-hidden">
+      <section className="relative pt-24 pb-16 flex flex-col justify-start items-center px-4 overflow-hidden">
         <div className="container mx-auto relative z-10 flex flex-col items-center">
-          <motion.div 
-            className="relative mb-4"
+          <motion.div
+            className="relative mb-3"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6, ease: "easeOut" }}
@@ -52,70 +52,78 @@ export default function Home() {
             <Image
               src={profile.image || "/default-profile.png"}
               alt={`${profile.name}'s profile picture`}
-              width={180}
-              height={180}
+              width={150}
+              height={150}
               className="rounded-full object-cover"
               priority
             />
           </motion.div>
-          <motion.h1 
-            className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 text-center"
+          <motion.h1
+            className="text-4xl md:text-5xl font-bold text-gray-900 mb-3 text-center"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
           >
             {profile.name}
           </motion.h1>
-          <motion.p 
-            className="text-xl md:text-2xl text-gray-600 mb-3 font-light"
+          <motion.p
+            className="text-xl md:text-2xl text-gray-600 mb-8 font-light"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
           >
             {profile.title}
           </motion.p>
-          <motion.p 
-            className="text-gray-700 max-w-xl mx-auto text-center leading-relaxed mb-6"
-            initial={{ y: 30, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
-          >
-            {profile.description}
-          </motion.p>
-          
-          <motion.div 
-            className="flex gap-4 mb-6"
+
+          <motion.div
+            className="flex gap-3 mb-10"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.4, ease: "easeOut" }}
           >
             <a
-              href={profile.links?.resume || "#"}
+              href={profile.links?.github || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white rounded-lg shadow-md hover:bg-gray-800 transition-all duration-300 group"
+              className="p-3 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              aria-label="GitHub"
             >
-              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              <span>Resume</span>
+              <Github className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
             <a
               href={profile.links?.linkedIn || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-5 py-2.5 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 transition-all duration-300 group"
+              className="p-3 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              aria-label="LinkedIn"
             >
-              <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              <span>LinkedIn</span>
+              <Linkedin className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <a
+              href={`mailto:${profile.contact.email}`}
+              className="p-3 bg-white border border-gray-200 text-gray-800 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5 group-hover:scale-110 transition-transform" />
+            </a>
+            <a
+              href={profile.links?.resume || "#"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-3 bg-gray-900 text-white rounded-lg shadow-sm hover:bg-gray-800 transition-all duration-300 group"
+              aria-label="Download Resume"
+            >
+              <FileText className="w-5 h-5 group-hover:scale-110 transition-transform" />
             </a>
           </motion.div>
-          
+
           <motion.img
             src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
             alt="GitHub Contribution Snake"
             className="mx-auto w-full max-w-lg"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
           />
         </div>
       </section>
@@ -192,7 +200,6 @@ export default function Home() {
               href="/projects"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
             >
-              <FolderOpen className="w-4 h-4 group-hover:scale-110 transition-transform" />
               <span>View All Projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
