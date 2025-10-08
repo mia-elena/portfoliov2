@@ -1,8 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ArrowRight, CheckCircle2, AlertCircle } from 'lucide-react'
 import Link from 'next/link'
+import Script from 'next/script'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
@@ -106,9 +107,11 @@ export default function HirePage() {
   }
 
   return (
-    <main className="min-h-screen bg-white">
-      {/* Hero Section */}
-      <section className="pt-24 pb-16 px-6">
+    <>
+      <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+      <main className="min-h-screen bg-white">
+        {/* Hero Section */}
+        <section className="pt-24 pb-16 px-6">
         <div className="max-w-3xl mx-auto">
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
@@ -134,12 +137,17 @@ export default function HirePage() {
             transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
           >
             <Button asChild size="lg">
-              <a href="#contact-form">
-                Get in touch
+              <a href="#consultation">
+                Book free consultation
                 <ArrowRight className="w-4 h-4 ml-2" />
               </a>
             </Button>
             <Button asChild variant="outline" size="lg">
+              <a href="#contact-form">
+                Send project details
+              </a>
+            </Button>
+            <Button asChild variant="ghost" size="lg">
               <Link href="/projects">
                 View my work
               </Link>
@@ -514,6 +522,34 @@ export default function HirePage() {
           </div>
         </div>
       </section>
-    </main>
+
+      {/* Book Consultation */}
+      <section id="consultation" className="py-16 px-6 bg-gray-50">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            className="text-center mb-10"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Book a free consultation</h2>
+            <p className="text-gray-600">
+              Prefer to talk first? Schedule a 30-minute call to discuss your project and see if we're a good fit.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          >
+            <div className="calendly-inline-widget" data-url="https://calendly.com/miariccidev/30min" style={{minWidth: '320px', height: '700px'}}></div>
+          </motion.div>
+        </div>
+      </section>
+      </main>
+    </>
   )
 }
