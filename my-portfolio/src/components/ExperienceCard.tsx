@@ -1,6 +1,6 @@
 import Image from "next/image"
 import TechBadge from "./TechBadge"
-import { Building, MapPin, ChevronRight } from "lucide-react"
+import { Building, MapPin } from "lucide-react"
 import type { Technology } from "../types"
 
 interface Metric {
@@ -23,91 +23,128 @@ interface ExperienceCardProps {
       country: string
     }
   }
+  isFirst?: boolean
+  isLast?: boolean
+  isCurrent?: boolean
 }
 
-export default function ExperienceCard({ experience }: ExperienceCardProps) {
+export default function ExperienceCard({ experience, isFirst, isLast, isCurrent }: ExperienceCardProps) {
   const { role, company, period, logo, highlights, skills, metrics, location } = experience
 
   return (
-    <article className="group relative rounded-sm overflow-hidden">
-      <div className="absolute inset-0 rounded-sm bg-gradient-to-r from-gray-50 via-white to-gray-50 shadow-md group-hover:shadow-lg transition-all duration-300"></div>
-      <div className="relative z-10 flex flex-col h-full">
-      <header className="p-6 pb-4">
-        <div className="flex items-start gap-5">
-          <div className="relative">
-            <div className="absolute -inset-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-lg blur opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-            <div className="relative flex-shrink-0 p-3 bg-white rounded-lg shadow-sm border border-gray-100 group-hover:border-gray-200 transition-all duration-300">
-              {logo ? (
-                <Image
-                  src={logo}
-                  alt={`${company} logo`}
-                  width={40}
-                  height={40}
-                  className="rounded-md"
-                />
-              ) : (
-                <Building className="w-5 h-5 text-gray-500" />
-              )}
+    <div className="relative flex gap-6 md:gap-8 group">
+      {/* Timeline Line & Node */}
+      <div className="relative flex flex-col items-center">
+        {/* Top Line */}
+        {!isFirst && (
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0.5 h-6 bg-gray-300"></div>
+        )}
+
+        {/* Node */}
+        <div className="relative z-10 mt-6">
+          {isCurrent ? (
+            // Current role: Filled green circle with glow
+            <div className="relative">
+              <div className="absolute inset-0 rounded-full bg-[#57AE5B] blur-md opacity-40 group-hover:opacity-60 transition-opacity"></div>
+              <div className="relative w-4 h-4 bg-[#57AE5B] rounded-full border-4 border-white shadow-sm group-hover:scale-110 transition-transform"></div>
+            </div>
+          ) : (
+            // Past roles: Outlined gray circle
+            <div className="w-4 h-4 bg-white rounded-full border-3 border-gray-300 shadow-sm group-hover:border-gray-400 group-hover:scale-110 transition-all" style={{ borderWidth: '3px' }}></div>
+          )}
+        </div>
+
+        {/* Bottom Line */}
+        {!isLast && (
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0.5 h-full bg-gray-300" style={{ top: '40px' }}></div>
+        )}
+      </div>
+
+      {/* Content Card */}
+      <div className="flex-1 pb-8">
+        <article className="relative rounded-lg overflow-hidden bg-white border border-gray-200 shadow-sm group-hover:shadow-md group-hover:border-gray-300 transition-all duration-300">
+          <div className="p-5 md:p-6">
+            {/* Header */}
+            <div className="flex items-start gap-4 mb-4">
+              {/* Logo */}
+              <div className="relative flex-shrink-0">
+                <div className="absolute -inset-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-lg blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div className="relative p-2.5 bg-gray-50 rounded-lg border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
+                  {logo ? (
+                    <Image
+                      src={logo}
+                      alt={`${company} logo`}
+                      width={36}
+                      height={36}
+                      className="rounded-md"
+                    />
+                  ) : (
+                    <Building className="w-9 h-9 text-gray-400" />
+                  )}
+                </div>
+              </div>
+
+              {/* Title & Meta */}
+              <div className="flex-1 min-w-0">
+                <h3 className="font-bold text-gray-900 text-base md:text-lg mb-1">
+                  {role}
+                </h3>
+                <p className="text-gray-700 font-medium text-sm">
+                  {company}
+                </p>
+                <div className="flex flex-wrap items-center gap-3 mt-1.5 text-xs text-gray-500">
+                  <span>{period}</span>
+                  <span className="flex items-center gap-1">
+                    <MapPin className="w-3 h-3" />
+                    {location.city}, {location.country}
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Highlights */}
+            <ul className="space-y-2 mb-4">
+              {highlights.map((item, i) => (
+                <li key={i} className="text-gray-600 text-sm flex items-start leading-relaxed">
+                  <span className="text-gray-400 mr-2.5 mt-1 flex-shrink-0">•</span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Metrics (if provided) */}
+            {metrics && metrics.length > 0 && (
+              <div className="mb-4">
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {metrics.map((metric, i) => (
+                    <div key={i} className="p-3 text-center bg-gray-50 border border-gray-200 rounded-md">
+                      <p className="text-lg font-bold text-gray-900">{metric.value}</p>
+                      <p className="text-xs text-gray-600 mt-1">{metric.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Tech Stack */}
+            <div className="pt-4 border-t border-gray-200">
+              <div className="flex flex-wrap gap-1.5">
+                {skills.map((skill) => (
+                  <TechBadge
+                    key={skill}
+                    tech={skill as Technology}
+                    size="sm"
+                    showLabel={true}
+                    showbg={true}
+                    showIcon={false}
+                    className="transition-all hover:shadow-sm"
+                  />
+                ))}
+              </div>
             </div>
           </div>
-
-          <div className="flex-1">
-            <h3 className="font-bold text-gray-900 text-lg group-hover:text-gray-700 transition-colors">{role}</h3>
-            <p className="text-gray-700 font-medium text-sm mt-1">
-              {company} • {period}
-            </p>
-            <p className="text-gray-600 text-sm flex items-center gap-1 mt-1">
-              <MapPin className="w-3.5 h-3.5" />
-              {location.city}, {location.country}
-            </p>
-          </div>
-        </div>
-      </header>
-
-      <div className="px-6 pb-4">
-        <ul className="space-y-2">
-          {highlights.map((item, i) => (
-            <li key={i} className="text-gray-700 text-sm flex items-start leading-relaxed">
-              <span className="text-gray-400 mr-2 mt-1 flex-shrink-0">•</span>
-              <span>{item}</span>
-            </li>
-          ))}
-        </ul>
+        </article>
       </div>
-
-      {metrics && metrics.length > 0 && (
-        <div className="px-6 pb-4">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {metrics.map((metric, i) => (
-              <div key={i} className="p-3 text-center bg-gray-50 border border-gray-200 rounded-md">
-                <p className="text-lg font-bold text-gray-900">{metric.value}</p>
-                <p className="text-xs text-gray-600 mt-1">{metric.label}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      <div className="mt-auto pt-4 px-6 pb-6 bg-gradient-to-r from-gray-50 to-white border-t border-gray-200">
-        <h4 className="text-xs font-medium text-gray-600 mb-3 flex items-center">
-          <span className="inline-block w-8 h-px bg-gray-300 mr-2"></span>
-          Technologies Used
-        </h4>
-        <div className="flex flex-wrap gap-1.5">
-          {skills.map((skill) => (
-            <TechBadge
-              key={skill}
-              tech={skill as Technology}
-              size="sm"
-              showLabel={true}
-              showbg={true}
-              showIcon={false}
-              className="transition-all hover:shadow-sm hover:scale-105"
-            />
-          ))}
-        </div>
-      </div>
-      </div>
-    </article>
+    </div>
   )
 }

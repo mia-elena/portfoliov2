@@ -56,7 +56,7 @@ export default function Home() {
               className="rounded-full object-cover border-[3px] border-gray-200"
               priority
             />
-            <div className="absolute bottom-0 right-0 w-6 h-6 bg-green-500 border-[3px] border-white rounded-full"></div>
+            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#57AE5B] border-[3px] border-white rounded-full"></div>
           </motion.div>
           <motion.h1
             className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 text-center"
@@ -213,7 +213,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid gap-6 max-w-5xl mx-auto"
+            className="max-w-4xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.1 }}
@@ -239,6 +239,9 @@ export default function Home() {
                       country: exp.location?.country || "Unknown",
                     },
                   }}
+                  isFirst={index === 0}
+                  isLast={index === experience.length - 1}
+                  isCurrent={exp.status === "current"}
                 />
               </motion.div>
             ))}
