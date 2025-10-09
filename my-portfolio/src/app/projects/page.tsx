@@ -18,15 +18,15 @@ export default function ProjectsPage() {
           <div className="w-16 h-0.5 bg-gray-800"></div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-8">
+        <div className="max-w-4xl mx-auto space-y-8">
           {sortedProjects.map((project, index) => (
             <div
               key={project.id}
-              className="flex gap-4 group"
+              className="flex gap-5 group pb-8 border-b border-gray-200 last:border-b-0 last:pb-0"
             >
               {/* Number */}
-              <div className="flex-shrink-0 w-8 h-8 flex items-center justify-center">
-                <span className="text-lg font-bold text-gray-400 group-hover:text-gray-600 transition-colors">
+              <div className="flex-shrink-0 w-10 flex items-start pt-1">
+                <span className="text-xl font-bold text-gray-400 group-hover:text-gray-600 transition-colors">
                   {(index + 1).toString().padStart(2, '0')}
                 </span>
               </div>
@@ -34,11 +34,11 @@ export default function ProjectsPage() {
               {/* Content */}
               <div className="flex-1 min-w-0">
                 {/* Title & Links */}
-                <div className="flex items-start justify-between gap-3 mb-1">
-                  <h2 className="text-base font-bold text-gray-900 leading-snug">
+                <div className="flex items-start justify-between gap-4 mb-2">
+                  <h2 className="text-lg md:text-xl font-bold text-gray-900 leading-tight">
                     {project.title}
                   </h2>
-                  <div className="flex items-center gap-2 shrink-0">
+                  <div className="flex items-center gap-2.5 shrink-0">
                     {project.links?.github && (
                       <a
                         href={project.links.github}
@@ -47,7 +47,7 @@ export default function ProjectsPage() {
                         className="text-gray-600 hover:text-gray-900 transition-colors"
                         aria-label="GitHub"
                       >
-                        <Github className="w-4 h-4 stroke-[2.5]" strokeWidth={2.5} />
+                        <Github className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
                       </a>
                     )}
                     {project.links?.demo && (
@@ -58,7 +58,7 @@ export default function ProjectsPage() {
                         className="text-gray-600 hover:text-gray-900 transition-colors"
                         aria-label="Live Demo"
                       >
-                        <ExternalLink className="w-4 h-4 stroke-[2.5]" strokeWidth={2.5} />
+                        <ExternalLink className="w-4.5 h-4.5 stroke-[2.5]" strokeWidth={2.5} />
                       </a>
                     )}
                   </div>
@@ -66,14 +66,14 @@ export default function ProjectsPage() {
 
                 {/* Project Type */}
                 {project.projectType && (
-                  <p className="text-xs text-gray-500 font-medium mb-2">
+                  <p className="text-sm text-gray-500 font-medium mb-3">
                     {project.projectType}
                   </p>
                 )}
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-1.5 mb-2">
-                  {project.technologies.slice(0, 5).map((tech) => (
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {project.technologies.map((tech) => (
                     <TechBadge
                       key={tech}
                       tech={tech}
@@ -83,15 +83,10 @@ export default function ProjectsPage() {
                       showIcon={true}
                     />
                   ))}
-                  {project.technologies.length > 5 && (
-                    <span className="text-xs text-gray-400 font-medium self-center">
-                      +{project.technologies.length - 5}
-                    </span>
-                  )}
                 </div>
 
                 {/* Status & Date */}
-                <div className="flex items-center gap-3 text-xs text-gray-400 font-normal">
+                <div className="flex items-center gap-3 text-xs text-gray-500 font-normal">
                   <span>{project.date}</span>
                   {project.status && (
                     <span className="capitalize">{project.status.replace('-', ' ')}</span>
