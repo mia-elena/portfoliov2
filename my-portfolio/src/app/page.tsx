@@ -152,7 +152,7 @@ export default function Home() {
           
           <div className="mx-auto max-w-6xl">
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8"
+              className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8 auto-rows-fr"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
