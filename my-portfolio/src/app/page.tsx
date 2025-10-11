@@ -231,7 +231,7 @@ export default function Home() {
                       country: exp.location?.country || "Unknown",
                     },
                   }}
-                  isFirst={index === 0}
+                  index={index}
                   isLast={index === experience.length - 1}
                   isCurrent={exp.status === "current"}
                 />
@@ -255,13 +255,13 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="grid gap-6 max-w-5xl mx-auto"
+            className="max-w-4xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
-            {education.map((edu) => (
+            {education.map((edu, index) => (
               <motion.div
                 key={edu.id}
                 variants={fadeInUp}
@@ -269,6 +269,8 @@ export default function Home() {
               >
                 <EducationCard
                   education={edu}
+                  index={index}
+                  isLast={index === education.length - 1}
                 />
               </motion.div>
             ))}
