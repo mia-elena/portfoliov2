@@ -68,8 +68,7 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
             <div className="flex items-start gap-4 mb-4">
               {/* Logo */}
               <div className="relative flex-shrink-0">
-                <div className="absolute -inset-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-md blur opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
-                <div className="relative p-2.5 bg-gray-50 rounded-md border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
+                <div className="p-2.5 bg-gray-50 rounded-md border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
                   {logo ? (
                     <Image
                       src={logo}
@@ -127,7 +126,7 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
             )}
 
             {/* Tech Stack */}
-            <div className="pt-4 border-t border-gray-200">
+            <div className="pt-4">
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
                   <TechBadge
