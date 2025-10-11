@@ -15,17 +15,17 @@ export default function AboutPage() {
           {/* Header */}
           <div>
             <div className="mb-4">
-              <h1 className="text-2xl font-bold text-gray-900 mb-2 text-center">About</h1>
-              <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
+              <h1 className="text-2xl font-bold text-gray-900 mb-2">About</h1>
+              <div className="w-16 h-0.5 bg-gray-800"></div>
             </div>
-            <p className="text-gray-600 leading-relaxed text-sm text-center mt-6">
+            <p className="text-gray-600 leading-relaxed text-sm mt-6">
               Hi, I'm Mia 👋 I'm a software engineer based in New York City.
             </p>
           </div>
 
           {/* What I'm Working With */}
           <div className="pt-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-6 text-center">What I'm Working With</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-6">What I'm Working With</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 gap-6 text-sm">
               <div>
                 <h3 className="font-semibold text-gray-900 mb-3">Backend</h3>
@@ -60,11 +60,11 @@ export default function AboutPage() {
 
           {/* Contact */}
           <div className="pt-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-4 text-center">Get in Touch</h2>
-            <p className="text-gray-600 text-sm mb-6 text-center max-w-xl mx-auto">
+            <h2 className="text-xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+            <p className="text-gray-600 text-sm mb-6 max-w-xl">
               Available for freelance projects and contract work. Let's discuss how I can help bring your ideas to life.
             </p>
-            <div className="flex gap-6 justify-center">
+            <div className="flex gap-6">
               <Link
                 href={profile.links?.github || "https://github.com"}
                 target="_blank"

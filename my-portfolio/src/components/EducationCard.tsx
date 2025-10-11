@@ -1,5 +1,7 @@
 import Image from "next/image"
+import TechBadge from "./TechBadge"
 import { GraduationCap, MapPin, Calendar } from "lucide-react"
+import type { Technology } from "../types"
 
 interface EducationCardProps {
   education: {
@@ -115,9 +117,15 @@ export default function EducationCard({ education }: EducationCardProps) {
         <div className="mt-auto pt-2 px-6 pb-6">
           <div className="flex flex-wrap gap-1.5">
             {technologies.map((tech) => (
-              <span key={tech} className="text-xs text-gray-500">
-                {tech}
-              </span>
+              <TechBadge
+                key={tech}
+                tech={tech as Technology}
+                size="sm"
+                showLabel={true}
+                showbg={true}
+                showIcon={false}
+                className="transition-all"
+              />
             ))}
           </div>
         </div>

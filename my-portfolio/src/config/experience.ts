@@ -11,13 +11,14 @@ export const experience = [
     },
     type: "work",
     status: "current",
-    description: "Developed comprehensive RBAC using TypeScript with comprehensive permissions and multi-organization support. Built Canvas LMS feedback intelligence platform with FastAPI backend, priority scoring algorithms, and modular Canvas API architecture. Developed AI-powered educational technology solutions supporting student learning outcomes and educational tools.",
+    description: "Contributing to microservices-based AI education platform with 5+ interconnected services using Docker and GCP, scaling to support 1000+ concurrent users across multi-tenant architecture.",
     highlights: [
-      "Built Canvas LMS feedback platform with FastAPI backend, modular API clients, and async SQLAlchemy 2.0—processing 60+ metrics across 4 weighted dimensions for AI-driven course improvement recommendations",
-      "Engineered priority scoring algorithm with explainable recommendations and automated survey discovery using confidence-based Canvas quiz identification",
-      "Developed comprehensive RBAC system with TypeScript supporting granular permissions and multi-organization access control"
+      "Contributed to microservices-based AI education platform with 5+ interconnected services using Docker and GCP, scaling to support 1000+ concurrent users across multi-tenant architecture",
+      "Engineered comprehensive RBAC system with Typescript enabling multi-organization permissions, role hierarchies, and granular access control for admin, instructor, and student roles",
+      "Implemented comprehensive testing framework with pytest and Jest featuring multi-modal AI ensemble evaluation, increasing code coverage by 30% and improving test readability",
+      "Collaborated with product and design teams to deliver 3 platform features 2 weeks ahead of schedule, including RBAC system, authentication flows, and admin dashboard"
     ],
-    technologies: ["python", "fastapi", "typescript", "react", "nextjs", "nodejs", "postgresql", "aws"],
+    technologies: ["typescript", "python", "react", "docker", "gcp", "jest", "pytest"],
     logo: "/images/gogentic-logo.png"
   },
   {
@@ -31,13 +32,13 @@ export const experience = [
     },
     type: "work",
     status: "completed",
-    description: "Designed WCAG 2.1 accessible React components with form validation and type safety using Typescript. Built CI/CD pipeline with GitHub Actions integrating automated testing, linting, and multi-environment deployments. Led technical architecture reviews for 3 web applications, mentoring junior peers on modern React patterns.",
+    description: "Designed WCAG 2.1 accessible React components with Typescript, improving UX for students with disabilities. Built CI/CD pipeline with GitHub Actions reducing deployment time by 60% across 4 development teams.",
     highlights: [
-      "Designed WCAG 2.1 accessible React components with form validation and type safety using Typescript",
-      "Built CI/CD pipeline with GitHub Actions integrating automated testing, linting, and multi-environment deployments",
-      "Led technical architecture reviews for 3 web applications, mentoring junior peers on modern React patterns"
+      "Designed WCAG 2.1 accessible React components with Typescript, improving UX for students with disabilities",
+      "Built CI/CD pipeline with GitHub Actions reducing deployment time by 60% across 4 development teams",
+      "Participated in technical reviews for 3 applications, collaborating with 5 developers on modern React patterns"
     ],
-    technologies: ["react", "typescript", "javascript", "git", "github"],
+    technologies: ["react", "typescript", "javascript", "git"],
     logo: "/images/HunterCollege.jpg"
   },
   {
@@ -51,13 +52,13 @@ export const experience = [
     },
     type: "internship",
     status: "completed",
-    description: "Developed portfolio management features improving client dashboard functionality and user experience. Created RESTful APIs with comprehensive endpoint documentation and applied database query optimizations. Developed full-stack applications with React/Next.js engaging in weekly pair programming sessions.",
+    description: "Developed front end features and RESTful APIs improving client dashboard functionality for 200+ users. Built full-stack applications with React/Next.js in Agile environment with code reviews and pair programming.",
     highlights: [
-      "Developed portfolio management features improving client dashboard functionality and user experience",
-      "Created RESTful APIs with comprehensive endpoint documentation and applied database query optimizations",
-      "Developed full-stack applications with React/Next.js engaging in weekly pair programming sessions"
+      "Developed front end features and RESTful APIs improving client dashboard functionality for 200+ users",
+      "Built full-stack applications with React/Next.js in Agile environment with code reviews and pair programming",
+      "Applied database query optimizations reducing API response time by 35%"
     ],
-    technologies: ["react", "typescript", "nodejs", "postgresql", "nextjs"],
+    technologies: ["react", "nextjs", "typescript", "nodejs", "postgresql"],
     logo: "/images/evergreen-logo.jpg"
   }
 ];
