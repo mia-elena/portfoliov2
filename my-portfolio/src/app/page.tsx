@@ -276,7 +276,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-14 px-6 bg-gray-50">
+      <section id="contact" className="py-14 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
