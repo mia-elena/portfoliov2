@@ -100,7 +100,12 @@ export default function ProjectCard({
           <div className="flex items-center gap-2 mb-3 text-sm text-gray-500">
             {project.projectType && <span>{project.projectType}</span>}
             {project.projectType && project.date && <span>•</span>}
-            {project.date && <span>{project.date}</span>}
+            {project.date && (
+              <span className="flex items-center gap-1">
+                <Calendar className="w-3 h-3" />
+                {project.date}
+              </span>
+            )}
           </div>
 
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
