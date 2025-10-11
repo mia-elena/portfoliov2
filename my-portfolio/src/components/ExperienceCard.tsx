@@ -1,7 +1,5 @@
 import Image from "next/image"
-import TechBadge from "./TechBadge"
 import { Building, MapPin } from "lucide-react"
-import type { Technology } from "../types"
 
 interface Metric {
   value: string
@@ -116,7 +114,7 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
               <div className="mb-4">
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {metrics.map((metric, i) => (
-                    <div key={i} className="p-3 text-center bg-gray-50 border border-gray-200 rounded-md">
+                    <div key={i} className="p-3 text-center bg-gray-50 rounded-md">
                       <p className="text-lg font-bold text-gray-900">{metric.value}</p>
                       <p className="text-xs text-gray-600 mt-1">{metric.label}</p>
                     </div>
@@ -129,15 +127,9 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
             <div className="pt-4">
               <div className="flex flex-wrap gap-1.5">
                 {skills.map((skill) => (
-                  <TechBadge
-                    key={skill}
-                    tech={skill as Technology}
-                    size="sm"
-                    showLabel={true}
-                    showbg={true}
-                    showIcon={false}
-                    className="transition-all"
-                  />
+                  <span key={skill} className="text-xs text-gray-500">
+                    {skill}
+                  </span>
                 ))}
               </div>
             </div>

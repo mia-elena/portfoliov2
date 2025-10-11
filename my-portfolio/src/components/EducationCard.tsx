@@ -1,7 +1,5 @@
 import Image from "next/image"
-import TechBadge from "./TechBadge"
-import { GraduationCap, MapPin, Calendar, Award } from "lucide-react"
-import type { Technology } from "../types"
+import { GraduationCap, MapPin, Calendar } from "lucide-react"
 
 interface EducationCardProps {
   education: {
@@ -87,16 +85,12 @@ export default function EducationCard({ education }: EducationCardProps) {
 
         {(coursework && coursework.length > 0) && (
           <div className="px-6 pb-4">
-            <h4 className="text-sm font-medium text-gray-600 mb-3 flex items-center">
-              <Award className="w-4 h-4 mr-2" />
+            <h4 className="text-sm font-medium text-gray-600 mb-3">
               Relevant Coursework
             </h4>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {coursework.map((course, i) => (
-                                 <span
-                   key={i}
-                   className="px-3 py-1 text-xs bg-gray-100 text-gray-800 rounded-full border border-gray-200"
-                 >
+                <span key={i} className="text-xs text-gray-500">
                   {course}
                 </span>
               ))}
@@ -118,22 +112,12 @@ export default function EducationCard({ education }: EducationCardProps) {
           </div>
         )}
 
-        <div className="mt-auto pt-4 px-6 pb-6 bg-gradient-to-r from-gray-50 to-white border-t border-gray-200">
-          <h4 className="text-xs font-medium text-gray-600 mb-3 flex items-center">
-            <span className="inline-block w-8 h-px bg-gray-300 mr-2"></span>
-            Technologies Used
-          </h4>
+        <div className="mt-auto pt-2 px-6 pb-6">
           <div className="flex flex-wrap gap-1.5">
             {technologies.map((tech) => (
-              <TechBadge
-                key={tech}
-                tech={tech as Technology}
-                size="sm"
-                showLabel={true}
-                showbg={true}
-                showIcon={false}
-                className="transition-all hover:shadow-sm hover:scale-105"
-              />
+              <span key={tech} className="text-xs text-gray-500">
+                {tech}
+              </span>
             ))}
           </div>
         </div>
