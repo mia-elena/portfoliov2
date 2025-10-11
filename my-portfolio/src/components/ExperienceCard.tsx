@@ -62,16 +62,13 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
 
       {/* Content Card */}
       <div className="flex-1 pb-8">
-        <article className="relative rounded-md overflow-hidden">
-          <div className="absolute inset-0 rounded-md bg-gradient-to-r from-gray-50 via-white to-gray-50 shadow-md group-hover:shadow-lg transition-all duration-300"></div>
-
-          <div className="relative z-10 p-5 md:p-6">
+        <article className="relative rounded-md overflow-hidden bg-white border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
+          <div className="p-5 md:p-6">
             {/* Header */}
             <div className="flex items-start gap-4 mb-4">
               {/* Logo */}
               <div className="relative flex-shrink-0">
-                <div className="absolute -inset-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-md blur opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-                <div className="relative p-2.5 bg-white rounded-md border border-gray-100 group-hover:border-gray-200 transition-all duration-300">
+                <div className="p-2.5 bg-gray-50 rounded-md border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
                   {logo ? (
                     <Image
                       src={logo}
