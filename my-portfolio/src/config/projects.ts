@@ -49,7 +49,7 @@ export const projects: Project[] = [
   },
   {
     id: "project1",
-    title: "E-commerce Platform",
+    title: "Luxe Marketplace",
     projectType: "E-commerce Platform",
     description: "Full-stack e-commerce platform with Stripe payments, Google OAuth, and 30+ RESTful API endpoints. Features PostgreSQL database with full-text search, real-time cart management, social commerce features including product likes, and seller listing management. Includes CI/CD deployment pipeline.",
     technologies: ["react", "nodejs", "express", "postgresql", "firebase", "tailwindcss"],
