@@ -55,14 +55,8 @@ export default function EducationCard({ education }: EducationCardProps) {
             <div className="flex flex-col sm:flex-row sm:justify-between w-full gap-2">
               <div>
                 <h3 className="font-bold text-gray-900 text-xl group-hover:text-gray-700 transition-colors">{degree}</h3>
-                <p className="text-gray-700 font-medium mt-1 flex items-center">
+                <p className="text-gray-700 font-medium mt-1">
                   {institution}
-                  {gpa && (
-                    <>
-                      <span className="inline-block w-1.5 h-1.5 rounded-full bg-gray-300 mx-2"></span>
-                      <span className="text-gray-600 text-sm font-semibold">GPA: {gpa}</span>
-                    </>
-                  )}
                 </p>
               </div>
               <div className="text-left sm:text-right flex flex-col items-start sm:items-end mt-1 sm:mt-0">
