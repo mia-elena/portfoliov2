@@ -14,7 +14,7 @@ export default function Navbar() {
                     href="/"
                     className="text-lg font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
                 >
-                    Mia E. Ricci
+                    
                 </Link>
 
                 <ul className="hidden md:flex items-center gap-7">
