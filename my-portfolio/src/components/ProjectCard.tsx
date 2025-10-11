@@ -41,17 +41,15 @@ export default function ProjectCard({
 
   return (
     <article className={`group relative h-full flex flex-col rounded-md overflow-hidden bg-white ${className}`}>
-      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-gray-100 to-gray-50 shadow-md group-hover:shadow-lg transition-all duration-300"></div>
-
-      <div className="relative flex flex-col h-full z-10">
+      <div className="relative flex flex-col h-full">
         {project.image && (
-          <div className="relative w-full aspect-[16/9] flex-shrink-0 overflow-hidden bg-white/20 border border-gray-200/40 rounded-md transition-all duration-300 group-hover:border-gray-400 group-hover:scale-[1.02]">
+          <div className="relative w-full aspect-[16/9] flex-shrink-0 overflow-hidden bg-white/20 rounded-sm transition-all duration-300 group-hover:scale-[1.02]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
             <Image
               src={project.image}
               alt={`${project.title} screenshothttp://localhost:3000/`}
               fill
-              className="object-cover object-center rounded-md transition-transform duration-500"
+              className="object-cover object-center rounded-sm transition-transform duration-500"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.meta?.isFeatured}
             />

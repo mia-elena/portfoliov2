@@ -28,15 +28,12 @@ export default function EducationCard({ education }: EducationCardProps) {
   const { degree, institution, period, location, gpa, description, highlights, coursework, activities, technologies, logo } = education
 
   return (
-    <article className="group relative rounded-md overflow-hidden">
-      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-gray-50 via-white to-gray-50 shadow-md group-hover:shadow-lg transition-all duration-300"></div>
-
-      <div className="relative z-10 flex flex-col h-full">
+    <article className="group relative rounded-md overflow-hidden bg-white transition-all duration-300">
+      <div className="relative flex flex-col h-full">
         <header className="p-6 pb-4">
           <div className="flex items-start gap-5">
             <div className="relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-gray-200 to-gray-100 rounded-md blur opacity-0 group-hover:opacity-70 transition-opacity duration-300"></div>
-              <div className="relative flex-shrink-0 p-3 bg-white rounded-md shadow-sm border border-gray-100 group-hover:border-gray-200 transition-all duration-300">
+              <div className="relative flex-shrink-0 p-3 bg-gray-50 rounded-md transition-all duration-300">
                 {logo ? (
                   <Image
                     src={logo}

@@ -62,7 +62,7 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
 
       {/* Content Card */}
       <div className="flex-1 pb-8">
-        <article className="relative rounded-md overflow-hidden bg-white border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
+        <article className="relative rounded-md overflow-hidden bg-white transition-all duration-300">
           <div className="p-5 md:p-6">
             {/* Header */}
             <div className="flex items-start gap-4 mb-4">
