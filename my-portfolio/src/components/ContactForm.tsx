@@ -83,15 +83,15 @@ export default function ContactForm() {
 
   if (status.success) {
     return (
-      <div className="border border-green-200 bg-green-50 rounded-md p-8 text-center">
-        <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
-          <CheckCircle className="h-6 w-6 text-green-600" />
+      <div className="bg-white rounded-sm p-8 text-center">
+        <div className="inline-flex items-center justify-center w-12 h-12 bg-gray-100 rounded-full mb-4">
+          <CheckCircle className="h-6 w-6 text-gray-900" />
         </div>
         <h3 className="text-xl font-semibold text-gray-900 mb-2">Message Sent</h3>
         <p className="text-gray-700 mb-6">Thank you for reaching out. I'll get back to you soon.</p>
         <button
           onClick={() => setStatus({ loading: false, success: false, error: false, message: "" })}
-          className="px-4 py-2 bg-white text-gray-700 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors text-sm"
+          className="px-4 py-2 bg-gray-100 text-gray-900 rounded-sm hover:bg-gray-200 transition-colors text-sm"
         >
           Send another message
         </button>
@@ -100,9 +100,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="relative rounded-md overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-50 shadow-md"></div>
-      <div className="relative p-6 z-10">
+    <div className="bg-white rounded-sm p-6">
       <form onSubmit={handleSubmit} className="space-y-5">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
@@ -116,7 +114,7 @@ export default function ContactForm() {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+              className="w-full px-4 py-2 bg-gray-50 rounded-sm focus:outline-none focus:bg-white transition-all"
               placeholder="Your name"
             />
           </div>
@@ -132,7 +130,7 @@ export default function ContactForm() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+              className="w-full px-4 py-2 bg-gray-50 rounded-sm focus:outline-none focus:bg-white transition-all"
               placeholder="your.email@example.com"
             />
           </div>
@@ -149,7 +147,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             rows={5}
-            className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
+            className="w-full px-4 py-2 bg-gray-50 rounded-sm focus:outline-none focus:bg-white transition-all resize-none"
             placeholder="Your message..."
           />
         </div>
@@ -157,7 +155,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={status.loading}
-          className="w-full px-6 py-3 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm font-medium flex items-center justify-center gap-2"
+          className="w-full px-6 py-3 bg-gray-900 text-white rounded-sm hover:bg-gray-800 disabled:opacity-50 disabled:cursor-not-allowed transition-colors text-sm font-medium flex items-center justify-center gap-2"
         >
           {status.loading ? (
             <>
@@ -192,11 +190,11 @@ export default function ContactForm() {
         </button>
 
         {status.error && (
-          <div className="border border-red-200 bg-red-50 rounded-md p-4 flex items-start gap-3">
-            <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+          <div className="bg-gray-100 rounded-sm p-4 flex items-start gap-3">
+            <AlertCircle className="h-5 w-5 text-gray-900 flex-shrink-0 mt-0.5" />
             <div>
-              <p className="font-medium text-red-900 text-sm">Could not send message</p>
-              <p className="text-sm text-red-700 mt-1">
+              <p className="font-medium text-gray-900 text-sm">Could not send message</p>
+              <p className="text-sm text-gray-700 mt-1">
                 {status.message || "Please try again later or contact me directly."}
               </p>
             </div>
