@@ -9,7 +9,6 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
-import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -155,7 +154,7 @@ export default function HirePage() {
       </section>
 
       {/* What I Do Section */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8"
@@ -167,9 +166,9 @@ export default function HirePage() {
             What I can help you with
           </motion.h2>
 
-          <div className="space-y-6">
+          <div className="space-y-8">
             <motion.div
-              className="bg-white p-6 rounded-md border border-gray-200"
+              className="p-6 rounded-sm"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -183,7 +182,7 @@ export default function HirePage() {
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-md border border-gray-200"
+              className="p-6 rounded-sm"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -197,7 +196,7 @@ export default function HirePage() {
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-md border border-gray-200"
+              className="p-6 rounded-sm"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -214,7 +213,7 @@ export default function HirePage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8 text-center"
@@ -239,17 +238,16 @@ export default function HirePage() {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
+                className="relative text-center"
               >
-                <Card className={`relative border-gray-200 text-center ${index < 3 ? 'md:mr-3' : ''}`}>
-                  <CardContent className="pt-6">
-                    <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                      {step.num}
-                    </div>
-                    <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-sm text-gray-600">{step.desc}</p>
-                  </CardContent>
-                  {index < 3 && <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-300"></div>}
-                </Card>
+                <div className="p-6 rounded-sm">
+                  <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                    {step.num}
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
+                  <p className="text-sm text-gray-600">{step.desc}</p>
+                </div>
+                {index < 3 && <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-200"></div>}
               </motion.div>
             ))}
           </div>
@@ -257,7 +255,7 @@ export default function HirePage() {
       </section>
 
       {/* What You Get */}
-      <section className="py-16 px-6 bg-gray-50">
+      <section className="py-16 px-6 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8"
@@ -332,22 +330,21 @@ export default function HirePage() {
               </div>
 
               {status.success ? (
-                <div className="border border-green-200 bg-green-50 rounded-md p-8 text-center">
+                <div className="bg-gray-100 rounded-sm p-8 text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
-                    <CheckCircle2 className="h-6 w-6 text-green-600" />
+                    <CheckCircle2 className="h-6 w-6 text-gray-900" />
                   </div>
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">Message sent!</h3>
                   <p className="text-gray-700 mb-6">{status.message}</p>
                   <button
                     onClick={() => setStatus({ loading: false, success: false, error: false, message: '' })}
-                    className="px-4 py-2 bg-white text-gray-700 rounded-md border border-gray-300 hover:bg-gray-50 transition-colors text-sm"
+                    className="px-4 py-2 bg-gray-100 text-gray-900 rounded-sm hover:bg-gray-200 transition-colors text-sm"
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
-                <Card className="border-gray-200 shadow-sm">
-                <CardContent className="pt-8">
+                <div className="bg-white rounded-sm p-6">
                   <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="space-y-2">
@@ -496,19 +493,18 @@ export default function HirePage() {
                   </Button>
 
                   {status.error && (
-                    <div className="border border-red-200 bg-red-50 rounded-md p-4 flex items-start gap-3">
-                      <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
+                    <div className="bg-gray-100 rounded-sm p-4 flex items-start gap-3">
+                      <AlertCircle className="h-5 w-5 text-gray-900 flex-shrink-0 mt-0.5" />
                       <div>
-                        <p className="font-medium text-red-900 text-sm">Could not send message</p>
-                        <p className="text-sm text-red-700 mt-1">
+                        <p className="font-medium text-gray-900 text-sm">Could not send message</p>
+                        <p className="text-sm text-gray-700 mt-1">
                           {status.message || 'Please try again later or email me directly.'}
                         </p>
                       </div>
                     </div>
                   )}
                 </form>
-              </CardContent>
-            </Card>
+              </div>
               )}
 
               <div className="mt-4 text-center text-sm text-gray-600">
@@ -531,7 +527,7 @@ export default function HirePage() {
                 <p className="text-gray-600">Prefer to talk first? Schedule a 30-minute consultation to discuss your project.</p>
               </div>
 
-              <div className="bg-gray-50 rounded-md border border-gray-200 overflow-hidden">
+              <div className="bg-gray-50 rounded-sm overflow-hidden">
                 <div className="calendly-inline-widget" data-url="https://calendly.com/miariccidev/30min" style={{minWidth: '320px', height: '700px'}}></div>
               </div>
             </motion.div>
