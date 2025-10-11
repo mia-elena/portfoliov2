@@ -109,8 +109,18 @@ export default function ProjectCard({
           </div>
 
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
-            {truncatedDescription}
+            {isExpanded ? project.description : truncatedDescription}
           </p>
+
+          {showReadMore && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className="text-xs text-gray-500 hover:text-gray-700 transition-colors mb-3 flex items-center gap-1"
+            >
+              <span>{isExpanded ? "Read less" : "Read more"}</span>
+              <ChevronDown className={`w-3 h-3 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+            </button>
+          )}
 
           <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="flex flex-wrap gap-1.5">
