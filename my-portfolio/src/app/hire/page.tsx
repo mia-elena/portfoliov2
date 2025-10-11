@@ -112,7 +112,11 @@ export default function HirePage() {
       <main className="min-h-screen bg-white">
         {/* Hero Section */}
         <section className="pt-24 pb-16 px-6">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
+          {/* Back to Home */}
+          <Link href="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors mb-8">
+            ← Home
+          </Link>
           <motion.h1
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-4"
             initial={{ y: 20, opacity: 0 }}
@@ -127,8 +131,7 @@ export default function HirePage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           >
-            I'm a full-stack developer who specializes in React, Python, and building scalable web applications.
-            Currently accepting projects for <span className="font-semibold text-gray-900">November 2025 onwards</span>.
+            Full-stack developer specializing in React, Python, and scalable web applications. Available for new projects starting <span className="font-semibold text-gray-900">November 2025</span>.
           </motion.p>
           <motion.div
             className="flex flex-wrap gap-3"
@@ -153,7 +156,7 @@ export default function HirePage() {
 
       {/* What I Do Section */}
       <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8"
             initial={{ y: 20, opacity: 0 }}
@@ -166,7 +169,7 @@ export default function HirePage() {
 
           <div className="space-y-6">
             <motion.div
-              className="bg-white p-6 rounded-lg border border-gray-200"
+              className="bg-white p-6 rounded-md border border-gray-200"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -180,7 +183,7 @@ export default function HirePage() {
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-lg border border-gray-200"
+              className="bg-white p-6 rounded-md border border-gray-200"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -194,7 +197,7 @@ export default function HirePage() {
             </motion.div>
 
             <motion.div
-              className="bg-white p-6 rounded-lg border border-gray-200"
+              className="bg-white p-6 rounded-md border border-gray-200"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -255,7 +258,7 @@ export default function HirePage() {
 
       {/* What You Get */}
       <section className="py-16 px-6 bg-gray-50">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8"
             initial={{ y: 20, opacity: 0 }}
@@ -303,7 +306,7 @@ export default function HirePage() {
 
       {/* Let's Talk - Two Column Section */}
       <section id="contact-form" className="py-16 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <motion.div
             className="text-center mb-12"
             initial={{ y: 20, opacity: 0 }}
@@ -329,7 +332,7 @@ export default function HirePage() {
               </div>
 
               {status.success ? (
-                <div className="border border-green-200 bg-green-50 rounded-lg p-8 text-center">
+                <div className="border border-green-200 bg-green-50 rounded-md p-8 text-center">
                   <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
                     <CheckCircle2 className="h-6 w-6 text-green-600" />
                   </div>
@@ -493,7 +496,7 @@ export default function HirePage() {
                   </Button>
 
                   {status.error && (
-                    <div className="border border-red-200 bg-red-50 rounded-lg p-4 flex items-start gap-3">
+                    <div className="border border-red-200 bg-red-50 rounded-md p-4 flex items-start gap-3">
                       <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
                       <div>
                         <p className="font-medium text-red-900 text-sm">Could not send message</p>
@@ -528,7 +531,7 @@ export default function HirePage() {
                 <p className="text-gray-600">Prefer to talk first? Schedule a 30-minute consultation to discuss your project.</p>
               </div>
 
-              <div className="bg-gray-50 rounded-lg border border-gray-200 overflow-hidden">
+              <div className="bg-gray-50 rounded-md border border-gray-200 overflow-hidden">
                 <div className="calendly-inline-widget" data-url="https://calendly.com/miariccidev/30min" style={{minWidth: '320px', height: '700px'}}></div>
               </div>
             </motion.div>

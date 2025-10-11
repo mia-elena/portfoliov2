@@ -33,7 +33,7 @@ const licorice = Licorice({
 });
 
 export const metadata: Metadata = {
-  title: "Mia Elena Ricci | Full-Stack Developer",
+  title: "Mia Elena | Full-Stack Developer",
   description: "Software engineer specializing in Python, Django, React, Next.js, and TypeScript development",
   icons: {
     icon: [

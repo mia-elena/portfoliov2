@@ -83,7 +83,7 @@ export default function ContactForm() {
 
   if (status.success) {
     return (
-      <div className="border border-green-200 bg-green-50 rounded-lg p-8 text-center">
+      <div className="border border-green-200 bg-green-50 rounded-md p-8 text-center">
         <div className="inline-flex items-center justify-center w-12 h-12 bg-white rounded-full mb-4">
           <CheckCircle className="h-6 w-6 text-green-600" />
         </div>
@@ -100,7 +100,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="relative rounded-xl overflow-hidden">
+    <div className="relative rounded-md overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-gray-100 to-gray-50 shadow-md"></div>
       <div className="relative p-6 z-10">
       <form onSubmit={handleSubmit} className="space-y-5">
@@ -192,7 +192,7 @@ export default function ContactForm() {
         </button>
 
         {status.error && (
-          <div className="border border-red-200 bg-red-50 rounded-lg p-4 flex items-start gap-3">
+          <div className="border border-red-200 bg-red-50 rounded-md p-4 flex items-start gap-3">
             <AlertCircle className="h-5 w-5 text-red-600 flex-shrink-0 mt-0.5" />
             <div>
               <p className="font-medium text-red-900 text-sm">Could not send message</p>

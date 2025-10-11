@@ -302,7 +302,7 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="max-w-2xl mx-auto bg-white rounded-lg shadow-sm border border-gray-200 p-6 md:p-7"
+            className="max-w-2xl mx-auto bg-white rounded-md shadow-sm border border-gray-200 p-6 md:p-7"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}

@@ -40,8 +40,8 @@ export default function ProjectCard({
     : project.description
 
   return (
-    <article className={`group relative h-full flex flex-col rounded-sm overflow-hidden bg-white ${className}`}>
-      <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-gray-100 to-gray-50 shadow-md group-hover:shadow-lg transition-all duration-300"></div>
+    <article className={`group relative h-full flex flex-col rounded-md overflow-hidden bg-white ${className}`}>
+      <div className="absolute inset-0 rounded-md bg-gradient-to-r from-gray-100 to-gray-50 shadow-md group-hover:shadow-lg transition-all duration-300"></div>
 
       <div className="relative flex flex-col h-full z-10">
         {project.image && (

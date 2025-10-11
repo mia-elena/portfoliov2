@@ -5,8 +5,13 @@ import { Github, Linkedin, Mail } from "lucide-react"
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-6xl mx-auto px-6 py-16">
+      <div className="max-w-5xl mx-auto px-6 py-16">
         <div className="space-y-10">
+          {/* Back to Home */}
+          <Link href="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors">
+            ← Home
+          </Link>
+
           {/* Header */}
           <div>
             <div className="mb-5">
@@ -14,7 +19,7 @@ export default function AboutPage() {
               <div className="w-16 h-0.5 bg-gray-800"></div>
             </div>
             <p className="text-gray-600 leading-relaxed text-sm">
-              Software engineer at <span className="font-semibold text-gray-900">Gogentic.ai</span> building educational technology and full-stack applications with Python, TypeScript, and React. Based in New York, focused on creating scalable systems for education and healthcare.
+              Hi, I'm Mia 👋 I'm a software engineer based in New York City.
             </p>
           </div>
 
@@ -53,22 +58,11 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Currently Learning */}
-          <div className="border-t border-gray-200 pt-10">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Currently Exploring</h2>
-            <ul className="space-y-1.5 text-gray-600 text-sm">
-              <li>• Fine-tuning LLMs for domain-specific tasks</li>
-              <li>• Prompt engineering and chain-of-thought reasoning</li>
-              <li>• AI agent orchestration frameworks (LangGraph, CrewAI, AutoGen)</li>
-              <li>• RAG pipeline architecture and vector embeddings</li>
-            </ul>
-          </div>
-
           {/* Contact */}
           <div className="border-t border-gray-200 pt-10">
             <h2 className="text-xl font-bold text-gray-900 mb-4">Get in Touch</h2>
             <p className="text-gray-600 text-sm mb-5">
-              Open to discussing new opportunities, collaborations, or just connecting about tech.
+              Available for freelance projects and contract work. Let's discuss how I can help bring your ideas to life.
             </p>
             <div className="flex gap-5">
               <Link

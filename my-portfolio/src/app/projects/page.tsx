@@ -2,6 +2,7 @@
 
 import { projects } from '../../config/projects'
 import { ExternalLink, Github } from 'lucide-react'
+import Link from 'next/link'
 import TechBadge from '../../components/TechBadge'
 
 export default function ProjectsPage() {
@@ -12,13 +13,18 @@ export default function ProjectsPage() {
 
   return (
     <div className="min-h-screen bg-white py-16">
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Back to Home */}
+        <Link href="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors mb-10">
+          ← Home
+        </Link>
+
         <div className="mb-10">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Projects</h1>
           <div className="w-16 h-0.5 bg-gray-800"></div>
         </div>
 
-        <div className="max-w-4xl mx-auto space-y-8">
+        <div className="space-y-8">
           {sortedProjects.map((project, index) => (
             <div
               key={project.id}
