@@ -128,7 +128,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="py-14 px-6 bg-gray-50">
+      <section id="projects" className="py-14 px-6">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-8"
@@ -231,7 +231,7 @@ export default function Home() {
                       country: exp.location?.country || "Unknown",
                     },
                   }}
-                  index={index}
+                  isFirst={index === 0}
                   isLast={index === experience.length - 1}
                   isCurrent={exp.status === "current"}
                 />
@@ -255,13 +255,13 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            className="max-w-4xl mx-auto"
+            className="grid gap-6 max-w-5xl mx-auto"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
-            {education.map((edu, index) => (
+            {education.map((edu) => (
               <motion.div
                 key={edu.id}
                 variants={fadeInUp}
@@ -269,8 +269,6 @@ export default function Home() {
               >
                 <EducationCard
                   education={edu}
-                  index={index}
-                  isLast={index === education.length - 1}
                 />
               </motion.div>
             ))}

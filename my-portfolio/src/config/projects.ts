@@ -3,11 +3,33 @@ import { Project, Technology } from "../types/index";
 export const projects: Project[] = [
   // Featured projects first (most recent work)
   {
+    id: "project7",
+    title: "CUNY Hunter College Daily Events Portal",
+    shortTitle: "Hunter College Events Portal",
+    projectType: "Campus Event Portal",
+    description: "Centralized event portal for Hunter College club activities with real-time Firebase updates. Features admin dashboard with role-based access control, automated daily cleanup, and one-event-per-day restriction system. Built responsive React frontend with event card layouts.",
+    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
+    date: "10/2025",
+    lastUpdated: "2025-10-08",
+    status: "planning",
+    links: {
+      github: "TBD"
+    },
+    image: "https://s29068.pcdn.co/wp-content/uploads/streetfair-dsc-8099-1024x576.jpg.webp",
+    meta: {
+      isWIP: true,
+      isFeatured: true,
+      isFullStack: true,
+      isTeamProject: true
+    },
+    platforms: ["web"]
+  },
+  {
     id: "project6",
     title: "Canvas LMS Feedback Intelligence Platform",
     shortTitle: "Canvas LMS Feedback Platform",
     projectType: "EdTech Analytics Platform",
-    description: "Analytics platform that helps educators prioritize course improvements by analyzing student feedback from Canvas LMS. Built with FastAPI, React, and PostgreSQL featuring automated survey extraction and priority scoring across 60+ metrics.",
+    description: "Analytics platform that helps educators prioritize course improvements by analyzing student feedback from Canvas LMS. Features intelligent scoring algorithm weighing 60+ metrics across impact, urgency, and effort. Built with async FastAPI backend, React frontend, and PostgreSQL with automated survey extraction.",
     technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
     date: "10/2025",
     lastUpdated: "2025-10-06",
@@ -26,32 +48,10 @@ export const projects: Project[] = [
     platforms: ["web"]
   },
   {
-    id: "project7",
-    title: "CUNY Hunter College Daily Events Portal",
-    shortTitle: "Hunter College Events Portal",
-    projectType: "Campus Event Portal",
-    description: "Centralized event portal for Hunter College club activities with real-time updates. Features admin dashboard for event management, automated daily cleanup, and Firebase real-time database integration.",
-    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
-    date: "10/2025",
-    lastUpdated: "2025-10-08",
-    status: "planning",
-    links: {
-      github: "TBD"
-    },
-    image: "https://s29068.pcdn.co/wp-content/uploads/streetfair-dsc-8099-1024x576.jpg.webp",
-    meta: {
-      isWIP: true,
-      isFeatured: true,
-      isFullStack: true,
-      isTeamProject: true
-    },
-    platforms: ["web"]
-  },
-  {
     id: "project1",
     title: "E-commerce Platform",
     projectType: "E-commerce Platform",
-    description: "Full-stack e-commerce platform with Stripe payments, Google OAuth, and 30+ RESTful API endpoints. Features real-time cart management, product search, and seller listing tools built with React and PostgreSQL.",
+    description: "Full-stack e-commerce platform with Stripe payments, Google OAuth, and 30+ RESTful API endpoints. Features PostgreSQL database with full-text search, real-time cart management, social commerce features including product likes, and seller listing management. Includes CI/CD deployment pipeline.",
     technologies: ["react", "nodejs", "express", "postgresql", "firebase", "tailwindcss"],
     date: "01/2025",
     lastUpdated: "2025-07-18",
