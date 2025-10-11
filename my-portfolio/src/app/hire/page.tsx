@@ -9,6 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import * as z from 'zod'
 import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
@@ -154,7 +155,7 @@ export default function HirePage() {
       </section>
 
       {/* What I Do Section */}
-      <section className="py-16 px-6 bg-white">
+      <section className="py-16 px-6 bg-gray-50">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8"
@@ -166,9 +167,9 @@ export default function HirePage() {
             What I can help you with
           </motion.h2>
 
-          <div className="space-y-8">
+          <div className="space-y-6">
             <motion.div
-              className="p-6 rounded-sm"
+              className="bg-white p-6 rounded-md border border-gray-200"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -182,7 +183,7 @@ export default function HirePage() {
             </motion.div>
 
             <motion.div
-              className="p-6 rounded-sm"
+              className="bg-white p-6 rounded-md border border-gray-200"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -196,7 +197,7 @@ export default function HirePage() {
             </motion.div>
 
             <motion.div
-              className="p-6 rounded-sm"
+              className="bg-white p-6 rounded-md border border-gray-200"
               initial={{ x: -20, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               viewport={{ once: true }}
@@ -213,7 +214,7 @@ export default function HirePage() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-6 bg-white border-t border-gray-100">
+      <section className="py-16 px-6 bg-white">
         <div className="max-w-5xl mx-auto">
           <motion.h2
             className="text-2xl font-bold text-gray-900 mb-8 text-center"
@@ -238,16 +239,17 @@ export default function HirePage() {
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-                className="relative text-center"
               >
-                <div className="p-6 rounded-sm">
-                  <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
-                    {step.num}
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
-                  <p className="text-sm text-gray-600">{step.desc}</p>
-                </div>
-                {index < 3 && <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-200"></div>}
+                <Card className={`relative border-gray-200 text-center ${index < 3 ? 'md:mr-3' : ''}`}>
+                  <CardContent className="pt-6">
+                    <div className="w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">
+                      {step.num}
+                    </div>
+                    <h3 className="font-semibold text-gray-900 mb-2">{step.title}</h3>
+                    <p className="text-sm text-gray-600">{step.desc}</p>
+                  </CardContent>
+                  {index < 3 && <div className="hidden md:block absolute top-8 -right-3 w-6 h-0.5 bg-gray-300"></div>}
+                </Card>
               </motion.div>
             ))}
           </div>
