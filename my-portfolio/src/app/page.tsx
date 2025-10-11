@@ -43,7 +43,7 @@ export default function Home() {
       <section className="relative pt-24 pb-12 flex flex-col justify-start items-center px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
           <motion.div
-            className="relative mb-4"
+            className="relative mb-3"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -67,20 +67,12 @@ export default function Home() {
             {profile.name}
           </motion.h1>
           <motion.p
-            className="text-sm md:text-base text-gray-600 mb-2 font-normal"
+            className="text-sm md:text-base text-gray-600 mb-4 font-normal"
             initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
           >
             {profile.title}
-          </motion.p>
-          <motion.p
-            className="text-xs md:text-sm text-gray-500 mb-5 text-center max-w-md font-light"
-            initial={{ y: 15, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.16, ease: "easeOut" }}
-          >
-            {profile.description}
           </motion.p>
 
           <motion.div
