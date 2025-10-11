@@ -6,7 +6,8 @@
 ### Core Principles
 **Clean, Sharp, Professional — Without Sacrificing Personality**
 
-This portfolio strikes a balance between corporate credibility and personal authenticity. The design language communicates technical competence while maintaining approachability for client acquisition.
+This portfolio strikes a balance between corporate credibility and 
+personal authenticity. The design language communicates technical competence while maintaining approachability for client acquisition.
 
 ### Design Goals
 1. **Contract Work Positioning**: Professional aesthetic that attracts serious clients

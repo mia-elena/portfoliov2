@@ -43,7 +43,7 @@ export default function ProjectCard({
     <article className={`group relative h-full flex flex-col rounded-md overflow-hidden bg-white ${className}`}>
       <div className="relative flex flex-col h-full">
         {project.image && (
-          <div className="relative w-full aspect-[16/9] flex-shrink-0 overflow-hidden bg-white/20 rounded-sm transition-all duration-300 group-hover:scale-[1.02]">
+          <div className="relative w-full aspect-[4/3] flex-shrink-0 overflow-hidden bg-white/20 rounded-sm transition-all duration-300 group-hover:scale-[1.01]">
             <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
             <Image
               src={project.image}
@@ -92,85 +92,36 @@ export default function ProjectCard({
           </div>
         )}
 
-        <div className="p-5 flex-1 flex flex-col">
-          <div className="mb-3">
-            {project.projectType && (
-              <span className="text-xs uppercase tracking-wide text-gray-600 font-semibold mb-1.5 block">
-                {project.projectType}
-              </span>
-            )}
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-bold text-gray-900 group-hover:text-gray-700 transition-colors leading-tight">
-                {project.links?.github ? (
-                  <Link
-                    href={project.links.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:underline decoration-2 underline-offset-2 transition-all"
-                  >
-                    {project.shortTitle || project.title}
-                  </Link>
-                ) : (
-                  <span>{project.shortTitle || project.title}</span>
-                )}
-              </h3>
-            </div>
-
-            <div className="flex items-center gap-4 mt-1 text-xs text-gray-500">
-              <div className="flex items-center">
-                <Calendar className="w-3 h-3 mr-1" />
-                <span>{project.date}</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="mb-4">
-            <p className="text-gray-700 text-sm leading-relaxed flex-grow">
-              {isExpanded ? project.description : truncatedDescription}
-            </p>
-            {showReadMore && (
-              <button
-                onClick={() => setIsExpanded(!isExpanded)}
-                className="flex items-center gap-1 text-xs text-gray-600 hover:text-gray-900 mt-2 transition-colors"
+        <div className="pt-4 flex-1 flex flex-col">
+          <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+            {project.links?.github ? (
+              <Link
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gray-700 transition-colors"
               >
-                <span>{isExpanded ? 'Read less' : 'Read more'}</span>
-                <ChevronDown className={`w-3 h-3 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} />
-              </button>
+                {project.shortTitle || project.title}
+              </Link>
+            ) : (
+              <span>{project.shortTitle || project.title}</span>
             )}
-          </div>
+          </h3>
 
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.meta?.isOpenSource && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium border border-gray-200">Open Source</span>
-            )}
-            {project.meta?.isTeamProject && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium border border-gray-200">
-                Team Project
-              </span>
-            )}
-            {project.meta?.isAI && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium border border-gray-200">AI Enhanced</span>
-            )}
-            {project.meta?.isDataScience && (
-              <span className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-md font-medium border border-gray-200">
-                Data Science
-              </span>
-            )}
-          </div>
+          <p className="text-gray-600 text-sm leading-relaxed mb-3">
+            {truncatedDescription}
+          </p>
 
-          <div className="mt-auto pt-4 border-t border-gray-100">
-            <h4 className="text-xs font-semibold text-gray-700 mb-2 uppercase tracking-wide">Technologies</h4>
+          <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <div className="flex flex-wrap gap-1.5">
-              {project.technologies.map((tech) => (
-                <TechBadge
-                  key={tech}
-                  tech={tech}
-                  size="sm"
-                  showLabel={true}
-                  showbg={true}
-                  showIcon={false}
-                />
+              {project.technologies.slice(0, 4).map((tech) => (
+                <span key={tech} className="text-xs text-gray-500">
+                  {tech}
+                </span>
               ))}
+              {project.technologies.length > 4 && (
+                <span className="text-xs text-gray-500">+{project.technologies.length - 4}</span>
+              )}
             </div>
           </div>
         </div>
