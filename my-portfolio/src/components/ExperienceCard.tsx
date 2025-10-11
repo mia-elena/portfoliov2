@@ -46,11 +46,11 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
             // Current role: Filled green circle with glow
             <div className="relative">
               <div className="absolute inset-0 rounded-full bg-[#57AE5B] blur-md opacity-40 group-hover:opacity-60 transition-opacity"></div>
-              <div className="relative w-4 h-4 bg-[#57AE5B] rounded-full border-4 border-white shadow-sm group-hover:scale-110 transition-transform"></div>
+              <div className="relative w-4 h-4 bg-[#57AE5B] rounded-full border-4 border-white group-hover:scale-110 transition-transform"></div>
             </div>
           ) : (
             // Past roles: Outlined gray circle
-            <div className="w-4 h-4 bg-white rounded-full border-3 border-gray-300 shadow-sm group-hover:border-gray-400 group-hover:scale-110 transition-all" style={{ borderWidth: '3px' }}></div>
+            <div className="w-4 h-4 bg-white rounded-full border-3 border-gray-300 group-hover:border-gray-400 group-hover:scale-110 transition-all" style={{ borderWidth: '3px' }}></div>
           )}
         </div>
 
@@ -62,7 +62,7 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
 
       {/* Content Card */}
       <div className="flex-1 pb-8">
-        <article className="relative rounded-md overflow-hidden bg-white border border-gray-200 shadow-sm group-hover:shadow-md group-hover:border-gray-300 transition-all duration-300">
+        <article className="relative rounded-md overflow-hidden bg-white border border-gray-200 group-hover:border-gray-300 transition-all duration-300">
           <div className="p-5 md:p-6">
             {/* Header */}
             <div className="flex items-start gap-4 mb-4">
@@ -136,7 +136,7 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
                     showLabel={true}
                     showbg={true}
                     showIcon={false}
-                    className="transition-all hover:shadow-sm"
+                    className="transition-all"
                   />
                 ))}
               </div>
