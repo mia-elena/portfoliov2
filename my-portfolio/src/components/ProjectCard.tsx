@@ -55,16 +55,18 @@ export default function ProjectCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.meta?.isFeatured}
             />
-            <div className="absolute top-3 right-3 z-20 flex flex-col gap-2 items-end">
-              {project.status && (
-                <StatusBadge status={project.status} size="sm" />
-              )}
-              {project.meta?.isWIP && !project.status && (
-                <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 shadow-sm">
-                  In Progress
-                </span>
-              )}
-            </div>
+            {!project.meta?.isFeatured && (
+              <div className="absolute top-3 right-3 z-20 flex flex-col gap-2 items-end">
+                {project.status && (
+                  <StatusBadge status={project.status} size="sm" />
+                )}
+                {project.meta?.isWIP && !project.status && (
+                  <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 shadow-sm">
+                    In Progress
+                  </span>
+                )}
+              </div>
+            )}
             <div className="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
               {project.links?.github && (
                 <Link

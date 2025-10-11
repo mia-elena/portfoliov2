@@ -15,7 +15,7 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/miasdk/canvas-feedback-aggregator"
     },
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=870",
+    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=870&auto=format&fit=crop",
     meta: {
       isWIP: true,
       isFeatured: true,
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       github: "https://github.com/miasdk/Vite-Ecommerce-Template",
       demo: "https://ecartdemo.vercel.app/"
     },
-    image: "/images/luxe.png",
+    image: "/images/ecart-homepage2.png",
     meta: {
       isTeamProject: false,
       isFeatured: true,

@@ -40,7 +40,7 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative pt-24 pb-12 flex flex-col justify-start items-center px-6 overflow-hidden">
+      <section className="relative pt-24 pb-20 flex flex-col justify-start items-center px-6 overflow-hidden">
         <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
           <motion.div
             className="relative mb-3"
@@ -144,7 +144,7 @@ export default function Home() {
           
           <div className="mx-auto max-w-6xl">
             <motion.div
-              className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8 auto-rows-fr"
+              className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 auto-rows-fr"
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
