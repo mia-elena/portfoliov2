@@ -53,47 +53,35 @@ export default function ProjectCard({
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.meta?.isFeatured}
             />
-            {!project.meta?.isFeatured && (
-              <div className="absolute top-3 right-3 z-20 flex flex-col gap-2 items-end">
-                {project.status && (
-                  <StatusBadge status={project.status} size="sm" />
-                )}
-                {project.meta?.isWIP && !project.status && (
-                  <span className="px-2.5 py-1 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 shadow-sm">
-                    In Progress
-                  </span>
-                )}
+
+            {/* Top-left: Featured/Status badge */}
+            {project.meta?.isFeatured && (
+              <div className="absolute top-3 left-3 z-20">
+                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-gray-900 backdrop-blur-sm">
+                  Featured
+                </span>
               </div>
             )}
-            <div className="absolute bottom-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex gap-2">
-              {project.links?.github && (
+
+            {/* Top-right: GitHub icon link */}
+            {project.links?.github && (
+              <div className="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
                 <Link
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/90 text-gray-800 hover:bg-white hover:text-black transition-colors shadow-sm"
-                  aria-label={`View ${project.title} source code on GitHub`}
+                  className="w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors"
+                  aria-label="View on GitHub"
                 >
-                  <Github className="w-4 h-4" />
+                  <Github className="w-4 h-4 text-gray-900" />
                 </Link>
-              )}
-              {project.links?.demo && (
-                <Link
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-full bg-white/90 text-gray-800 hover:bg-white hover:text-black transition-colors shadow-sm"
-                  aria-label={`View live demo of ${project.title}`}
-                >
-                  <ExternalLink className="w-4 h-4" />
-                </Link>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         )}
 
         <div className="pt-4 flex-1 flex flex-col">
-          <h3 className="text-xl font-bold text-gray-900 mb-2 leading-tight">
+          <h3 className="text-xl font-bold text-gray-900 mb-1 leading-tight">
             {project.links?.github ? (
               <Link
                 href={project.links.github}
@@ -107,6 +95,13 @@ export default function ProjectCard({
               <span>{project.shortTitle || project.title}</span>
             )}
           </h3>
+
+          {/* Airbnb-style subtext: Project type • Date */}
+          <div className="flex items-center gap-2 mb-3 text-sm text-gray-500">
+            {project.projectType && <span>{project.projectType}</span>}
+            {project.projectType && project.date && <span>•</span>}
+            {project.date && <span>{project.date}</span>}
+          </div>
 
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
             {truncatedDescription}
