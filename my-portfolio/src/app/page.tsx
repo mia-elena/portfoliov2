@@ -56,7 +56,7 @@ export default function Home() {
               className="rounded-full object-cover border-[3px] border-gray-200"
               priority
             />
-            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#57AE5B] border-[3px] border-white rounded-full"></div>
+            <div className="absolute bottom-1 right-1 w-3 h-3 bg-[#57AE5B] border-2 border-white rounded-full"></div>
           </motion.div>
           <motion.h1
             className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 text-center"
