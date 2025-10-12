@@ -530,7 +530,7 @@ export default function HirePage() {
               </div>
 
               <div className="bg-gray-50 rounded-sm overflow-hidden">
-                <div className="calendly-inline-widget" data-url="https://calendly.com/miariccidev/30min" style={{minWidth: '320px', height: '700px'}}></div>
+                <div className="calendly-inline-widget" data-url="https://calendly.com/miaelenadev/30min" style={{minWidth: '320px', height: '700px'}}></div>
               </div>
             </motion.div>
           </div>
