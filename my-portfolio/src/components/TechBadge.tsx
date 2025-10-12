@@ -2,9 +2,9 @@
 import { useState } from "react";
 import { IconType } from 'react-icons';
 import {
-  SiTypescript, 
-  SiJavascript, 
-  SiReact, 
+  SiTypescript,
+  SiJavascript,
+  SiReact,
   SiNextdotjs,
   SiTailwindcss,
   SiGraphql,
@@ -28,6 +28,7 @@ import {
   SiSupabase,
   SiSwift,
   SiJest,
+  SiPytest,
   SiCplusplus,
   SiRailway,
   SiBootstrap,
@@ -39,7 +40,8 @@ import {
   SiNumpy,
   SiDjango,
   SiMysql,
-  SiOpenapiinitiative
+  SiOpenapiinitiative,
+  SiGooglecloud
 } from 'react-icons/si';
 import { FaAws, FaJava } from 'react-icons/fa';
 import { Technology } from '../types';
@@ -221,6 +223,11 @@ const brandTechData = {
     color: "bg-[#c21325] text-white",
     label: "Jest",
   },
+  pytest: {
+    icon: SiPytest,
+    color: "bg-[#0a9edc] text-white",
+    label: "Pytest",
+  },
   bootstrap: {
     icon: SiBootstrap,
     color: "bg-[#563d7c] text-white",
@@ -319,6 +326,11 @@ const brandTechData = {
     icon: FaAws,
     color: "bg-[#ff9900] text-black",
     label: "AWS",
+  },
+  gcp: {
+    icon: SiGooglecloud,
+    color: "bg-[#4285f4] text-white",
+    label: "Google Cloud",
   },
 
   // Data Science & Analytics

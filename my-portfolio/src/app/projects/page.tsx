@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
+import { useState, useMemo, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { projects } from '../../config/projects'
 import { ExternalLink, Github } from 'lucide-react'
@@ -8,7 +8,7 @@ import Link from 'next/link'
 import TechBadge from '../../components/TechBadge'
 import FilterBar, { ProjectStatus, ProjectCategory } from '../../components/FilterBar'
 
-export default function ProjectsPage() {
+function ProjectsContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
 
@@ -211,5 +211,28 @@ export default function ProjectsPage() {
         )}
       </div>
     </div>
+  )
+}
+
+export default function ProjectsPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-white py-16">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="animate-pulse">
+            <div className="h-8 bg-gray-200 rounded w-32 mb-10"></div>
+            <div className="h-10 bg-gray-200 rounded w-48 mb-2"></div>
+            <div className="w-16 h-0.5 bg-gray-300 mb-10"></div>
+            <div className="space-y-6">
+              {[1, 2, 3].map(i => (
+                <div key={i} className="h-32 bg-gray-100 rounded"></div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    }>
+      <ProjectsContent />
+    </Suspense>
   )
 }
