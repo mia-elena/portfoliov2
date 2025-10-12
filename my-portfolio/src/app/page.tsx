@@ -225,6 +225,7 @@ export default function Home() {
                     period: exp.date,
                     highlights: exp.highlights || [],
                     skills: exp.technologies || [],
+                    metrics: exp.metrics,
                     logo: exp.logo,
                     location: {
                       city: exp.location?.city || "Unknown",

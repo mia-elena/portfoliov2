@@ -1,6 +1,6 @@
 import { StaticImageData } from "next/image";
 
-export type Technology = 
+export type Technology =
   | "typescript"
   | "javascript"
   | "react"
@@ -27,6 +27,8 @@ export type Technology =
   | "supabase"
   | "swift"
   | "jest"
+  | "pytest"
+  | "gcp"
   | "cpp"
   | "railway"
   | "bootstrap"

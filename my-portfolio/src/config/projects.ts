@@ -4,13 +4,13 @@ export const projects: Project[] = [
   // Featured projects first (most recent work)
   {
     id: "project7",
-    title: "CUNY Hunter College Daily Events Portal",
-    shortTitle: "Hunter College Events Portal",
-    projectType: "Campus Event Portal",
-    description: "Centralized event portal for Hunter College club activities with real-time Firebase updates. Features admin dashboard with role-based access control, automated daily cleanup, and one-event-per-day restriction system. Built responsive React frontend with event card layouts.",
-    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
+    title: "Hunter Daily Events Portal",
+    shortTitle: "Hunter Events Portal",
+    projectType: "Campus Event Platform",
+    description: "Full-stack event management platform centralizing all Hunter College club events with real-time updates. Features Firebase database with automated daily cleanup, React frontend with dynamic event cards, and admin-authenticated form access for club presidents. Implements one-event-per-day restrictions per club and role-based access control. Deployed on Vercel with weekly team sprints following agile methodology.",
+    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss", "figma"],
     date: "10/2025",
-    lastUpdated: "2025-10-08",
+    lastUpdated: "2025-10-12",
     status: "planning",
     links: {
       github: "TBD"

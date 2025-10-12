@@ -11,12 +11,10 @@ export const experience = [
     },
     type: "work",
     status: "current",
-    description: "Contributing to microservices-based AI education platform with 5+ interconnected services using Docker and GCP, scaling to support 1000+ concurrent users across multi-tenant architecture.",
+    description: "Contributing to microservices-based AI education platform built with Docker and GCP in a multi-tenant architecture.",
     highlights: [
-      "Contributed to microservices-based AI education platform with 5+ interconnected services using Docker and GCP, scaling to support 1000+ concurrent users across multi-tenant architecture",
-      "Engineered comprehensive RBAC system with Typescript enabling multi-organization permissions, role hierarchies, and granular access control for admin, instructor, and student roles",
-      "Implemented comprehensive testing framework with pytest and Jest featuring multi-modal AI ensemble evaluation, increasing code coverage by 30% and improving test readability",
-      "Collaborated with product and design teams to deliver 3 platform features 2 weeks ahead of schedule, including RBAC system, authentication flows, and admin dashboard"
+      "Built role-based access control system enabling organization-level permissions and user management",
+      "Developed testing framework for AI model evaluation and platform features"
     ],
     technologies: ["typescript", "python", "react", "docker", "gcp", "jest", "pytest"],
     logo: "/images/gogentic-logo.png"
@@ -32,11 +30,10 @@ export const experience = [
     },
     type: "work",
     status: "completed",
-    description: "Designed WCAG 2.1 accessible React components with Typescript, improving UX for students with disabilities. Built CI/CD pipeline with GitHub Actions reducing deployment time by 60% across 4 development teams.",
+    description: "Developed accessible web applications and deployment infrastructure for campus development teams.",
     highlights: [
-      "Designed WCAG 2.1 accessible React components with Typescript, improving UX for students with disabilities",
-      "Built CI/CD pipeline with GitHub Actions reducing deployment time by 60% across 4 development teams",
-      "Participated in technical reviews for 3 applications, collaborating with 5 developers on modern React patterns"
+      "Created accessible React components following WCAG 2.1 standards for inclusive user experiences",
+      "Implemented CI/CD pipelines with GitHub Actions to streamline development workflows"
     ],
     technologies: ["react", "typescript", "javascript", "git"],
     logo: "/images/HunterCollege.jpg"
@@ -52,11 +49,10 @@ export const experience = [
     },
     type: "internship",
     status: "completed",
-    description: "Developed front end features and RESTful APIs improving client dashboard functionality for 200+ users. Built full-stack applications with React/Next.js in Agile environment with code reviews and pair programming.",
+    description: "Built full-stack features and RESTful APIs for client-facing dashboard in collaborative Agile environment.",
     highlights: [
-      "Developed front end features and RESTful APIs improving client dashboard functionality for 200+ users",
-      "Built full-stack applications with React/Next.js in Agile environment with code reviews and pair programming",
-      "Applied database query optimizations reducing API response time by 35%"
+      "Developed frontend interfaces and backend APIs to enhance dashboard functionality for users",
+      "Improved application performance through database query optimization"
     ],
     technologies: ["react", "nextjs", "typescript", "nodejs", "postgresql"],
     logo: "/images/evergreen-logo.jpg"

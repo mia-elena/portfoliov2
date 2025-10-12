@@ -19,7 +19,7 @@ export default function AboutPage() {
               <div className="w-16 h-0.5 bg-gray-800"></div>
             </div>
             <p className="text-gray-600 leading-relaxed text-sm mt-6">
-              Hi, I'm Mia 👋 I'm a software engineer based in New York City.
+              Hi, I'm Mia. I'm a software engineer based in New York City. 
             </p>
           </div>
 
