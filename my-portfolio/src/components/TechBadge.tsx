@@ -115,9 +115,10 @@ const techCategories: Record<Technology, keyof typeof monoColorScheme> = {
   figma: "frontend",
   swift: "frontend",
   jest: "frontend",
+  pytest: "backend",
   bootstrap: "frontend",
   plotly: "frontend",
-  
+
   // Backend Technologies
   nodejs: "backend",
   express: "backend",
@@ -147,6 +148,7 @@ const techCategories: Record<Technology, keyof typeof monoColorScheme> = {
   awslambda: "infra",
   railway: "infra",
   aws: "infra",
+  gcp: "infra",
 };
 
 // Original brand color tech data

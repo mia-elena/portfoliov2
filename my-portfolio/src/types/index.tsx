@@ -113,16 +113,16 @@ export interface Profile {
 }
 
 export interface ExperienceItem {
-  id: string; 
+  id: string;
   role: string;
   company: string;
   period: string; // e.g., "Jan 2020 - Present"
-  
+
   // Tiered content structure
   summary: string; // Short 1-2 line overview for card view
   highlights?: string[]; // 2-4 key bullet points for medium view
   description: string[]; // Full detailed descriptions for expanded view
-  
+
   skills: Technology[]; // Technologies used
   logo?: string | StaticImageData; // Optional logo image
   links?: {
@@ -139,13 +139,31 @@ export interface ExperienceItem {
     value: string; // e.g., "20%"
     label: string; // e.g., "Increased efficiency"
   }[];
-  
+
   // Display preferences
   displayOptions?: {
     showMetrics?: boolean; // Whether to show metrics in card view
     emphasizeSkills?: boolean; // Whether to prominently display tech stack
     cardLayout?: "compact" | "standard" | "detailed"; // Default layout preference
   };
+}
+
+// Config type for experience data (matches the structure in experience.ts)
+export interface ExperienceConfig {
+  id: string;
+  title: string; // Maps to role
+  company: string;
+  date: string; // Maps to period
+  location?: {
+    city?: string;
+    country?: string;
+  };
+  type?: string;
+  status?: string;
+  description: string; // Single string
+  highlights?: string[];
+  technologies?: string[]; // Maps to skills
+  logo?: string;
 }
 
 export type ColorScheme = 'brand' | 'mono' | 'minimal';

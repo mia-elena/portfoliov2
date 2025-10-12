@@ -34,7 +34,7 @@ export default function ProjectsPage() {
   const filteredProjects = useMemo(() => {
     return projects.filter(project => {
       // Tech filter
-      const matchesTech = selectedTech === 'all' || project.technologies.includes(selectedTech)
+      const matchesTech = selectedTech === 'all' || project.technologies.includes(selectedTech as any)
 
       // Status filter
       const matchesStatus = selectedStatus === 'all' || project.status === selectedStatus

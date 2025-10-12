@@ -1,5 +1,6 @@
-import { ExperienceItem, Technology } from "../types";
-export const experience = [
+import { ExperienceConfig } from "../types";
+
+export const experience: ExperienceConfig[] = [
   {
     id: "gogentic",
     title: "Junior Software Engineer",
