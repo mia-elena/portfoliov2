@@ -115,29 +115,29 @@ export const projects: Project[] = [
     },
     platforms: ["web"]
   },
-  {
-    id: "project4",
-    title: "AI-Medical Referral Hub",
-    shortTitle: "Medical Referral Hub",
-    projectType: "Healthcare Platform",
-    description: "HIPAA-compliant healthcare platform with FHIR R4-compliant APIs for medical referral management. Features AI-powered PDF processing with Mistral AI and normalized PostgreSQL database with audit logging.",
-    technologies: ["python", "django", "postgresql", "react", "typescript", "tailwindcss", "docker"],
-    date: "06/2025",
-    lastUpdated: "2025-07-09",
-    status: "in-progress",
-    links: {
-      github: "https://github.com/miasdk/medical-referral-hub",
-    },
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    meta: {
-      isWIP: true,
-      isFeatured: false,
-      isAI: true,
-      isFullStack: true,
-      isTeamProject: false,
-    },
-    platforms: ["web"]
-  },
+  // {
+  //   id: "project4",
+  //   title: "AI-Medical Referral Hub",
+  //   shortTitle: "Medical Referral Hub",
+  //   projectType: "Healthcare Platform",
+  //   description: "HIPAA-compliant healthcare platform with FHIR R4-compliant APIs for medical referral management. Features AI-powered PDF processing with Mistral AI and normalized PostgreSQL database with audit logging.",
+  //   technologies: ["python", "django", "postgresql", "react", "typescript", "tailwindcss", "docker"],
+  //   date: "06/2025",
+  //   lastUpdated: "2025-07-09",
+  //   status: "in-progress",
+  //   links: {
+  //     github: "https://github.com/miasdk/medical-referral-hub",
+  //   },
+  //   image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   meta: {
+  //     isWIP: true,
+  //     isFeatured: false,
+  //     isAI: true,
+  //     isFullStack: true,
+  //     isTeamProject: false,
+  //   },
+  //   platforms: ["web"]
+  // },
   {
     id: "project5",
     title: "Portfolio",
