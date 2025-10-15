@@ -12,10 +12,11 @@ export const experience: ExperienceConfig[] = [
     },
     type: "work",
     status: "current",
-    description: "Contributing to microservices-based AI education platform built with Docker and GCP in a multi-tenant architecture.",
+    description: "Contributing to microservices-based AI education platform using Docker and GCP with multi-tenant architecture supporting multiple organizations.",
     highlights: [
-      "Built role-based access control system enabling organization-level permissions and user management",
-      "Developed testing framework for AI model evaluation and platform features"
+      "Implemented role-based access control (RBAC) system with TypeScript enabling organization-level permissions for admin, instructor, and student roles",
+      "Developed comprehensive test suite with pytest and Jest for authentication and permissions modules, improving code maintainability",
+      "Researched and evaluated observability solutions including Datadog for monitoring microservices performance and error tracking"
     ],
     technologies: ["typescript", "python", "react", "docker", "gcp", "jest", "pytest"],
     logo: "/images/gogentic-logo.png"
@@ -31,10 +32,10 @@ export const experience: ExperienceConfig[] = [
     },
     type: "work",
     status: "completed",
-    description: "Developed accessible web applications and deployment infrastructure for campus development teams.",
+    description: "Developed accessible React components with TypeScript following WCAG 2.1 guidelines for campus web applications.",
     highlights: [
-      "Created accessible React components following WCAG 2.1 standards for inclusive user experiences",
-      "Implemented CI/CD pipelines with GitHub Actions to streamline development workflows"
+      "Created GitHub Actions CI/CD workflow automating testing and deployment processes",
+      "Participated in code reviews and collaborated with development team on React best practices"
     ],
     technologies: ["react", "typescript", "javascript", "git"],
     logo: "/images/HunterCollege.jpg"
@@ -50,12 +51,12 @@ export const experience: ExperienceConfig[] = [
     },
     type: "internship",
     status: "completed",
-    description: "Built full-stack features and RESTful APIs for client-facing dashboard in collaborative Agile environment.",
+    description: "Developed frontend features and RESTful APIs for client dashboard used by 200+ investors.",
     highlights: [
-      "Developed frontend interfaces and backend APIs to enhance dashboard functionality for users",
-      "Improved application performance through database query optimization"
+      "Built full-stack applications with React/Next.js in Agile environment with code reviews and pair programming",
+      "Applied database query optimizations reducing API response time by 35% for portfolio data retrieval"
     ],
     technologies: ["react", "nextjs", "typescript", "nodejs", "postgresql"],
     logo: "/images/evergreen-logo.jpg"
-  }
+  },
 ];
