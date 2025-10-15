@@ -22,25 +22,6 @@ export const experience: ExperienceConfig[] = [
     logo: "/images/gogentic-logo.png"
   },
   {
-    id: "hunter-college-dev",
-    title: "Student Developer",
-    company: "CUNY Hunter College",
-    date: "January 2025 - May 2025",
-    location: {
-      city: "New York",
-      country: "USA"
-    },
-    type: "work",
-    status: "completed",
-    description: "Developed accessible React components with TypeScript following WCAG 2.1 guidelines for campus web applications.",
-    highlights: [
-      "Created GitHub Actions CI/CD workflow automating testing and deployment processes",
-      "Participated in code reviews and collaborated with development team on React best practices"
-    ],
-    technologies: ["react", "typescript", "javascript", "git"],
-    logo: "/images/HunterCollege.jpg"
-  },
-  {
     id: "evergreen-investments",
     title: "Software Engineering Intern",
     company: "Evergreen Investments",
@@ -58,5 +39,24 @@ export const experience: ExperienceConfig[] = [
     ],
     technologies: ["react", "nextjs", "typescript", "nodejs", "postgresql"],
     logo: "/images/evergreen-logo.jpg"
+  },
+  {
+    id: "hunter-college-dev",
+    title: "Student Developer",
+    company: "CUNY Hunter College",
+    date: "January 2025 - May 2025",
+    location: {
+      city: "New York",
+      country: "USA"
+    },
+    type: "work",
+    status: "completed",
+    description: "Developed accessible React components with TypeScript following WCAG 2.1 guidelines for campus web applications.",
+    highlights: [
+      "Created GitHub Actions CI/CD workflow automating testing and deployment processes",
+      "Participated in code reviews and collaborated with development team on React best practices"
+    ],
+    technologies: ["react", "typescript", "javascript", "git"],
+    logo: "/images/HunterCollege.jpg"
   },
 ];
