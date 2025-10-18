@@ -29,7 +29,7 @@ export const projects: Project[] = [
     title: "Canvas LMS Feedback Intelligence Platform",
     shortTitle: "Canvas LMS Feedback Platform",
     projectType: "EdTech Analytics Platform",
-    description: "Analytics platform that helps educators prioritize course improvements by analyzing student feedback from Canvas LMS. Features intelligent scoring algorithm weighing 60+ metrics across impact, urgency, and effort. Built with async FastAPI backend, React frontend, and PostgreSQL with automated survey extraction.",
+    description: "Analytics platform that helps educators prioritize course improvements by analyzing student feedback from Canvas LMS. Features 4-factor weighted scoring algorithm analyzing impact, urgency, implementation effort, and feedback recency. Built with async FastAPI backend, React frontend, and PostgreSQL with automated survey extraction.",
     technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
     date: "10/2025",
     lastUpdated: "2025-10-06",

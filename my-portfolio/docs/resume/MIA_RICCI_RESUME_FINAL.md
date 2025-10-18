@@ -34,7 +34,7 @@
 ## PROJECTS
 
 **Canvas LMS Feedback Intelligence Platform** | Python, React, TypeScript, PostgreSQL, FastAPI | [GitHub](https://github.com/miasdk/canvas-feedback-aggregator)
-- Built intelligent EdTech platform analyzing student feedback with priority scoring algorithm weighing 60+ metrics
+- Built intelligent EdTech platform analyzing student feedback with 4-factor weighted scoring algorithm
 - Architected async FastAPI backend with modular Canvas API clients and automated survey processing
 
 **Hunter College Daily Events Portal** | React, Node.js, Express, Firebase | Team Project

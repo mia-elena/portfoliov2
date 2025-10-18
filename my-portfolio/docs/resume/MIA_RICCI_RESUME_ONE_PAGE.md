@@ -33,7 +33,7 @@
 ## PROJECTS
 
 **Canvas LMS Feedback Intelligence Platform** | Python, React, TypeScript, PostgreSQL, FastAPI | [GitHub](https://github.com/miasdk/canvas-feedback-aggregator)
-- Built intelligent EdTech platform analyzing student feedback with priority scoring algorithm weighing 60+ metrics
+- Built intelligent EdTech platform analyzing student feedback with 4-factor weighted scoring algorithm
 - Architected async FastAPI backend with modular Canvas API clients, SQLAlchemy 2.0, and automated survey processing
 - Implemented real-time analytics dashboard with data visualization showing sentiment trends and actionable insights
 

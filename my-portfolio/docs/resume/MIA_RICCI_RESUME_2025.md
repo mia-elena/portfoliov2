@@ -60,7 +60,7 @@ New York, NY | miariccidev@gmail.com | (929) 428-2071
 *Python, React, TypeScript, PostgreSQL, FastAPI, TailwindCSS*
 
 - Built **intelligent EdTech platform** helping educators prioritize course improvements by analyzing student feedback from Canvas LMS surveys
-- Developed **priority scoring algorithm** weighing 60+ metrics across impact, urgency, effort, and recency with explainable AI recommendations
+- Developed **4-factor weighted scoring algorithm** analyzing impact, urgency, implementation effort, and feedback recency with explainable recommendations
 - Architected **async FastAPI backend** with modular Canvas API clients, SQLAlchemy 2.0, and PostgreSQL for automated survey extraction and response processing
 - Implemented **real-time analytics dashboard** with data visualization showing sentiment trends and actionable insights
 
