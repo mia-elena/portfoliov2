@@ -22,25 +22,6 @@ export const experience: ExperienceConfig[] = [
     logo: "/images/gogentic-logo.png"
   },
   {
-    id: "evergreen-investments",
-    title: "Software Engineering Intern",
-    company: "Evergreen Investments",
-    date: "June 2024 - December 2024",
-    location: {
-      city: "New York",
-      country: "USA"
-    },
-    type: "internship",
-    status: "completed",
-    description: "Developed frontend features and RESTful APIs for client dashboard used by 200+ investors.",
-    highlights: [
-      "Built full-stack applications with React/Next.js in Agile environment with code reviews and pair programming",
-      "Applied database query optimizations reducing API response time by 35% for portfolio data retrieval"
-    ],
-    technologies: ["react", "nextjs", "typescript", "nodejs", "postgresql"],
-    logo: "/images/evergreen-logo.jpg"
-  },
-  {
     id: "hunter-college-dev",
     title: "Student Developer",
     company: "CUNY Hunter College",
