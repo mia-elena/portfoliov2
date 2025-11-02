@@ -58,7 +58,7 @@ export default function ProjectCard({
             {project.meta?.isFeatured && (
               <div className="absolute top-3 left-3 z-20">
                 <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-gray-900 backdrop-blur-sm">
-                  Featured
+                  featured
                 </span>
               </div>
             )}
@@ -100,12 +100,7 @@ export default function ProjectCard({
           <div className="flex items-center gap-2 mb-3 text-sm text-gray-500">
             {project.projectType && <span>{project.projectType}</span>}
             {project.projectType && project.date && <span>•</span>}
-            {project.date && (
-              <span className="flex items-center gap-1">
-                <Calendar className="w-3 h-3" />
-                {project.date}
-              </span>
-            )}
+            {project.date && <span>{project.date}</span>}
           </div>
 
           <p className="text-gray-600 text-sm leading-relaxed mb-3">
@@ -117,20 +112,20 @@ export default function ProjectCard({
               onClick={() => setIsExpanded(!isExpanded)}
               className="text-xs text-gray-500 hover:text-gray-700 transition-colors mb-3 flex items-center gap-1"
             >
-              <span>{isExpanded ? "Read less" : "Read more"}</span>
+              <span>{isExpanded ? "read less" : "read more"}</span>
               <ChevronDown className={`w-3 h-3 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
             </button>
           )}
 
-          <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="mt-auto">
             <div className="flex flex-wrap gap-1.5">
-              {project.technologies.slice(0, 4).map((tech) => (
+              {project.technologies.slice(0, 3).map((tech) => (
                 <span key={tech} className="text-xs text-gray-500">
                   {tech}
                 </span>
               ))}
-              {project.technologies.length > 4 && (
-                <span className="text-xs text-gray-500">+{project.technologies.length - 4}</span>
+              {project.technologies.length > 3 && (
+                <span className="text-xs text-gray-500">+{project.technologies.length - 3}</span>
               )}
             </div>
           </div>

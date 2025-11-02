@@ -12,21 +12,22 @@ export default function Navbar() {
             <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
                 <Link
                     href="/"
-                    className="text-lg font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
+                    className="text-xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
                 >
-                    
+                    mia elena
+
                 </Link>
 
                 <ul className="hidden md:flex items-center gap-7">
-                    <NavLink href="/projects">Projects</NavLink>
-                    <NavLink href="/about">About</NavLink>
-                    <NavLink href="/#experience">Experience</NavLink>
+                    <NavLink href="/projects">projects</NavLink>
+                    <NavLink href="/about">about</NavLink>
+                    <NavLink href="/#experience">experience</NavLink>
                     <li>
                         <Link
                             href="/hire"
-                            className="px-4 py-2 bg-green-600 text-white text-sm font-semibold rounded-md hover:bg-green-700 transition-colors shadow-sm"
+                            className="text-sm text-gray-700 hover:text-gray-900 transition-colors font-medium"
                         >
-                            Hire Me
+                            hire me
                         </Link>
                     </li>
                 </ul>
@@ -44,13 +45,13 @@ export default function Navbar() {
                 <div className="md:hidden border-t border-gray-200 bg-white">
                     <ul className="px-6 py-3 space-y-1">
                         <MobileNavLink href="/projects" onClick={() => setIsOpen(false)}>
-                            Projects
+                            projects
                         </MobileNavLink>
                         <MobileNavLink href="/about" onClick={() => setIsOpen(false)}>
-                            About
+                            about
                         </MobileNavLink>
                         <MobileNavLink href="/#experience" onClick={() => setIsOpen(false)}>
-                            Experience
+                            experience
                         </MobileNavLink>
                         <li>
                             <Link
@@ -58,7 +59,7 @@ export default function Navbar() {
                                 className="block text-center bg-green-600 text-white hover:bg-green-700 py-2.5 px-3 rounded-md transition-colors font-semibold shadow-sm"
                                 onClick={() => setIsOpen(false)}
                             >
-                                Hire Me
+                                hire me
                             </Link>
                         </li>
                     </ul>

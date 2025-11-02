@@ -53,10 +53,9 @@ export default function Home() {
               alt={`${profile.name}'s profile picture`}
               width={96}
               height={96}
-              className="rounded-full object-cover border-[3px] border-gray-200"
+              className="rounded-full object-cover border-[3px] border-gray-100"
               priority
             />
-            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#57AE5B] border-[3px] border-white rounded-full"></div>
           </motion.div>
           <motion.h1
             className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 text-center"
@@ -177,14 +176,14 @@ export default function Home() {
               href="/hire"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300 group"
             >
-              <span>Hire Me</span>
+              <span>hire me</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
             >
-              <span>View All Projects</span>
+              <span>view all projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>

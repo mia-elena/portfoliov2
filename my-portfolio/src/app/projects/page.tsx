@@ -101,7 +101,7 @@ function ProjectsContent() {
       <div className="max-w-5xl mx-auto px-6">
         {/* Back to Home */}
         <Link href="/" className="inline-flex items-center text-sm text-gray-600 hover:text-gray-900 transition-colors mb-10">
-          ← Home
+          ← home
         </Link>
 
         <div className="mb-10">
