@@ -12,32 +12,40 @@ export default function AboutPage() {
 
           {/* Header */}
           <div>
-            <div className="mb-4">
+            <div className="mb-6">
               <h1 className="text-2xl font-bold text-gray-900 mb-2">About</h1>
               <div className="w-16 h-0.5 bg-gray-800"></div>
             </div>
 
-            <a
-              href="https://www.youtube.com/watch?v=q7gy2GRwT-I"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block cursor-pointer hover:opacity-95 transition-opacity duration-300 mb-6"
-            >
-              <NextImage
-                src="/images/kiki.gif"
-                alt="Logo"
-                width={200}
-                height={200}
-                className="object-cover"
-                unoptimized
-              />
-            </a>
+            <div className="flex flex-col md:flex-row gap-8 items-start">
+              <a
+                href="https://www.youtube.com/watch?v=q7gy2GRwT-I"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 cursor-pointer hover:opacity-95 transition-opacity duration-300"
+              >
+                <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
+                  <NextImage
+                    src="/images/kiki.gif"
+                    alt="Logo"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full"
+                    unoptimized
+                  />
+                </div>
+              </a>
 
-            <p className="text-gray-600 text-sm leading-relaxed max-w-prose">
-              Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat Achilles. 
-              <p>I like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer">movies</a>. </p>
-            </p>
-            
+              <div className="flex-1">
+                <p className="text-gray-600 text-sm leading-relaxed mt-14">
+                  Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat Achilles. 
+                  <p>
+                  I like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer" className="hover:underline">movies</a>.
+                  </p>
+                </p>
+              </div>
+            </div>
+
           </div>
 
           {/* Tech Stack */}
