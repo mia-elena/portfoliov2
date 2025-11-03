@@ -52,8 +52,6 @@ export default function Navbar() {
             <div className="hidden md:block bg-gray-50 border-t border-gray-200">
                 <div className="container mx-auto px-4">
                     <div className="flex items-center justify-center gap-3 py-2.5">
-                        <span className="text-xs text-gray-700 font-medium">React</span>
-                        <span className="text-gray-400">•</span>
                         <span className="text-xs text-gray-700 font-medium">TypeScript</span>
                         <span className="text-gray-400">•</span>
                         <span className="text-xs text-gray-700 font-medium">Python</span>
@@ -61,8 +59,6 @@ export default function Navbar() {
                         <span className="text-xs text-gray-700 font-medium">AI/ML</span>
                         <span className="text-gray-400">•</span>
                         <span className="text-xs text-gray-700 font-medium">PostgreSQL</span>
-                        <span className="text-gray-400">•</span>
-                        <span className="text-xs text-gray-700 font-medium">Docker</span>
                         <span className="text-gray-400">•</span>
                         <span className="text-xs text-gray-700 font-medium">AWS</span>
                     </div>
