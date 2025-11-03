@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { profile } from "../../config/profile"
-import { Github, Linkedin, Mail } from "lucide-react"
+import { Github, Linkedin, Mail, PhoneCall} from "lucide-react"
 import TechBadge from "@/components/TechBadge"
 import NextImage from "next/image"
 
@@ -18,26 +18,9 @@ export default function AboutPage() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-8 items-start">
-              <a
-                href="https://www.youtube.com/watch?v=q7gy2GRwT-I"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-shrink-0 cursor-pointer hover:opacity-95 transition-opacity duration-300 mt-14"
-              >
-                <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
-                  <NextImage
-                    src="/images/kiki.gif"
-                    alt="Logo"
-                    width={200}
-                    height={200}
-                    className="object-cover w-full h-full "
-                    unoptimized
-                  />
-                </div>
-              </a>
 
               <div className="flex-1">
-                <p className="text-gray-600 text-sm leading-relaxed mt-25">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I'm currently looking for new opportunities in full-stack, devops, and AI/ML.  I live in New York City with my cat, Achilles.
                   <p>
                   I also like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer" className="hover:underline">movies</a>.
@@ -103,8 +86,33 @@ export default function AboutPage() {
               <Mail className="w-4 h-4" />
               <span className="text-sm font-medium">Email</span>
             </Link>
+            <Link
+              href={`tel:${profile.contact?.phone}`}
+              className="flex items-center gap-2 text-gray-700 hover:text-gray-900 transition-colors"
+            >
+              <PhoneCall className="w-4 h-4" />
+              <span className="text-sm font-medium">Phone</span>
+            </Link>
+
             </div>
           </div>
+          <a
+                href="https://www.youtube.com/watch?v=q7gy2GRwT-I"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-shrink-0 cursor-pointer hover:opacity-95 transition-opacity duration-300 mt-14"
+              >
+                <div className="w-[140px] h-[140px] rounded-full overflow-hidden">
+                  <NextImage
+                    src="/images/kiki.gif"
+                    alt="Logo"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full "
+                    unoptimized
+                  />
+                </div>
+              </a>
         </div>
       </div>
     </main>
