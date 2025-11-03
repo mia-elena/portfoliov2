@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from "react"
 import type { Project } from "../types"
 import Link from "next/link"
 import Image from "next/image"
@@ -14,6 +17,9 @@ export default function ProjectCard({
   className = "",
   variant = "grid"
 }: ProjectCardProps) {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const maxDescriptionLength = 120
+  const showReadMore = project.description.length > maxDescriptionLength
   return (
     <article className={`group relative h-full flex flex-col cursor-pointer ${className}`}>
       <Link
@@ -58,12 +64,24 @@ export default function ProjectCard({
           </div>
 
           {/* Description */}
-          <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
+          <p className={`text-gray-600 text-sm leading-relaxed mb-2 ${isExpanded ? '' : 'line-clamp-2'}`}>
             {project.description}
           </p>
 
+          {showReadMore && (
+            <button
+              onClick={(e) => {
+                e.preventDefault()
+                setIsExpanded(!isExpanded)
+              }}
+              className="text-sm text-gray-900 hover:text-gray-600 underline transition-colors mb-2 text-left font-medium"
+            >
+              {isExpanded ? "Show less" : "Show more"}
+            </button>
+          )}
+
           {/* Tech stack */}
-          <div className="mt-auto">
+          <div className={showReadMore && !isExpanded ? "mt-auto pt-2" : "mt-auto"}>
             <p className="text-xs text-gray-500">
               {project.technologies.slice(0, 3).map((tech, i) => (
                 <span key={tech} className="capitalize">
