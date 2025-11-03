@@ -37,9 +37,8 @@ export const metadata: Metadata = {
   description: "Software engineer specializing in Python, Django, React, Next.js, and TypeScript development",
   icons: {
     icon: [
-      { url: '/icon.svg', sizes: '32x32', type: 'image/svg+xml' },
-      { url: '/icon.svg', sizes: '16x16', type: 'image/svg+xml' },
-      { url: '/favicon.ico', sizes: 'any' }
+      { url: '/images/ghibli-nav.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/ghibli-nav.png', sizes: '16x16', type: 'image/png' },
     ],
   },
 };

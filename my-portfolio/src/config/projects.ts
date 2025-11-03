@@ -15,7 +15,7 @@ export const projects: Project[] = [
     links: {
       github: "TBD"
     },
-    image: "https://s29068.pcdn.co/wp-content/uploads/hunter-new-york-city-street-view.jpg.optimal.jpg",
+    image: "https://s29068.pcdn.co/wp-content/uploads/hunter-building-tree-sq-768x768.jpg.optimal.jpg",
     meta: {
       isWIP: true,
       isFeatured: true,

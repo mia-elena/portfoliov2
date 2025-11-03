@@ -277,27 +277,27 @@ export default function HirePage() {
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           >
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Clear, regular communication</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Clean, well-documented code</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Realistic timelines and honest updates</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Responsive, production-ready applications</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Post-launch support and maintenance</p>
             </div>
             <div className="flex items-start gap-3">
-              <CheckCircle2 className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
+              <CheckCircle2 className="w-5 h-5 text-gray-900 flex-shrink-0 mt-0.5" />
               <p className="text-gray-700">Flexible hourly or project-based pricing</p>
             </div>
           </motion.div>
@@ -461,7 +461,7 @@ export default function HirePage() {
 
                   <Button
                     type="submit"
-                    className="w-full bg-green-600 hover:bg-green-700"
+                    className="w-full bg-gray-900 hover:bg-gray-800"
                     size="lg"
                     disabled={status.loading}
                   >

@@ -43,11 +43,8 @@ export default function ExperienceCard({ experience, isFirst, isLast, isCurrent 
         {/* Node */}
         <div className="relative z-10 mt-6">
           {isCurrent ? (
-            // Current role: Filled green circle with glow
-            <div className="relative">
-              <div className="absolute inset-0 rounded-full bg-[#57AE5B] blur-md opacity-40 group-hover:opacity-60 transition-opacity"></div>
-              <div className="relative w-4 h-4 bg-[#57AE5B] rounded-full border-4 border-white group-hover:scale-110 transition-transform"></div>
-            </div>
+            // Current role: Filled gray circle
+            <div className="w-4 h-4 bg-gray-900 rounded-full border-4 border-white group-hover:scale-110 transition-transform"></div>
           ) : (
             // Past roles: Outlined gray circle
             <div className="w-4 h-4 bg-white rounded-full border-3 border-gray-300 group-hover:border-gray-400 group-hover:scale-110 transition-all" style={{ borderWidth: '3px' }}></div>

@@ -10,7 +10,8 @@ import ProjectCard from "../components/ProjectCard"
 import ExperienceCard from "../components/ExperienceCard"
 import EducationCard from "../components/EducationCard"
 import ContactForm from "../components/ContactForm"
-import { FileText, Linkedin, ArrowRight, Github, Mail } from "lucide-react"
+import { ArrowRight, Linkedin, Mail, FileText } from "lucide-react"
+import { FaGithubAlt } from "react-icons/fa6"
 import { motion } from "framer-motion"
 
 // Animation variants for reusability
@@ -40,8 +41,9 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="relative pt-24 pb-20 flex flex-col justify-start items-center px-6 overflow-hidden">
-        <div className="max-w-6xl mx-auto relative z-10 flex flex-col items-center">
+      {/* Hero Section */}
+      <section className="relative min-h-screen w-full flex flex-col justify-center items-center px-6 overflow-hidden">
+        <div className="w-full mx-auto relative z-10 flex flex-col items-center mb-10">
           <motion.div
             className="relative mb-3"
             initial={{ scale: 0, opacity: 0 }}
@@ -51,15 +53,24 @@ export default function Home() {
             <Image
               src={profile.image || "/default-profile.png"}
               alt={`${profile.name}'s profile picture`}
-              width={96}
-              height={96}
-              className="rounded-full object-cover border-[3px] border-gray-100"
+              width={140}
+              height={140}
+              className="rounded-full object-cover border-[4px] border-gray-100 bg-gray-50"
               priority
             />
-            <div className="absolute bottom-0 right-0 w-6 h-6 bg-[#57AE5B] border-[3px] border-white rounded-full"></div>
+            <div className="absolute bottom-0 left-full -ml-[30px] group cursor-pointer">
+              <div className="relative h-9 bg-white border-[3px] border-gray-100 rounded-full flex items-center overflow-hidden transition-all duration-300 ease-in-out w-9 group-hover:w-auto group-hover:pr-3">
+                <div className="w-9 h-full flex items-center justify-center flex-shrink-0">
+                  <span className="text-lg pe-2">🪷</span>
+                </div>
+                <span className="text-xs font-medium text-gray-700 whitespace-nowrap opacity-0 w-0 group-hover:opacity-100 group-hover:w-auto group-hover:pl-1 transition-all duration-300 ease-in-out">
+                  {profile.status?.message || "Available"}
+                </span>
+              </div>
+            </div>
           </motion.div>
           <motion.h1
-            className="text-2xl md:text-3xl font-extrabold text-gray-900 mb-1 text-center"
+            className="text-2xl font-extrabold text-gray-900 mb-1 text-center"
             initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
@@ -72,11 +83,11 @@ export default function Home() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
           >
-            {profile.title}
+          {profile.description}
           </motion.p>
 
           <motion.div
-            className="flex gap-4 mb-4"
+            className="flex gap-4 mb-1"
             initial={{ opacity: 0, y: 8 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
@@ -85,50 +96,60 @@ export default function Home() {
               href={profile.links?.github || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-gray-900 transition-colors"
+              className="relative text-gray-800 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5 group"
               aria-label="GitHub"
             >
-              <Github className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
+              <FaGithubAlt className="w-6 h-6" />
+              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap pointer-events-none">
+                GitHub
+              </span>
             </a>
             <a
               href={profile.links?.linkedIn || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-gray-900 transition-colors"
+              className="relative text-gray-800 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5 group"
               aria-label="LinkedIn"
             >
-              <Linkedin className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
+              <Linkedin className="w-6 h-6 stroke-[2]" strokeWidth={2} />
+              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap pointer-events-none">
+                LinkedIn
+              </span>
             </a>
             <a
               href={`mailto:${profile.contact.email}`}
-              className="text-gray-800 hover:text-gray-900 transition-colors"
+              className="relative text-gray-800 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5 group"
               aria-label="Email"
             >
-              <Mail className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
+              <Mail className="w-6 h-6 stroke-[2]" strokeWidth={2} />
+              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap pointer-events-none">
+                Email
+              </span>
             </a>
             <a
               href={profile.links?.resume || "#"}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-800 hover:text-gray-900 transition-colors"
+              className="relative text-gray-800 hover:text-gray-900 transition-all duration-200 hover:-translate-y-0.5 group"
               aria-label="Download Resume"
             >
-              <FileText className="w-5 h-5 stroke-[2.5]" strokeWidth={2.5} />
+              <FileText className="w-6 h-6 stroke-[2]" strokeWidth={2} />
+              <span className="absolute top-full left-1/2 -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 whitespace-nowrap pointer-events-none">
+                Resume
+              </span>
             </a>
           </motion.div>
 
           <motion.img
             src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
             alt="GitHub Contribution Snake"
-            className="mx-auto w-full max-w-md opacity-60"
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 0.6, y: 0 }}
+            className="mx-auto w-full max-w-6xl h-32 opacity-90"
             transition={{ duration: 0.5, delay: 0.24, ease: "easeOut" }}
           />
         </div>
       </section>
 
-      <section id="projects" className="py-14 px-6">
+      <section id="projects" className="py-16 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             className="text-center mb-8"
@@ -177,21 +198,21 @@ export default function Home() {
               href="/hire"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300 group"
             >
-              <span>hire me</span>
+              <span>Hire me</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
               href="/projects"
               className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 text-sm font-medium rounded-md shadow-sm hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 group"
             >
-              <span>view all projects</span>
+              <span>View all projects</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
           </motion.div>
         </div>
       </section>
 
-      <section id="experience" className="py-14 px-6">
+      <section id="experience" className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -241,7 +262,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="py-14 px-6">
+      <section id="education" className="py-16 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"
@@ -276,7 +297,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="py-14 px-6">
+      <section id="contact" className="py-16 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial="hidden"

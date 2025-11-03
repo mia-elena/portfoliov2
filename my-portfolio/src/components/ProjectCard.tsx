@@ -40,25 +40,24 @@ export default function ProjectCard({
     : project.description
 
   return (
-    <article className={`group relative h-full flex flex-col rounded-md overflow-hidden bg-white ${className}`}>
+    <article className={`group relative h-full flex flex-col ${className}`}>
       <div className="relative flex flex-col h-full">
         {project.image && (
-          <div className="relative w-full aspect-[4/3] flex-shrink-0 overflow-hidden bg-white/20 rounded-sm transition-all duration-300 group-hover:scale-[1.01]">
-            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 pointer-events-none"></div>
+          <div className="relative w-full aspect-[4/3] flex-shrink-0 overflow-hidden rounded-lg transition-transform duration-300">
             <Image
               src={project.image}
-              alt={`${project.title} screenshothttp://localhost:3000/`}
+              alt={`${project.title} screenshot`}
               fill
-              className="object-cover object-center rounded-sm transition-transform duration-500"
+              className="object-cover object-center"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.meta?.isFeatured}
             />
 
-            {/* Top-left: Featured/Status badge */}
+            {/* Top-left: Featured badge */}
             {project.meta?.isFeatured && (
               <div className="absolute top-3 left-3 z-20">
-                <span className="px-3 py-1.5 rounded-full text-xs font-semibold bg-white/95 text-gray-900 backdrop-blur-sm">
-                  featured
+                <span className="px-2.5 py-1 rounded-md text-xs font-medium bg-white text-gray-900 shadow-sm">
+                  Featured
                 </span>
               </div>
             )}
@@ -70,7 +69,7 @@ export default function ProjectCard({
                   href={project.links.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-white/95 backdrop-blur-sm flex items-center justify-center hover:bg-white transition-colors"
+                  className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
                   aria-label="View on GitHub"
                 >
                   <Github className="w-4 h-4 text-gray-900" />
@@ -80,14 +79,14 @@ export default function ProjectCard({
           </div>
         )}
 
-        <div className="pt-4 flex-1 flex flex-col">
-          <h3 className="text-xl font-bold text-gray-900 mb-1 leading-tight">
+        <div className="pt-3 flex-1 flex flex-col">
+          <h3 className="text-base font-semibold text-gray-900 mb-0.5">
             {project.links?.github ? (
               <Link
                 href={project.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hover:text-gray-700 transition-colors"
+                className="hover:underline"
               >
                 {project.shortTitle || project.title}
               </Link>
@@ -97,35 +96,34 @@ export default function ProjectCard({
           </h3>
 
           {/* Airbnb-style subtext: Project type • Date */}
-          <div className="flex items-center gap-2 mb-3 text-sm text-gray-500">
-            {project.projectType && <span>{project.projectType}</span>}
-            {project.projectType && project.date && <span>•</span>}
+          <div className="flex items-center gap-1.5 mb-2 text-sm text-gray-500">
+            {project.projectType && <span className="capitalize">{project.projectType}</span>}
+            {project.projectType && project.date && <span>·</span>}
             {project.date && <span>{project.date}</span>}
           </div>
 
-          <p className="text-gray-600 text-sm leading-relaxed mb-3">
-            {isExpanded ? project.description : truncatedDescription}
+          <p className={`text-gray-600 text-sm leading-relaxed mb-2 ${isExpanded ? '' : 'line-clamp-2'}`}>
+            {project.description}
           </p>
 
           {showReadMore && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-xs text-gray-500 hover:text-gray-700 transition-colors mb-3 flex items-center gap-1"
+              className="text-sm text-gray-900 hover:text-gray-600 underline transition-colors mb-2 text-left font-medium"
             >
-              <span>{isExpanded ? "read less" : "read more"}</span>
-              <ChevronDown className={`w-3 h-3 transition-transform ${isExpanded ? "rotate-180" : ""}`} />
+              {isExpanded ? "Show less" : "Show more"}
             </button>
           )}
 
-          <div className="mt-auto">
+          <div className="mt-auto pt-2">
             <div className="flex flex-wrap gap-1.5">
               {project.technologies.slice(0, 3).map((tech) => (
-                <span key={tech} className="text-xs text-gray-500">
+                <span key={tech} className="text-xs text-gray-600 font-medium">
                   {tech}
                 </span>
               ))}
               {project.technologies.length > 3 && (
-                <span className="text-xs text-gray-500">+{project.technologies.length - 3}</span>
+                <span className="text-xs text-gray-500 font-medium">+{project.technologies.length - 3}</span>
               )}
             </div>
           </div>
