@@ -70,7 +70,7 @@ export default function Home() {
             </div>
           </motion.div>
           <motion.h1
-            className="text-2xl font-extrabold text-gray-900 mb-1 text-center"
+            className="text-xl font-extrabold text-gray-900 mb-1 text-center"
             initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
@@ -139,11 +139,11 @@ export default function Home() {
               </span>
             </a>
           </motion.div>
-
+          
           <motion.img
             src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
             alt="GitHub Contribution Snake"
-            className="mx-auto w-full max-w-6xl h-32 opacity-90"
+            className="mx-auto w-full max-w-7xl h-32 opacity-70"
             transition={{ duration: 0.5, delay: 0.24, ease: "easeOut" }}
           />
         </div>
@@ -163,7 +163,7 @@ export default function Home() {
             <div className="w-16 h-0.5 bg-gray-800 mx-auto"></div>
           </motion.div>
           
-          <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-5xl">
             <motion.div
               className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 auto-rows-fr"
               initial="hidden"
@@ -198,7 +198,7 @@ export default function Home() {
               href="/hire"
               className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white text-sm font-semibold rounded-md shadow-md hover:bg-gray-800 transition-all duration-300 group"
             >
-              <span>Hire me</span>
+              <span>Let's work together</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link

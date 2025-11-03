@@ -34,67 +34,51 @@ export default function AboutPage() {
             </a>
 
             <p className="text-gray-600 text-sm leading-relaxed max-w-prose">
-              Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat Achilles.
+              Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat Achilles. 
+              <p>I like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer">movies</a>. </p>
             </p>
             
           </div>
 
           {/* Tech Stack */}
           <div className="pt-8">
-            <h2 className="text-xl font-bold text-gray-900 mb-6">Tech Stack</h2>
+            <div className="mb-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Tech Stack</h2>
+            </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="space-y-6 max-w-2xl">
               {/* Languages */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-700 mb-3">Languages</h3>
-                <div className="space-y-2">
-                  {['python', 'javascript', 'typescript'].filter(skill => profile.skills.includes(skill as any)).map((skill) => (
-                    <div key={skill}>
-                      <TechBadge tech={skill as any} size="sm" />
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Languages</h3>
+                <p className="text-gray-700 text-sm">TypeScript, Python, JavaScript</p>
               </div>
 
               {/* Frontend */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-700 mb-3">Frontend</h3>
-                <div className="space-y-2">
-                  {['react', 'nextjs', 'tailwindcss', 'html', 'css'].filter(skill => profile.skills.includes(skill as any)).map((skill) => (
-                    <div key={skill}>
-                      <TechBadge tech={skill as any} size="sm" />
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Frontend</h3>
+                <p className="text-gray-700 text-sm">React, Next.js, TailwindCSS</p>
               </div>
 
               {/* Backend */}
               <div>
-                <h3 className="text-sm font-semibold text-gray-700 mb-3">Backend</h3>
-                <div className="space-y-2">
-                  {['nodejs', 'express', 'django', 'postgresql', 'mongodb', 'firebase'].filter(skill => profile.skills.includes(skill as any)).map((skill) => (
-                    <div key={skill}>
-                      <TechBadge tech={skill as any} size="sm" />
-                    </div>
-                  ))}
-                </div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Backend</h3>
+                <p className="text-gray-700 text-sm">Node.js, Django, PostgreSQL, MongoDB</p>
               </div>
-            </div>
 
-            {/* Tools & Infrastructure */}
-            <div className="mt-8">
-              <h3 className="text-sm font-semibold text-gray-700 mb-3">Tools & Infrastructure</h3>
-              <div className="flex flex-wrap gap-2">
-                {['git', 'github', 'docker', 'aws', 'vercel'].filter(skill => profile.skills.includes(skill as any)).map((skill) => (
-                  <TechBadge key={skill} tech={skill as any} size="sm" />
-                ))}
+              {/* Tools & Cloud */}
+              <div>
+                <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-2">Tools & Cloud</h3>
+                <p className="text-gray-700 text-sm">Docker, AWS, Git</p>
               </div>
             </div>
           </div>
 
           {/* Contact Links */}
-          <div className="pt-8 space-y-3">
-            <h2 className="text-xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+          <div className="pt-8">
+            <div className="mb-6">
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Get in Touch</h2>
+            </div>
+            <div className="space-y-3">
             <Link
               href={profile.links?.linkedIn || "https://linkedin.com"}
               target="_blank"
@@ -111,7 +95,7 @@ export default function AboutPage() {
               <Mail className="w-4 h-4" />
               <span className="text-sm font-medium">Email</span>
             </Link>
-           
+            </div>
           </div>
         </div>
       </div>

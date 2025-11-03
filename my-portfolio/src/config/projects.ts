@@ -4,8 +4,8 @@ export const projects: Project[] = [
   // Featured projects first (most recent work)
   {
     id: "project7",
-    title: "Hunter Daily Events Portal",
-    shortTitle: "Hunter Events Portal",
+    title: "CUNY Hunter College Daily Events Portal",
+    shortTitle: "CUNY Hunter College Daily Events Portal",
     projectType: "Campus Event Platform",
     description: "Campus event management platform for Hunter College's 20,000+ students featuring real-time event updates and collaborative event planning. Building with React, Node.js, and Firebase in a team of 6 students to centralize club event information and increase campus engagement.",
     technologies: ["react", "nodejs", "express", "firebase", "tailwindcss", "figma"],

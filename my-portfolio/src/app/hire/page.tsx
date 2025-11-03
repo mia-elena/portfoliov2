@@ -131,7 +131,7 @@ export default function HirePage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
           >
-            Full-stack developer specializing in React, Python, and scalable web applications. Available for new projects starting <span className="font-semibold text-gray-900">November 2025</span>.
+            Full-stack developer specializing in AI/ML integration, React, and scalable web applications. <span className="font-semibold text-gray-900">Available for immediate start</span>.
           </motion.p>
           <motion.div
             className="flex flex-wrap gap-3"

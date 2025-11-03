@@ -1,12 +1,7 @@
-'use client'
-
-import { useState } from "react"
 import type { Project } from "../types"
 import Link from "next/link"
 import Image from "next/image"
-import TechBadge from "./TechBadge"
-import StatusBadge from "./StatusBadge"
-import { Calendar, Github, Clock, ExternalLink, ChevronDown } from "lucide-react"
+import { Github } from "lucide-react"
 
 interface ProjectCardProps {
   project: Project
@@ -14,121 +9,73 @@ interface ProjectCardProps {
   variant?: "grid"
 }
 
-function formatRelativeDate(dateString: string): string {
-  const date = new Date(dateString)
-  const now = new Date()
-  const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
-
-  if (diffInDays === 0) return 'Today'
-  if (diffInDays === 1) return 'Yesterday'
-  if (diffInDays < 7) return `${diffInDays} days ago`
-  if (diffInDays < 30) return `${Math.floor(diffInDays / 7)} weeks ago`
-  if (diffInDays < 365) return `${Math.floor(diffInDays / 30)} months ago`
-  return `${Math.floor(diffInDays / 365)} years ago`
-}
-
 export default function ProjectCard({
   project,
   className = "",
   variant = "grid"
 }: ProjectCardProps) {
-  const [isExpanded, setIsExpanded] = useState(false)
-  const maxDescriptionLength = 120
-  const showReadMore = project.description.length > maxDescriptionLength
-  const truncatedDescription = project.description.length > maxDescriptionLength
-    ? project.description.substring(0, maxDescriptionLength) + "..."
-    : project.description
-
   return (
-    <article className={`group relative h-full flex flex-col ${className}`}>
-      <div className="relative flex flex-col h-full">
+    <article className={`group relative h-full flex flex-col cursor-pointer ${className}`}>
+      <Link
+        href={project.links?.github || "#"}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="relative flex flex-col h-full"
+      >
         {project.image && (
-          <div className="relative w-full aspect-[4/3] flex-shrink-0 overflow-hidden rounded-lg transition-transform duration-300">
+          <div className="relative w-full aspect-[4/3] flex-shrink-0 overflow-hidden rounded-xl mb-3">
             <Image
               src={project.image}
               alt={`${project.title} screenshot`}
               fill
-              className="object-cover object-center"
+              className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               priority={project.meta?.isFeatured}
             />
 
-            {/* Top-left: Featured badge */}
+            {/* Featured badge */}
             {project.meta?.isFeatured && (
               <div className="absolute top-3 left-3 z-20">
-                <span className="px-2.5 py-1 rounded-md text-xs font-medium bg-white text-gray-900 shadow-sm">
+                <span className="px-2.5 py-1 rounded-full text-xs font-semibold bg-white text-gray-900 shadow-sm">
                   Featured
                 </span>
-              </div>
-            )}
-
-            {/* Top-right: GitHub icon link */}
-            {project.links?.github && (
-              <div className="absolute top-3 right-3 z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                <Link
-                  href={project.links.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-8 h-8 rounded-full bg-white flex items-center justify-center hover:scale-110 transition-transform shadow-sm"
-                  aria-label="View on GitHub"
-                >
-                  <Github className="w-4 h-4 text-gray-900" />
-                </Link>
               </div>
             )}
           </div>
         )}
 
-        <div className="pt-3 flex-1 flex flex-col">
-          <h3 className="text-base font-semibold text-gray-900 mb-0.5">
-            {project.links?.github ? (
-              <Link
-                href={project.links.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:underline"
-              >
-                {project.shortTitle || project.title}
-              </Link>
-            ) : (
-              <span>{project.shortTitle || project.title}</span>
-            )}
+        <div className="flex-1 flex flex-col">
+          {/* Title */}
+          <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:underline">
+            {project.shortTitle || project.title}
           </h3>
 
-          {/* Airbnb-style subtext: Project type • Date */}
-          <div className="flex items-center gap-1.5 mb-2 text-sm text-gray-500">
+          {/* Project type · Date */}
+          <div className="flex items-center gap-1.5 mb-2 text-xs text-gray-600">
             {project.projectType && <span className="capitalize">{project.projectType}</span>}
             {project.projectType && project.date && <span>·</span>}
             {project.date && <span>{project.date}</span>}
           </div>
 
-          <p className={`text-gray-600 text-sm leading-relaxed mb-2 ${isExpanded ? '' : 'line-clamp-2'}`}>
+          {/* Description */}
+          <p className="text-gray-600 text-sm leading-relaxed mb-3 line-clamp-2">
             {project.description}
           </p>
 
-          {showReadMore && (
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
-              className="text-sm text-gray-900 hover:text-gray-600 underline transition-colors mb-2 text-left font-medium"
-            >
-              {isExpanded ? "Show less" : "Show more"}
-            </button>
-          )}
-
-          <div className="mt-auto pt-2">
-            <div className="flex flex-wrap gap-1.5">
-              {project.technologies.slice(0, 3).map((tech) => (
-                <span key={tech} className="text-xs text-gray-600 font-medium">
+          {/* Tech stack */}
+          <div className="mt-auto">
+            <p className="text-xs text-gray-500">
+              {project.technologies.slice(0, 3).map((tech, i) => (
+                <span key={tech} className="capitalize">
                   {tech}
+                  {i < Math.min(project.technologies.length, 3) - 1 && " · "}
                 </span>
               ))}
-              {project.technologies.length > 3 && (
-                <span className="text-xs text-gray-500 font-medium">+{project.technologies.length - 3}</span>
-              )}
-            </div>
+              {project.technologies.length > 3 && ` +${project.technologies.length - 3}`}
+            </p>
           </div>
         </div>
-      </div>
+      </Link>
     </article>
   )
 }

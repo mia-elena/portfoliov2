@@ -14,9 +14,7 @@ export const experience: ExperienceConfig[] = [
     status: "current",
     description: "Contributing to microservices-based AI education platform using Docker and GCP with multi-tenant architecture supporting multiple organizations.",
     highlights: [
-      "Implemented role-based access control (RBAC) system with TypeScript enabling organization-level permissions for admin, instructor, and student roles",
-      "Developed comprehensive test suite with pytest and Jest for authentication and permissions modules, improving code maintainability",
-      "Researched and evaluated observability solutions including Datadog for monitoring microservices performance and error tracking"
+      "Built microservices for AI education platform using Docker and LangChain for LLM integration. Designed and implemented role-based access control system with TypeScript, building authentication middleware across admin, instructor, and student roles."
     ],
     technologies: ["typescript", "python", "react", "docker", "gcp", "jest", "pytest"],
     logo: "/images/gogentic-logo.png"
@@ -34,8 +32,7 @@ export const experience: ExperienceConfig[] = [
     status: "completed",
     description: "Developed accessible React components with TypeScript following WCAG 2.1 guidelines for campus web applications.",
     highlights: [
-      "Created GitHub Actions CI/CD workflow automating testing and deployment processes",
-      "Participated in code reviews and collaborated with development team on React best practices"
+      "Assisted in deployment and user testing of web solutions, focusing on accessibility and responsive adoption. Participated in peer code reviews and collaborated on establishing React best practices for component architecture."
     ],
     technologies: ["react", "typescript", "javascript", "git"],
     logo: "/images/HunterCollege.jpg"

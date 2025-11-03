@@ -4,36 +4,26 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { HiMenu, HiX } from "react-icons/hi"
-import { IoLeafOutline } from "react-icons/io5"
-import { MapPin } from "lucide-react"
+import { IoLeaf } from "react-icons/io5"
+import { MapPinned, Phone } from "lucide-react"
 import { profile } from "../config/profile"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
 
     return (
-        <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
+        <nav className="sticky top-0 z-50 bg-gray-50 border-b border-gray-200">
             {/* Main Navbar */}
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
-                <div className="flex items-center gap-2">
-                    <Link
-                        href="/"
-                        className="flex items-center gap-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
-                    >
-                        <IoLeafOutline className="text-xl" />
-                        <span>Mia E.</span>
-                    </Link>
-                    <div className="hidden md:flex items-center gap-2 text-xs text-gray-600">
-                        <span>·</span>
-                        <span>New York, New York</span>
-                        <span>·</span>
-                        <a href={`tel:${profile.contact.phone}`} className="hover:text-gray-900 transition-colors">
-                            {profile.contact.phone}
-                        </a>
-                    </div>
-                </div>
+                <Link
+                    href="/"
+                    className="flex items-center gap-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
+                >
+                    <IoLeaf className="text-xl" />
+                    <span>Mia E.</span>
+                </Link>
 
-                <ul className="hidden md:flex items-center gap-3">
+                <ul className="hidden md:flex items-center gap-5">
                     <NavLink href="/projects">Projects</NavLink>
                     <NavLink href="/about">About</NavLink>
                     <NavLink href="/hire">Hire</NavLink>
@@ -49,18 +39,34 @@ export default function Navbar() {
             </div>
 
             {/* Tech Stack Sub-Navbar */}
-            <div className="hidden md:block bg-gray-50 border-t border-gray-200">
+            <div className="hidden md:block bg-gray-100 border-t border-gray-200">
                 <div className="container mx-auto px-4">
-                    <div className="flex items-center justify-center gap-3 py-2.5">
-                        <span className="text-xs text-gray-700 font-medium">TypeScript</span>
-                        <span className="text-gray-400">•</span>
-                        <span className="text-xs text-gray-700 font-medium">Python</span>
-                        <span className="text-gray-400">•</span>
-                        <span className="text-xs text-gray-700 font-medium">AI/ML</span>
-                        <span className="text-gray-400">•</span>
-                        <span className="text-xs text-gray-700 font-medium">PostgreSQL</span>
-                        <span className="text-gray-400">•</span>
-                        <span className="text-xs text-gray-700 font-medium">AWS</span>
+                    <div className="flex items-center justify-between py-2.5">
+                        {/* Tech Stack - Left */}
+                        <div className="flex items-center gap-2 text-xs text-gray-600">
+                            <span className="font-medium">React</span>
+                            <span className="text-gray-400">|</span>
+                            <span className="font-medium">TypeScript</span>
+                            <span className="text-gray-400">|</span>
+                            <span className="font-medium">Python</span>
+                            <span className="text-gray-400">|</span>
+                            <span className="font-medium">PostgreSQL</span>
+                            <span className="text-gray-400">|</span>
+                            <span className="font-medium">AWS</span>
+                        </div>
+
+                        {/* Contact Info - Right */}
+                        <div className="flex items-center gap-3 text-xs text-gray-600">
+                            <span className="flex items-center gap-1">
+                                <MapPinned className="w-3 h-3" />
+                                NYC
+                            </span>
+                            <span className="text-gray-400">·</span>
+                            <a href={`tel:${profile.contact.phone}`} className="flex items-center gap-1 hover:text-gray-900 transition-colors">
+                                <Phone className="w-3 h-3 fill-current" />
+                                {profile.contact.phone}
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,7 +105,7 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
         <li>
             <Link
                 href={href}
-                className="text-sm text-gray-700 hover:text-gray-900 transition-colors font-medium"
+                className="text-sm text-gray-700 hover:text-gray-900 transition-colors font-medium hover:underline"
             >
                 {children}
             </Link>
