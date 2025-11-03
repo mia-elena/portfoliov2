@@ -10,16 +10,17 @@ import { profile } from "../config/profile"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const navbarSkills = ['React', 'TypeScript', 'Python', 'PostgreSQL', 'AWS']
 
     return (
-        <nav className="sticky top-0 z-50 bg-gray-50 border-b border-gray-200">
+        <nav className="sticky top-0 z-50 bg-gray-50 space-y-2 p-2">
             {/* Main Navbar */}
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <Link
                     href="/"
                     className="flex items-center gap-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
                 >
-                    <IoLeaf className="text-xl" />
+                    <IoLeaf className="text-xl rotate-[-90deg]" />
                     <span>Mia E.</span>
                 </Link>
 
@@ -39,20 +40,17 @@ export default function Navbar() {
             </div>
 
             {/* Tech Stack Sub-Navbar */}
-            <div className="hidden md:block bg-gray-100 border-t border-gray-200">
+            <div className="hidden md:block bg-gray-100">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="flex items-center justify-between py-2.5">
                         {/* Tech Stack - Left */}
-                        <div className="flex items-center gap-2 text-xs text-gray-600">
-                            <span className="font-medium">React</span>
-                            <span className="text-gray-400">|</span>
-                            <span className="font-medium">TypeScript</span>
-                            <span className="text-gray-400">|</span>
-                            <span className="font-medium">Python</span>
-                            <span className="text-gray-400">|</span>
-                            <span className="font-medium">PostgreSQL</span>
-                            <span className="text-gray-400">|</span>
-                            <span className="font-medium">AWS</span>
+                        <div className="flex items-center gap-3 text-xs text-gray-600 flex-wrap">
+                            {navbarSkills.map((skill, i) => (
+                                <span key={skill} className="flex items-center gap-3">
+                                    <span className="font-medium">{skill}</span>
+                                    {i < navbarSkills.length - 1 && <span className="text-gray-400">|</span>}
+                                </span>
+                            ))}
                         </div>
 
                         {/* Contact Info - Right */}
@@ -73,7 +71,7 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden border-t border-gray-200 bg-gray-50">
+                <div className="md:hidden bg-gray-50">
                     <ul className="px-6 py-3 space-y-1">
                         <MobileNavLink href="/projects" onClick={() => setIsOpen(false)}>
                             Projects

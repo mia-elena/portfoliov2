@@ -42,7 +42,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen w-full flex flex-col justify-center items-center px-6 overflow-hidden">
+      <section className="relative min-h-screen w-full flex flex-col justify-center items-center px-6 overflow-hidden bg-gray-50">
         <div className="w-full mx-auto relative z-10 flex flex-col items-center mb-10">
           <motion.div
             className="relative mb-3"
@@ -59,11 +59,11 @@ export default function Home() {
               priority
             />
             <div className="absolute bottom-0 left-full -ml-[30px] group cursor-pointer">
-              <div className="relative h-9 bg-white border-[3px] border-gray-100 rounded-full flex items-center overflow-hidden transition-all duration-300 ease-in-out w-9 group-hover:w-auto group-hover:pr-3">
+              <div className="relative h-9 bg-white border-[3px] border-gray-100 rounded-full flex items-center overflow-hidden transition-all duration-300 ease-in-out w-auto pr-3 sm:w-9 sm:group-hover:w-auto sm:group-hover:pr-3">
                 <div className="w-9 h-full flex items-center justify-center flex-shrink-0">
                   <span className="text-lg pe-2">🪷</span>
                 </div>
-                <span className="text-xs font-medium text-gray-700 whitespace-nowrap opacity-0 w-0 group-hover:opacity-100 group-hover:w-auto group-hover:pl-1 transition-all duration-300 ease-in-out">
+                <span className="text-xs font-medium text-gray-700 whitespace-nowrap opacity-100 w-auto pl-1 sm:opacity-0 sm:w-0 sm:group-hover:opacity-100 sm:group-hover:w-auto sm:group-hover:pl-1 transition-all duration-300 ease-in-out">
                   {profile.status?.message || "Available"}
                 </span>
               </div>
