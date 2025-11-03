@@ -38,7 +38,7 @@ export default function AboutPage() {
 
               <div className="flex-1">
                 <p className="text-gray-600 text-sm leading-relaxed mt-25">
-                  Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat, Achilles. Currently looking for opportunities in full-stack, devops, and AI/ML.
+                  Hi, I'm Mia. I'm a software engineer and sometimes UX designer. Currently looking for opportunities in full-stack, devops, and AI/ML.  I live in New York City with my cat, Achilles.
                   <p>
                   I also like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer" className="hover:underline">movies</a>.
                   </p>
