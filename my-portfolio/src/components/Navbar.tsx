@@ -48,7 +48,7 @@ export default function Navbar() {
                             {navbarSkills.map((skill, i) => (
                                 <span key={skill} className="flex items-center gap-3">
                                     <span className="font-medium">{skill}</span>
-                                    {i < navbarSkills.length - 1 && <span className="text-gray-400">|</span>}
+                                    {i < navbarSkills.length - 1 && <span className="text-gray-300">|</span>}
                                 </span>
                             ))}
                         </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
                                 <MapPinned className="w-3 h-3" />
                                 NYC
                             </span>
-                            <span className="text-gray-400">·</span>
+                            <span className="text-gray-300">·</span>
                             <a href={`tel:${profile.contact.phone}`} className="flex items-center gap-1 hover:text-gray-900 transition-colors">
                                 <Phone className="w-3 h-3 fill-current" />
                                 {profile.contact.phone}
