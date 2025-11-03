@@ -19,7 +19,7 @@ export default function AboutPage() {
 
             <div className="flex flex-col md:flex-row gap-8 items-start">
 
-              <div className="flex-1">
+              <div className="max-w-2xl">
                 <p className="text-gray-600 text-sm leading-relaxed">
                   Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I'm currently looking for new opportunities in full-stack, devops, and AI/ML.  I live in New York City with my cat, Achilles.
                   <p>
