@@ -7,7 +7,7 @@ import NextImage from "next/image"
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-white">
-      <div className="max-w-5xl mx-auto px-6 py-14">
+      <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="space-y-12">
 
           {/* Header */}
@@ -22,7 +22,7 @@ export default function AboutPage() {
                 href="https://www.youtube.com/watch?v=q7gy2GRwT-I"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-shrink-0 cursor-pointer hover:opacity-95 transition-opacity duration-300"
+                className="flex-shrink-0 cursor-pointer hover:opacity-95 transition-opacity duration-300 mt-14"
               >
                 <div className="w-[200px] h-[200px] rounded-full overflow-hidden">
                   <NextImage
@@ -30,17 +30,17 @@ export default function AboutPage() {
                     alt="Logo"
                     width={200}
                     height={200}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-full "
                     unoptimized
                   />
                 </div>
               </a>
 
               <div className="flex-1">
-                <p className="text-gray-600 text-sm leading-relaxed mt-14">
-                  Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat Achilles. 
+                <p className="text-gray-600 text-sm leading-relaxed mt-25">
+                  Hi, I'm Mia. I'm a software engineer and sometimes UX designer. I live in New York City with my cat, Achilles. Currently looking for opportunities in full-stack, devops, and AI/ML.
                   <p>
-                  I like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer" className="hover:underline">movies</a>.
+                  I also like <a href="https://letterboxd.com/mia___elena/" target="_blank" rel="noopener noreferrer" className="hover:underline">movies</a>.
                   </p>
                 </p>
               </div>

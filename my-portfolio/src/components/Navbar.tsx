@@ -14,7 +14,7 @@ export default function Navbar() {
     return (
         <nav className="sticky top-0 z-50 bg-gray-50 border-b border-gray-200">
             {/* Main Navbar */}
-            <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <Link
                     href="/"
                     className="flex items-center gap-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
@@ -40,7 +40,7 @@ export default function Navbar() {
 
             {/* Tech Stack Sub-Navbar */}
             <div className="hidden md:block bg-gray-100 border-t border-gray-200">
-                <div className="container mx-auto px-4">
+                <div className="max-w-7xl mx-auto px-4">
                     <div className="flex items-center justify-between py-2.5">
                         {/* Tech Stack - Left */}
                         <div className="flex items-center gap-2 text-xs text-gray-600">
