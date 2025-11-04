@@ -2,7 +2,7 @@ import type { Technology } from "../types/index";
 
 export const profile = {
   name: "Hi, I'm Mia. ",
-  username: "miasdk",
+  username: "miaelena",
   pronouns: "she/her",
   title: "Software Engineer",
   description: "I build things for the web.",
