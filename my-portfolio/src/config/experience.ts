@@ -3,7 +3,7 @@ import { ExperienceConfig } from "../types";
 export const experience: ExperienceConfig[] = [
   {
     id: "gogentic",
-    title: "Junior Software Engineer",
+    title: "Junior Developer (Contract)",
     company: "Gogentic.ai",
     date: "August 2025 - Present",
     location: {
