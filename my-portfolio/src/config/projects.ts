@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
   {
     id: "project6",
-    title: "Canvas LMS Feedback Intelligence Platform",
+    title: "Canvas Learning Management System Feedback Intelligence Platform",
     shortTitle: "Canvas LMS Feedback Platform",
     projectType: "EdTech Analytics Platform",
     description: "EdTech analytics platform that helps educators prioritize course improvements through AI-powered student feedback analysis. Features 4-factor weighted scoring algorithm (impact, urgency, effort, recency) with async FastAPI backend and React frontend for real-time insights.",

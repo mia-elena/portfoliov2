@@ -2,6 +2,8 @@ import type { Technology } from "../types/index";
 
 export const profile = {
   name: "Hi, I'm Mia. ",
+  username: "miasdk",
+  pronouns: "she/her",
   title: "Software Engineer",
   description: "I build things for the web.",
   image: "/images/mia-smiling.png",
@@ -36,6 +38,6 @@ export const profile = {
   },
   status: {
     emoji: "🪷",
-    message: "Open to opportunities"
+    message: "Open to new opportunities"
   }
 };

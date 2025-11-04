@@ -45,7 +45,7 @@ export default function Home() {
       <section className="relative min-h-screen w-full flex flex-col justify-center items-center px-6 overflow-hidden bg-gray-50">
         <div className="w-full mx-auto relative z-10 flex flex-col items-center mb-10">
           <motion.div
-            className="relative mb-3"
+            className="relative mb-3 flex flex-col items-center gap-3 sm:flex-row sm:gap-0"
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
@@ -58,7 +58,7 @@ export default function Home() {
               className="rounded-full object-cover border-[4px] border-gray-100 bg-gray-50"
               priority
             />
-            <div className="absolute bottom-0 left-full -ml-[30px] group cursor-pointer">
+            <div className="relative sm:absolute sm:bottom-0 sm:left-full sm:-ml-[30px] group cursor-pointer">
               <div className="relative h-9 bg-white border-[3px] border-gray-100 rounded-full flex items-center overflow-hidden transition-all duration-300 ease-in-out w-auto pr-3 sm:w-9 sm:group-hover:w-auto sm:group-hover:pr-3">
                 <div className="w-9 h-full flex items-center justify-center flex-shrink-0">
                   <span className="text-lg pe-2">🪷</span>
@@ -78,7 +78,15 @@ export default function Home() {
             {profile.name}
           </motion.h1>
           <motion.p
-            className="text-sm md:text-base text-gray-600 mb-4 font-normal"
+            className="text-sm text-gray-600 mb-2 font-normal text-center"
+            initial={{ y: 15, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
+          >
+            {profile.username} · {profile.pronouns}
+          </motion.p>
+          <motion.p
+            className="text-md  text-gray-900 mb-4 font-normal"
             initial={{ y: 15, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.4, delay: 0.12, ease: "easeOut" }}
