@@ -28,7 +28,7 @@ export default function EducationCard({ education }: EducationCardProps) {
   const { degree, institution, period, location, gpa, description, highlights, coursework, activities, technologies, logo } = education
 
   return (
-    <article className="group relative rounded-md overflow-hidden bg-white transition-all duration-300">
+    <article className="group relative rounded-md overflow-hidden transition-all duration-300">
       <div className="relative flex flex-col h-full">
         <header className="p-6 pb-4">
           <div className="flex items-start gap-5">

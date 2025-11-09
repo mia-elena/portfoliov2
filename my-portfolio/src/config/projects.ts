@@ -4,45 +4,21 @@ export const projects: Project[] = [
   // Featured projects first (most recent work)
   {
     id: "project7",
-    title: "CUNY Hunter College Daily Events Portal",
-    shortTitle: "CUNY Hunter College Daily Events Portal",
+    title: "CUNY Hunter College Events Portal",
+    shortTitle: "Hunter College Events Portal",
     projectType: "Campus Event Platform",
-    description: "Campus event management platform for Hunter College's 20,000+ students featuring real-time event updates and collaborative event planning. Building with React, Node.js, and Firebase in a team of 6 students to centralize club event information and increase campus engagement.",
-    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss", "figma"],
+    description: "Developed campus event discovery platform with Firebase Authentication supporting email/password and Google OAuth login flows. Built responsive React application with nested routing architecture, global state management using Context API. Designed mobile-first UI with Tailwind CSS featuring event search, filtering, and form components.",
+    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
     date: "10/2025",
     lastUpdated: "2025-10-12",
-    status: "planning",
+    status: "complete",
     links: {
-      github: "TBD"
+      github: "https://github.com/miasdk/hunter-events"
     },
     image: "https://s29068.pcdn.co/wp-content/uploads/hunter-building-tree-sq-768x768.jpg.optimal.jpg",
     meta: {
-      isWIP: true,
       isFeatured: true,
       isFullStack: true,
-      isTeamProject: true
-    },
-    platforms: ["web"]
-  },
-  {
-    id: "project6",
-    title: "Canvas Learning Management System Feedback Intelligence Platform",
-    shortTitle: "Canvas LMS Feedback Platform",
-    projectType: "EdTech Analytics Platform",
-    description: "EdTech analytics platform that helps educators prioritize course improvements through AI-powered student feedback analysis. Features 4-factor weighted scoring algorithm (impact, urgency, effort, recency) with async FastAPI backend and React frontend for real-time insights.",
-    technologies: ["python", "react", "typescript", "postgresql", "fastapi", "tailwindcss"],
-    date: "10/2025",
-    lastUpdated: "2025-10-06",
-    status: "in-progress",
-    links: {
-      github: "https://github.com/miasdk/canvas-feedback-aggregator"
-    },
-    image: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=870&auto=format&fit=crop",
-    meta: {
-      isWIP: true,
-      isFeatured: true,
-      isFullStack: true,
-      isAI: false,
       isTeamProject: false
     },
     platforms: ["web"]
@@ -51,8 +27,8 @@ export const projects: Project[] = [
     id: "project1",
     title: "Luxe Marketplace",
     projectType: "E-commerce Platform",
-    description: "Full-stack e-commerce platform with Stripe payments, Google OAuth, and 30+ RESTful API endpoints. Features PostgreSQL database with full-text search, real-time cart management, social commerce features including product likes, and seller listing management. Includes CI/CD deployment pipeline.",
-    technologies: ["react", "nodejs", "express", "postgresql", "firebase", "tailwindcss"],
+    description: "Built full-stack e-commerce platform with Stripe payments and Google OAuth authentication. Created 30+ RESTful API endpoints for product catalog, shopping cart, and order management. Designed normalized PostgreSQL schema with full-text search for product discovery. Built responsive seller dashboard for listing management with real-time product metrics.",
+    technologies: ["react", "nodejs", "express", "postgresql", "tailwindcss"],
     date: "01/2025",
     lastUpdated: "2025-07-18",
     status: "complete",
@@ -70,11 +46,11 @@ export const projects: Project[] = [
   },
   {
     id: "project2",
-    title: "AI-Powered Job Finder Platform",
+    title: "AI-Powered Job Finder",
     shortTitle: "AI-Powered Job Finder",
     projectType: "Job Matching Platform",
-    description: "AI-powered job matching platform integrating 9+ job APIs with intelligent scoring algorithms. Processes 1000+ daily job postings through Django backend with Celery task queues and Next.js frontend for personalized recommendations.",
-    technologies: ["python", "django", "react", "nextjs", "typescript", "postgresql"],
+    description: "Built full-stack job platform with Next.js/TypeScript frontend and Django REST API backend. Integrated 4+ external job board APIs (Adzuna, JSearch, Reed, Rise) aggregating 100+ daily job listings. Implemented Celery task queues with Redis broker for asynchronous job scraping, AI-powered matching, and automated email digests.",
+    technologies: ["nextjs", "typescript", "django", "python", "postgresql", "react"],
     date: "07/2025",
     lastUpdated: "2025-07-23",
     status: "complete",

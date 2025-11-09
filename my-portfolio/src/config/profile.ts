@@ -11,7 +11,7 @@ export const profile = {
     github: "https://github.com/miasdk",
     linkedIn: "https://www.linkedin.com/in/miaelena/",
     website: "https://miaelena.vercel.app/",
-    resume: "https://www.dropbox.com/preview/resume.pdf?context=file_uploader_preview_file&role=personal",
+    resume: "https://www.dropbox.com/scl/fi/h88slx5ez789qpouvivik/Mia-Junior-SWE-Resume.pdf?rlkey=ubc8u0j1rkv0ag3cd7ni5lnd1&st=4qom5dyr&dl=0",
   },
   skills: [
     "python",
