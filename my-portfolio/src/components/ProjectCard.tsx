@@ -20,12 +20,22 @@ export default function ProjectCard({
   const [isExpanded, setIsExpanded] = useState(false)
   const maxDescriptionLength = 120
   const showReadMore = project.description.length > maxDescriptionLength
+
+  // Prefer demo link if available, otherwise use GitHub
+  const projectLink = project.links?.demo || project.links?.github || "#"
+  const hasValidLink = projectLink !== "#"
+
+  const ContentWrapper = hasValidLink ? Link : 'div'
+  const linkProps = hasValidLink ? {
+    href: projectLink,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  } : {}
+
   return (
-    <article className={`group relative h-full flex flex-col cursor-pointer ${className}`}>
-      <Link
-        href={project.links?.github || "#"}
-        target="_blank"
-        rel="noopener noreferrer"
+    <article className={`group relative h-full flex flex-col ${hasValidLink ? 'cursor-pointer' : ''} ${className}`}>
+      <ContentWrapper
+        {...linkProps}
         className="relative flex flex-col h-full"
       >
         {project.image && (
@@ -52,7 +62,7 @@ export default function ProjectCard({
 
         <div className="flex-1 flex flex-col">
           {/* Title */}
-          <h3 className="text-base font-semibold text-gray-900 mb-1 group-hover:underline">
+          <h3 className={`text-base font-semibold text-gray-900 mb-1 ${hasValidLink ? 'group-hover:underline' : ''}`}>
             {project.shortTitle || project.title}
           </h3>
 
@@ -93,7 +103,7 @@ export default function ProjectCard({
             </p>
           </div>
         </div>
-      </Link>
+      </ContentWrapper>
     </article>
   )
 }

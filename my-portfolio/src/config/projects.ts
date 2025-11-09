@@ -11,12 +11,11 @@ export const projects: Project[] = [
     technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
     date: "10/2025",
     lastUpdated: "2025-10-12",
-    status: "complete",
-    links: {
-      github: "https://github.com/miasdk/hunter-events"
-    },
+    status: "in-progress",
+    links: {},
     image: "https://s29068.pcdn.co/wp-content/uploads/hunter-building-tree-sq-768x768.jpg.optimal.jpg",
     meta: {
+      isWIP: true,
       isFeatured: true,
       isFullStack: true,
       isTeamProject: false
@@ -36,7 +35,7 @@ export const projects: Project[] = [
       github: "https://github.com/miasdk/Vite-Ecommerce-Template",
       demo: "https://ecartdemo.vercel.app/"
     },
-    image: "/images/ecart-homepage2.png",
+    image: "/images/luxe-demo.gif",
     meta: {
       isTeamProject: false,
       isFeatured: true,
