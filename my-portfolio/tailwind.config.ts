@@ -9,7 +9,15 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: [
+          "var(--font-inter)",
+          "Roboto",
+          '"Helvetica Neue"',
+          '"Arial Nova"',
+          '"Nimbus Sans"',
+          "Arial",
+          "sans-serif"
+        ],
         display: ["var(--font-epilogue)", "system-ui", "sans-serif"],
         licorice: ["var(--font-licorice)", "cursive"],
       },

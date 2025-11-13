@@ -77,14 +77,7 @@ export default function Home() {
           >
             {profile.name}
           </motion.h1>
-          <motion.p
-            className="text-sm text-gray-600 mb-2 font-normal text-center"
-            initial={{ y: 15, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, delay: 0.1, ease: "easeOut" }}
-          >
-            {profile.username} · {profile.pronouns}
-          </motion.p>
+         
           <motion.p
             className="text-base text-gray-900 mb-4 font-normal text-center"
             initial={{ y: 15, opacity: 0 }}
