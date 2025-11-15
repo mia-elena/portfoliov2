@@ -7,7 +7,7 @@ export const projects: Project[] = [
     title: "CUNY Hunter College Events Portal",
     shortTitle: "Hunter College Events Portal",
     projectType: "Campus Event Platform",
-    description: "Developed campus event discovery platform with Firebase Authentication supporting email/password and Google OAuth login flows. Built responsive React application with nested routing architecture, global state management using Context API. Designed mobile-first UI with Tailwind CSS featuring event search, filtering, and form components.",
+    description: "Collaborative campus event platform for Hunter College centralizing daily club events in one feed. Building admin portal for club presidents to post events with Firebase authentication and real-time database updates. *In Progress*",
     technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
     date: "10/2025",
     lastUpdated: "2025-10-12",
@@ -43,76 +43,32 @@ export const projects: Project[] = [
     },
     platforms: ["web"]
   },
-  {
-    id: "project2",
-    title: "AI-Powered Job Finder",
-    shortTitle: "AI-Powered Job Finder",
-    projectType: "Job Matching Platform",
-    description: "Built full-stack job platform with Next.js/TypeScript frontend and Django REST API backend. Integrated 4+ external job board APIs (Adzuna, JSearch, Reed, Rise) aggregating 100+ daily job listings. Implemented Celery task queues with Redis broker for asynchronous job scraping, AI-powered matching, and automated email digests.",
-    technologies: ["nextjs", "typescript", "django", "python", "postgresql", "react"],
-    date: "07/2025",
-    lastUpdated: "2025-07-23",
-    status: "complete",
-    links: {
-      github: "https://github.com/miasdk/job-finder-backend",
-      demo: "https://mia-jobfinder.vercel.app/"
-    },
-    image: "/images/job-finder-hero1.png",
-    meta: {
-      isFeatured: true,
-      isFullStack: true,
-      isAI: true,
-      isTeamProject: false
-    },
-    platforms: ["web"]
-  },
-  // Non-featured projects (reverse chronological)
-  {
-    id: "project3",
-    title: "Smart Chat Component",
-    shortTitle: "Smart Chat Component",
-    projectType: "AI Chat Component",
-    description: "Reusable AI chat component library with 4 intelligent personas and theme variants. Built with React, TypeScript, and OpenAI featuring real-time conversations and comprehensive developer documentation.",
-    technologies: ["react", "typescript", "nodejs", "express", "tailwindcss", "openai"],
-    date: "07/2025",
-    lastUpdated: "2025-07-25",
-    status: "complete",
-    links: {
-      github: "https://github.com/miasdk/gemini-chatbot",
-      demo: "https://gemini-chat-component.vercel.app/"
-    },
-    image: "/images/gemini-chatbot.png",
-    meta: {
-      isFeatured: false,
-      isFullStack: true,
-      isAI: true,
-      isTeamProject: false,
-    },
-    platforms: ["web"]
-  },
   // {
-  //   id: "project4",
-  //   title: "AI-Medical Referral Hub",
-  //   shortTitle: "Medical Referral Hub",
-  //   projectType: "Healthcare Platform",
-  //   description: "HIPAA-compliant healthcare platform with FHIR R4-compliant APIs for medical referral management. Features AI-powered PDF processing with Mistral AI and normalized PostgreSQL database with audit logging.",
-  //   technologies: ["python", "django", "postgresql", "react", "typescript", "tailwindcss", "docker"],
-  //   date: "06/2025",
-  //   lastUpdated: "2025-07-09",
-  //   status: "in-progress",
+  //   id: "project2",
+  //   title: "AI-Powered Job Finder",
+  //   shortTitle: "AI-Powered Job Finder",
+  //   projectType: "Job Matching Platform",
+  //   description: "Built full-stack job platform with Next.js/TypeScript frontend and Django REST API backend. Integrated 4+ external job board APIs (Adzuna, JSearch, Reed, Rise) aggregating 100+ daily job listings. Implemented Celery task queues with Redis broker for asynchronous job scraping, AI-powered matching, and automated email digests.",
+  //   technologies: ["nextjs", "typescript", "django", "python", "postgresql", "react"],
+  //   date: "07/2025",
+  //   lastUpdated: "2025-07-23",
+  //   status: "complete",
   //   links: {
-  //     github: "https://github.com/miasdk/medical-referral-hub",
+  //     github: "https://github.com/miasdk/job-finder-backend",
+  //     demo: "https://mia-jobfinder.vercel.app/"
   //   },
-  //   image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  //   image: "/images/job-finder-hero1.png",
   //   meta: {
-  //     isWIP: true,
-  //     isFeatured: false,
-  //     isAI: true,
+  //     isFeatured: true,
   //     isFullStack: true,
-  //     isTeamProject: false,
+  //     isAI: true,
+  //     isTeamProject: false
   //   },
   //   platforms: ["web"]
   // },
+  // Non-featured projects (reverse chronological)
+ 
+ 
   {
     id: "project5",
     title: "Portfolio",
@@ -128,7 +84,7 @@ export const projects: Project[] = [
     },
     image: "/images/portfolio.jpg",
     meta: {
-      isFeatured: false,
+      isFeatured: true,
     },
     platforms: ["web", "mobile"]
   }

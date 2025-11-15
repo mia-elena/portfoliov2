@@ -18,7 +18,7 @@ export default function ProjectCard({
   variant = "grid"
 }: ProjectCardProps) {
   const [isExpanded, setIsExpanded] = useState(false)
-  const maxDescriptionLength = 120
+  const maxDescriptionLength = 80
   const showReadMore = project.description.length > maxDescriptionLength
 
   // Prefer demo link if available, otherwise use GitHub
