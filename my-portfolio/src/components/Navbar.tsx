@@ -3,36 +3,31 @@
 import { useState } from "react"
 import Link from "next/link"
 import { HiMenu, HiX } from "react-icons/hi"
-import { MapPin } from "lucide-react"
-import { SiPython, SiTypescript, SiReact } from "react-icons/si"
+import { IoLeaf } from "react-icons/io5"
+import { MapPinned, Phone } from "lucide-react"
 import { profile } from "../config/profile"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
+    const navbarSkills = ['React', 'TypeScript', 'Python', 'PostgreSQL', 'AWS']
 
     return (
-        <nav className="sticky top-0 z-50 bg-gray-50">
+        <nav className="sticky top-0 z-50 bg-gray-50 space-y-2 p-2">
             {/* Main Navbar */}
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <Link
                     href="/"
-                    className="flex flex-col hover:opacity-80 transition-opacity"
+                    className="flex items-center gap-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
                 >
-                    <span className="text-xl font-bold text-gray-900 tracking-tight">Mia E.</span>
-                    <span className="text-xs text-gray-600">Software Engineer</span>
+                    <IoLeaf className="text-xl rotate-[-90deg]" />
+                    <span>Mia E.</span>
                 </Link>
 
-                <div className="hidden md:flex flex-col items-end gap-1">
-                    <ul className="flex items-center gap-6">
-                        <NavLink href="/projects">Projects</NavLink>
-                        <NavLink href="/about">About</NavLink>
-                        <NavLink href="/hire">Hire</NavLink>
-                    </ul>
-                    <div className="flex items-center gap-1.5 text-xs text-gray-600">
-                        <MapPin className="w-3.5 h-3.5" />
-                        NYC
-                    </div>
-                </div>
+                <ul className="hidden md:flex items-center gap-5">
+                    <NavLink href="/projects">Projects</NavLink>
+                    <NavLink href="/about">About</NavLink>
+                    <NavLink href="/hire">Hire</NavLink>
+                </ul>
 
                 <button
                     onClick={() => setIsOpen(!isOpen)}
@@ -43,15 +38,43 @@ export default function Navbar() {
                 </button>
             </div>
 
+            {/* Tech Stack Sub-Navbar */}
+            <div className="hidden md:block bg-gray-100">
+                <div className="max-w-7xl mx-auto px-4">
+                    <div className="flex items-center justify-between py-2.5">
+                        {/* Tech Stack - Left */}
+                        <div className="flex items-center gap-3 text-xs text-gray-600 flex-wrap">
+                            {navbarSkills.map((skill, i) => (
+                                <span key={skill} className="flex items-center gap-3">
+                                    <span className="font-medium">{skill}</span>
+                                    {i < navbarSkills.length - 1 && <span className="text-gray-300">|</span>}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* Contact Info - Right */}
+                        <div className="flex items-center gap-3 text-xs text-gray-600">
+                            <span className="flex items-center gap-1">
+                                <MapPinned className="w-3 h-3" />
+                                NYC
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="md:hidden bg-gray-50 border-b border-gray-200">
+                <div className="md:hidden bg-gray-50">
                     <ul className="px-6 py-3 space-y-1">
                         <MobileNavLink href="/projects" onClick={() => setIsOpen(false)}>
                             Projects
                         </MobileNavLink>
                         <MobileNavLink href="/about" onClick={() => setIsOpen(false)}>
                             About
+                        </MobileNavLink>
+                        <MobileNavLink href="/#experience" onClick={() => setIsOpen(false)}>
+                            Experience
                         </MobileNavLink>
                         <li>
                             <Link
