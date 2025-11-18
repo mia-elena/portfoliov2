@@ -3,12 +3,9 @@
 import { useState } from "react"
 import Link from "next/link"
 import { HiMenu, HiX } from "react-icons/hi"
-import { MapPinned } from "lucide-react"
-import { profile } from "../config/profile"
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
-    const navbarSkills = ['React', 'TypeScript', 'Python', 'PostgreSQL', 'AWS']
 
     return (
         <nav className="sticky top-0 z-50 bg-gray-50 space-y-2 p-2">
@@ -36,30 +33,6 @@ export default function Navbar() {
                 </button>
             </div>
 
-            {/* Tech Stack Sub-Navbar */}
-            <div className="hidden md:block bg-gray-100">
-                <div className="max-w-7xl mx-auto px-4">
-                    <div className="flex items-center justify-between py-2.5">
-                        {/* Tech Stack - Left */}
-                        <div className="flex items-center gap-3 text-xs text-gray-600 flex-wrap">
-                            {navbarSkills.map((skill, i) => (
-                                <span key={skill} className="flex items-center gap-3">
-                                    <span className="font-medium">{skill}</span>
-                                    {i < navbarSkills.length - 1 && <span className="text-gray-300">|</span>}
-                                </span>
-                            ))}
-                        </div>
-
-                        {/* Contact Info - Right */}
-                        <div className="flex items-center gap-3 text-xs text-gray-600">
-                            <span className="flex items-center gap-1">
-                                <MapPinned className="w-3 h-3" />
-                                NYC
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
             {/* Mobile Menu */}
             {isOpen && (
