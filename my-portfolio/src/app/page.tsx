@@ -144,7 +144,7 @@ export default function Home() {
           <motion.img
             src="https://raw.githubusercontent.com/miaskyelena/contribution_snk/output/github-contribution-grid-snake.svg"
             alt="GitHub Contribution Snake"
-            className="mx-auto w-full max-w-7xl h-32 opacity-70"
+            className="mx-auto w-full max-w-7xl h-32 opacity-90"
             transition={{ duration: 0.5, delay: 0.24, ease: "easeOut" }}
           />
         </div>
