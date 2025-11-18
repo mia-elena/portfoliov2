@@ -3,8 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { HiMenu, HiX } from "react-icons/hi"
-import { IoLeaf } from "react-icons/io5"
-import { MapPinned, Phone } from "lucide-react"
+import { MapPinned } from "lucide-react"
 import { profile } from "../config/profile"
 
 export default function Navbar() {
@@ -17,10 +16,9 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
                 <Link
                     href="/"
-                    className="flex items-center gap-2 text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
+                    className="text-2xl font-bold text-gray-900 hover:text-gray-700 transition-colors tracking-tight"
                 >
-                    <IoLeaf className="text-xl rotate-[-90deg]" />
-                    <span>Mia E.</span>
+                    Mia E.
                 </Link>
 
                 <ul className="hidden md:flex items-center gap-5">
