@@ -53,35 +53,8 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [galleryOpen, galleryIndex])
 
-  // Normalize experience data to WorkItem format
-  const normalizedExperience: WorkItemType[] = experience.map((exp) => ({
-    id: exp.id,
-    title: exp.title,
-    url: undefined, // Experience items typically don't have URLs
-    role: exp.company,
-    date: exp.date,
-    description: exp.description,
-    technicalDetails: exp.highlights || [],
-    technologies: exp.technologies as any[],
-    images: undefined
-  }))
-
-  // Normalize project data to WorkItem format
-  const normalizedProjects: WorkItemType[] = projects.map((project) => ({
-    id: project.id,
-    title: project.title,
-    url: project.links?.demo || project.links?.github,
-    role: project.projectType || 'Personal Project',
-    date: project.date,
-    description: project.description,
-    technicalDetails: project.highlights || [],
-    technologies: project.technologies,
-    images: project.images
-  }))
-
   // Combine and sort all work items by date (most recent first)
-  const allWorkItems = [...normalizedExperience, ...normalizedProjects].sort((a, b) => {
-    // Simple date comparison - you may want to make this more robust
+  const allWorkItems = [...experience, ...projects].sort((a, b) => {
     return b.date.localeCompare(a.date)
   })
 
@@ -140,7 +113,7 @@ export default function Home() {
       <section className="mb-10">
         <div className="space-y-3">
           <p>
-            I'm an AI engineer based in New York, specializing in agentic workflows and RAG-powered systems. I build autonomous agents using LangChain and LangGraph that handle complex reasoning with high reliability.
+            Building agentic AI and retrieval systems in NYC. I work with LangChain, LangGraph, and containerized microservices to create reliable, production-grade AI workflows.
           </p>
           <p className="text-stone-600">
             <span className="font-semibold">Technical Focus:</span> Agentic Logic, Semantic RAG, Multi-tenant Architecture, Deterministic AI Systems
@@ -174,8 +147,7 @@ export default function Home() {
               <div className="font-semibold text-xl mb-1">{edu.degree}</div>
               <div className="text-stone-600 mb-1">
                 {edu.institution}
-                <span> · </span>
-                <span className="text-xs font-mono text-stone-500">{edu.period}</span>
+               
               </div>
               {edu.highlights && edu.highlights.length > 0 && (
                 <ul className="mt-2 space-y-1">

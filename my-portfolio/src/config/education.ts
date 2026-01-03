@@ -7,7 +7,6 @@ export const education = [
       city: "New York",
       country: "USA"
     },
-    period: "2023 – Present",
     status: "current",
     description: "",
     highlights: [
