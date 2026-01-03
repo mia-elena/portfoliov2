@@ -1,54 +1,54 @@
 export const education = [
   {
     id: "hunter-college",
-    degree: "Bachelor of Arts in Computer Science",
+    degree: "B.S. in Computer Science",
     institution: "CUNY Hunter College",
     location: {
       city: "New York",
       country: "USA"
     },
-    period: "September 2022 - Present",
+    period: "2023 – Present",
     status: "current",
     gpa: "3.4",
-    description: "Computer Science degree with focus on data structures, algorithms, and web development. Active in CS community and maintaining strong academic performance.",
+    description: "",
     highlights: [
-      "Completed core curriculum including Data Structures & Algorithms, Operating Systems, and Practical Web Development",
-      "Enhanced technical skills through CodePath Advanced Web Development program and ongoing Technical Interview Course"
+      "Relevant Coursework: Data Structures, Algorithms, Computer Systems, Single Variable Calculus"
     ],
     coursework: [
       "Data Structures & Algorithms",
-      "Operating Systems", 
-      "Practical Web Development",
-      "Statistics",
-      "Software Engineering"
+      "Computer Systems", 
+      "Single Variable Calculus",
+      "Statistics"
     ],
-    // activities: [
-    //   "Computer Science Club - Active Member", (PENDING)
-    //   "WiCS (Women in Computer Science) - Active Member" (PENDING)
-    // ],
     technologies: ["javascript", "python", "cpp"],
     logo: "/images/HunterCollege.jpg"
   }
 ];
 
-export const certifications = [
+export const additionalCoursework = [
   {
-    id: "codepath-web-dev",
-    title: "Advanced Web Development",
-    provider: "CodePath",
-    period: "January 2024",
-    status: "completed",
-    description: "Intensive web development program focused on full-stack application development and modern frameworks.",
-    technologies: ["react", "nextjs", "nodejs", "express", "javascript"],
-    logo: "/images/codepathlogo.jpg"
+    title: "Docker & Kubernetes Masterclass: From Beginner to Advanced",
+    provider: "Packt",
+    url: "https://www.coursera.org/specializations/packt-docker-and-kubernetes-masterclass-from-beginner-to-advanced"
   },
   {
-    id: "codepath-interview",
-    title: "Intermediate Technical Interview Course", 
-    provider: "CodePath",
-    period: "In Progress",
-    status: "current",
-    description: "Advanced technical interview preparation covering algorithms, data structures, and system design.",
-    technologies: ["python", "javascript", "cpp"]
+    title: "Generative AI Engineering with LLMs Specialization",
+    provider: "IBM",
+    url: "https://www.coursera.org/professional-certificates/ai-engineer"
+  },
+  {
+    title: "Retrieval Augmented Generation (RAG) Specialization",
+    provider: "DeepLearning.AI",
+    url: "https://www.coursera.org/specializations/retrieval-augmented-generation-rag"
+  },
+  {
+    title: "LangChain MasterClass: Build 15 LLM Apps with Python",
+    provider: "Packt",
+    url: "https://www.coursera.org/learn/packt-langchain-masterclass-build-15-openai-and-llama-2-llm-apps-using-pyt-s2uus"
+  },
+  {
+    title: "Agentic AI with LangChain and LangGraph",
+    provider: "IBM",
+    url: "https://www.coursera.org/learn/agentic-ai-with-langchain-and-langgraph"
   }
-]; 
+];

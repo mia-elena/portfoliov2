@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import { profile } from '@/config/profile'
 import { projects } from '@/config/projects'
 import { experience } from '@/config/experience'
-import { education } from '@/config/education'
+import { education, additionalCoursework } from '@/config/education'
 import { WorkItem as WorkItemType } from '@/types'
 import WorkItem from '@/components/WorkItem'
 import { FaGithubAlt } from 'react-icons/fa6'
@@ -167,7 +167,8 @@ export default function Home() {
       {/* Education */}
       <section className="mb-10">
         <h2 className="text-2xl font-semibold mb-6">Education</h2>
-        <div className="space-y-5">
+        <div className="space-y-6">
+          {/* Formal Education */}
           {education.map((edu) => (
             <div key={edu.id}>
               <div className="font-semibold text-xl mb-1">{edu.degree}</div>
@@ -176,16 +177,34 @@ export default function Home() {
                 <span> · </span>
                 <span className="text-xs font-mono text-stone-500">{edu.period}</span>
               </div>
-              {edu.gpa && <div className="text-xs font-mono text-stone-500 mb-3">GPA: {edu.gpa}</div>}
-              {edu.highlights && edu.highlights.length > 0 && (
-                <ul className="mt-1 space-y-1">
-                  {edu.highlights.map((highlight, i) => (
+              {edu.gpa && (
+                <ul className="mt-2 space-y-1">
+                  <li className="flex"><span className="mr-2">–</span><span>GPA: {edu.gpa}</span></li>
+                  {edu.highlights && edu.highlights.map((highlight, i) => (
                     <li key={i} className="flex"><span className="mr-2">–</span><span>{highlight}</span></li>
                   ))}
                 </ul>
               )}
             </div>
           ))}
+
+          {/* Additional Coursework */}
+          <div>
+            <div className="font-semibold text-xl mb-2">Additional Coursework</div>
+            <ul className="space-y-1">
+              {additionalCoursework.map((course, i) => (
+                <li key={i} className="flex">
+                  <span className="mr-2">–</span>
+                  <span>
+                    <a href={course.url} target="_blank" rel="noopener noreferrer" className="hover:text-stone-600">
+                      {course.title}
+                    </a>
+                    <span className="text-stone-500"> — {course.provider}</span>
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
 
