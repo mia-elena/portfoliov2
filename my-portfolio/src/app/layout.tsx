@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import '../styles/globals.css';
 import { Analytics } from '@vercel/analytics/next';
-import { Inter } from "next/font/google";
+import { Source_Sans_3 } from "next/font/google";
 
-const inter = Inter({
+const sourceSans = Source_Sans_3({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-source-sans",
   display: "swap",
 });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased font-sans`}>
+      <body className={`${sourceSans.variable} antialiased`}>
         {/* Umami Analytics - Add your website ID after creating account at https://cloud.umami.is */}
         {process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID && (
           <Script

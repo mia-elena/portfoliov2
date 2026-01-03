@@ -16,31 +16,31 @@ export default function WorkItem({ item, onImageClick }: WorkItemProps) {
             href={item.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-lg"
+            className="font-semibold text-xl"
           >
             {item.title}
           </a>
         ) : (
-          <span className="font-bold text-lg">{item.title}</span>
+          <span className="font-semibold text-xl">{item.title}</span>
         )}
       </div>
 
       {/* Role/Subtitle */}
-      <div className="mb-1">{item.role}</div>
+      <div className="text-stone-600 mb-1">{item.role}</div>
 
       {/* Date */}
-      <div className="text-sm text-gray-600 mb-2">{item.date}</div>
+      <div className="text-xs font-mono text-stone-500 mb-3">{item.date}</div>
 
       {/* Description */}
       <p className="mb-3">{item.description}</p>
 
       {/* Technical Details */}
       {item.technicalDetails && item.technicalDetails.length > 0 && (
-        <div className="mb-3">
-          <div className="mb-1">Technical Details:</div>
-          <ul className="list-disc ml-6 space-y-1">
+        <div className="mb-4">
+          <div className="text-xs font-mono uppercase tracking-wider text-stone-500 mb-2">Technical Details</div>
+          <ul className="space-y-1.5 text-stone-700">
             {item.technicalDetails.map((detail, i) => (
-              <li key={i}>{detail}</li>
+              <li key={i} className="flex"><span className="mr-2">–</span><span>{detail}</span></li>
             ))}
           </ul>
         </div>
@@ -57,13 +57,13 @@ export default function WorkItem({ item, onImageClick }: WorkItemProps) {
 
       {/* Image Gallery Thumbnails */}
       {item.images && item.images.length > 0 && (
-        <div className="flex gap-3 flex-wrap">
+        <div className="flex gap-3 flex-wrap mt-4">
           {item.images.map((img, idx) => (
             <img
               key={idx}
               src={img}
               alt={`${item.title} screenshot ${idx + 1}`}
-              className="w-20 h-20 object-cover border border-black cursor-pointer hover:opacity-70 transition-opacity"
+              className="w-20 h-20 object-cover border border-stone-200 rounded cursor-pointer hover:opacity-80 transition-opacity"
               onClick={() => onImageClick(item.images!, idx)}
             />
           ))}

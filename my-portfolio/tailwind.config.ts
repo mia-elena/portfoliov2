@@ -10,16 +10,11 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: [
-          "var(--font-inter)",
-          "Roboto",
-          '"Helvetica Neue"',
-          '"Arial Nova"',
-          '"Nimbus Sans"',
-          "Arial",
+          "var(--font-source-sans)",
+          '"Source Sans 3"',
+          "system-ui",
           "sans-serif"
         ],
-        display: ["var(--font-epilogue)", "system-ui", "sans-serif"],
-        licorice: ["var(--font-licorice)", "cursive"],
       },
       colors: {
         background: "var(--background)",
