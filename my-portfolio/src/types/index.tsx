@@ -53,9 +53,11 @@ export interface Project {
   projectType?: string; // Client-friendly project category (e.g., "E-commerce Platform", "SaaS Dashboard")
   description: string;
   shortDescription?: string; // Brief description for compact cards
+  highlights?: string[]; // Key technical achievements/details
   technologies: Technology[];
-  
+
   image?: string | StaticImageData; // Path to image (optional)
+  images?: string[]; // Array of image paths for gallery
   videoUrl?: string; // For demo videos
   
   date: 
@@ -167,3 +169,16 @@ export interface ExperienceConfig {
 }
 
 export type ColorScheme = 'brand' | 'mono' | 'minimal';
+
+// Normalized schema for both work experience and projects
+export interface WorkItem {
+  id: string;
+  title: string; // Project name or Position
+  url?: string; // Link for the title (demo, company website, etc.)
+  role: string; // "Founder & Developer (Web - React...)" or company name
+  date: string; // "2024 04 - ongoing"
+  description: string; // Main paragraph
+  technicalDetails: string[]; // Bullet points of achievements/details
+  technologies?: Technology[]; // Tech stack for rendering badges
+  images?: string[]; // Gallery images
+}

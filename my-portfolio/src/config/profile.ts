@@ -11,7 +11,7 @@ export const profile = {
     github: "https://github.com/miasdk",
     linkedIn: "https://www.linkedin.com/in/miaelena/",
     website: "https://miaelena.vercel.app/",
-    resume: "",
+    resume: "YOUR_RESUME_URL_HERE",
   },
   skills: [
     "python",

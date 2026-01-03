@@ -3,30 +3,16 @@ import { Project, Technology } from "../types/index";
 export const projects: Project[] = [
   // Featured projects first (most recent work)
   {
-    id: "project7",
-    title: "CUNY Hunter College Events Portal",
-    shortTitle: "Hunter College Events Portal",
-    projectType: "Campus Event Platform",
-    description: "Collaborative campus event platform for Hunter College centralizing daily club events in one feed. Building admin portal for club presidents to post events with Firebase authentication and real-time database updates. *In Progress*",
-    technologies: ["react", "nodejs", "express", "firebase", "tailwindcss"],
-    date: "10/2025",
-    lastUpdated: "2025-10-12",
-    status: "in-progress",
-    links: {},
-    image: "https://s29068.pcdn.co/wp-content/uploads/hunter-building-tree-sq-768x768.jpg.optimal.jpg",
-    meta: {
-      isWIP: true,
-      isFeatured: true,
-      isFullStack: true,
-      isTeamProject: false
-    },
-    platforms: ["web"]
-  },
-  {
     id: "project1",
     title: "Luxe Marketplace",
     projectType: "E-commerce Platform",
-    description: "Built full-stack e-commerce platform with Stripe payments and Google OAuth authentication. Created 30+ RESTful API endpoints for product catalog, shopping cart, and order management. Designed normalized PostgreSQL schema with full-text search for product discovery. Built responsive seller dashboard for listing management with real-time product metrics.",
+    description: "Full-stack e-commerce platform with integrated payment processing, authentication, and real-time analytics.",
+    highlights: [
+      "Integrated Stripe payments and Google OAuth for secure transactions and authentication",
+      "Built 30+ RESTful API endpoints for product catalog, cart, and order management",
+      "Designed normalized PostgreSQL schema with full-text search capabilities",
+      "Created responsive seller dashboard with real-time product metrics"
+    ],
     technologies: ["react", "nodejs", "express", "postgresql", "tailwindcss"],
     date: "01/2025",
     lastUpdated: "2025-07-18",
@@ -36,6 +22,7 @@ export const projects: Project[] = [
       demo: "https://ecartdemo.vercel.app/"
     },
     image: "/images/luxe-demo.gif",
+    images: ["/images/luxe-demo.gif", "/images/luxe.png", "/images/eCart1.jpg", "/images/ecart-final-homepage.png"],
     meta: {
       isTeamProject: false,
       isFeatured: true,
@@ -73,7 +60,12 @@ export const projects: Project[] = [
     id: "project5",
     title: "Portfolio",
     projectType: "Developer Portfolio",
-    description: "Next.js portfolio featuring server-side rendering, responsive design, and custom component library for consistent UI/UX.",
+    description: "Minimalist brutalist portfolio showcasing work experience and projects.",
+    highlights: [
+      "Built with Next.js 15 App Router and server-side rendering",
+      "Designed minimal brutalist aesthetic with custom component architecture",
+      "Implemented responsive image gallery with keyboard navigation"
+    ],
     technologies: ["typescript", "javascript", "react", "nextjs", "tailwindcss"],
     date: "04/2025",
     lastUpdated: "2025-07-18",
@@ -83,6 +75,7 @@ export const projects: Project[] = [
       demo: "https://miaelena.vercel.app/"
     },
     image: "/images/portfolio.jpg",
+    images: ["/images/portfolio.jpg"],
     meta: {
       isFeatured: true,
     },
