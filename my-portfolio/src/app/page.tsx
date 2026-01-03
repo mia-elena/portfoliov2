@@ -196,10 +196,11 @@ export default function Home() {
                 <li key={i} className="flex">
                   <span className="mr-2">–</span>
                   <span>
+                    <span className="font-medium">{course.credential}</span>
+                    <span className="text-stone-500"> — </span>
                     <a href={course.url} target="_blank" rel="noopener noreferrer" className="hover:text-stone-600">
                       {course.title}
                     </a>
-                    <span className="text-stone-500"> — {course.provider}</span>
                   </span>
                 </li>
               ))}

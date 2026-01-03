@@ -27,28 +27,28 @@ export const education = [
 
 export const additionalCoursework = [
   {
-    title: "Docker & Kubernetes Masterclass: From Beginner to Advanced",
-    provider: "Packt",
+    credential: "Packt Specialization",
+    title: "Docker & Kubernetes Masterclass",
     url: "https://www.coursera.org/specializations/packt-docker-and-kubernetes-masterclass-from-beginner-to-advanced"
   },
   {
-    title: "Generative AI Engineering with LLMs Specialization",
-    provider: "IBM",
+    credential: "IBM Professional Certificate",
+    title: "Generative AI Engineering with LLMs",
     url: "https://www.coursera.org/professional-certificates/ai-engineer"
   },
   {
-    title: "Retrieval Augmented Generation (RAG) Specialization",
-    provider: "DeepLearning.AI",
+    credential: "DeepLearning.AI Specialization",
+    title: "Retrieval Augmented Generation (RAG)",
     url: "https://www.coursera.org/specializations/retrieval-augmented-generation-rag"
   },
   {
-    title: "LangChain MasterClass: Build 15 LLM Apps with Python",
-    provider: "Packt",
+    credential: "Packt Course",
+    title: "LangChain MasterClass: Build 15 LLM Apps",
     url: "https://www.coursera.org/learn/packt-langchain-masterclass-build-15-openai-and-llama-2-llm-apps-using-pyt-s2uus"
   },
   {
+    credential: "IBM Course",
     title: "Agentic AI with LangChain and LangGraph",
-    provider: "IBM",
     url: "https://www.coursera.org/learn/agentic-ai-with-langchain-and-langgraph"
   }
 ];
