@@ -177,10 +177,9 @@ export default function Home() {
                 <span> · </span>
                 <span className="text-xs font-mono text-stone-500">{edu.period}</span>
               </div>
-              {edu.gpa && (
+              {edu.highlights && edu.highlights.length > 0 && (
                 <ul className="mt-2 space-y-1">
-                  <li className="flex"><span className="mr-2">–</span><span>GPA: {edu.gpa}</span></li>
-                  {edu.highlights && edu.highlights.map((highlight, i) => (
+                  {edu.highlights.map((highlight, i) => (
                     <li key={i} className="flex"><span className="mr-2">–</span><span>{highlight}</span></li>
                   ))}
                 </ul>

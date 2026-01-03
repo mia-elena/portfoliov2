@@ -9,16 +9,9 @@ export const education = [
     },
     period: "2023 – Present",
     status: "current",
-    gpa: "3.4",
     description: "",
     highlights: [
-      "Relevant Coursework: Data Structures, Algorithms, Computer Systems, Single Variable Calculus"
-    ],
-    coursework: [
-      "Data Structures & Algorithms",
-      "Computer Systems", 
-      "Single Variable Calculus",
-      "Statistics"
+      "Relevant Coursework: Data Structures, Algorithms, Computer Theory, Operating Systems, Single Variable Calculus"
     ],
     technologies: ["javascript", "python", "cpp"],
     logo: "/images/HunterCollege.jpg"
