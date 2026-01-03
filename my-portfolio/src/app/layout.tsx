@@ -12,13 +12,24 @@ const sourceSans = Source_Sans_3({
 });
 
 export const metadata: Metadata = {
-  title: "Mia Elena | Software Engineer",
-  description: "Software engineer. I build things for the web.",
+  title: "Mia Elena | AI Engineer",
+  description: "AI engineer in NYC. Building agentic systems, RAG pipelines, and production-grade LLM workflows with LangChain and LangGraph.",
+  keywords: ["AI Engineer", "LangChain", "LangGraph", "RAG", "Agentic AI", "NYC"],
+  authors: [{ name: "Mia Elena" }],
   icons: {
     icon: [
-      { url: '/images/ghibli-nav.png', sizes: '32x32', type: 'image/png' },
-      { url: '/images/ghibli-nav.png', sizes: '16x16', type: 'image/png' },
+      { url: '/ai-favicon.svg', type: 'image/svg+xml' },
     ],
+  },
+  openGraph: {
+    title: "Mia Elena | AI Engineer",
+    description: "Building agentic AI and retrieval systems in NYC.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Mia Elena | AI Engineer",
+    description: "Building agentic AI and retrieval systems in NYC.",
   },
 };
 

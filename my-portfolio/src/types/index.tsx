@@ -95,6 +95,8 @@ export interface Profile {
   name: string;
   title: string;
   description: string;
+  technicalFocus?: string[]; // Key technical interests/specializations
+  currentlyWorkingOn?: string; // Current projects/learning
   image?: string | StaticImageData;
   links?: {
     github?: string;

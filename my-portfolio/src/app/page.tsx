@@ -2,10 +2,8 @@
 
 import { useState, useEffect } from 'react'
 import { profile } from '@/config/profile'
-import { projects } from '@/config/projects'
-import { experience } from '@/config/experience'
+import { workitems } from '@/config/workitems'
 import { education, additionalCoursework } from '@/config/education'
-import { WorkItem as WorkItemType } from '@/types'
 import WorkItem from '@/components/WorkItem'
 import { FaGithubAlt } from 'react-icons/fa6'
 import { Linkedin, Mail, FileText } from 'lucide-react'
@@ -53,8 +51,8 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [galleryOpen, galleryIndex])
 
-  // Combine and sort all work items by date (most recent first)
-  const allWorkItems = [...experience, ...projects].sort((a, b) => {
+  // Sort all work items by date (most recent first)
+  const allWorkItems = [...workitems].sort((a, b) => {
     return b.date.localeCompare(a.date)
   })
 
@@ -113,11 +111,18 @@ export default function Home() {
       <section className="mb-10">
         <div className="space-y-3">
           <p>
-            Building agentic AI and retrieval systems in NYC. I work with LangChain, LangGraph, and containerized microservices to create reliable, production-grade AI workflows.
+            {profile.description}
           </p>
-          <p className="text-stone-600">
-            <span className="font-semibold">Technical Focus:</span> Agentic Logic, Semantic RAG, Multi-tenant Architecture, Deterministic AI Systems
+          {profile.currentlyWorkingOn && (
+          <p>
+          {profile.currentlyWorkingOn}
           </p>
+          )}
+          {profile.technicalFocus && profile.technicalFocus.length > 0 && (
+            <p className="text-stone-600">
+              <span className="font-semibold">Technical Focus:</span> {profile.technicalFocus.join(', ')}
+            </p>
+          )}
         </div>
       </section>
 
