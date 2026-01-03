@@ -142,8 +142,9 @@ export default function Home() {
           <p>
             I'm an AI engineer based in New York, specializing in agentic workflows and RAG-powered systems. I build autonomous agents using LangChain and LangGraph that handle complex reasoning with high reliability.
           </p>
-         
-         
+          <p className="text-stone-600">
+            <span className="font-semibold">Technical Focus:</span> Agentic Logic, Semantic RAG, Multi-tenant Architecture, Deterministic AI Systems
+          </p>
         </div>
       </section>
 
