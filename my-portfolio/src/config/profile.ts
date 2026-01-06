@@ -5,7 +5,7 @@ export const profile = {
   username: "miaelena",
   pronouns: "she/her",
   title: "AI Engineer",
-  description: "I am a full-stack software engineer specializing in building end-to-end agentic systems. My experience spans across contributing to production RAG pipelines to architecting custom agentic systems using LangChain and LangGraph to meet various business use cases. ",
+  description: "I am a full-stack software engineer specializing in building end-to-end agentic systems. My experience spans across contributing to RAG pipelines to architecting custom agentic workflows using LangChain and LangGraph to meet various business use cases. ",
   technicalFocus: [
     "Agentic Logic",
     "Semantic RAG",

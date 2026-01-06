@@ -1,7 +1,7 @@
 export const education = [
   {
     id: "hunter-college",
-    degree: "B.S. in Computer Science",
+    degree: "B.A. in Computer Science",
     institution: "CUNY Hunter College",
     location: {
       city: "New York",
