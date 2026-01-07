@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- Lowercase m with node styling -->
+  <!-- Left stem -->
+  <line x1="5" y1="26" x2="5" y2="12" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- First arch -->
+  <path d="M5 14 Q5 8 11 8 Q17 8 17 14" stroke="#292524" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Middle stem -->
+  <line x1="17" y1="14" x2="17" y2="26" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Second arch -->
+  <path d="M17 14 Q17 8 23 8 Q29 8 29 14" stroke="#292524" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  
+  <!-- Right stem -->
+  <line x1="29" y1="14" x2="29" y2="26" stroke="#292524" stroke-width="2.5" stroke-linecap="round"/>
+  
+  <!-- Nodes at terminals -->
+  <circle cx="5" cy="26" r="2.5" fill="#292524"/>
+  <circle cx="17" cy="26" r="2.5" fill="#292524"/>
+  <circle cx="29" cy="26" r="2.5" fill="#292524"/>
+  
+  <!-- Nodes at arch peaks -->
+  <circle cx="11" cy="8" r="2" fill="#78716c"/>
+  <circle cx="23" cy="8" r="2" fill="#78716c"/>
+</svg>
